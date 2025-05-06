@@ -1,65 +1,75 @@
-// React and Next.js
+
 import React, { JSX } from "react";
 
-// Layout Components
 import { Section, Container } from "@/components/craft";
 import Balancer from "react-wrap-balancer";
 
-// Icons
-import { Coins } from "lucide-react";
+import { Button } from "../ui/button";
+import Link from "next/link";
+import { FaApple } from "react-icons/fa";
+import { IoLogoGooglePlaystore } from "react-icons/io5";
 
 type FeatureText = {
   icon: JSX.Element;
   title: string;
   description: string;
+  img: JSX.Element;
 };
 
 const featureText: FeatureText[] = [
   {
-    icon: <Coins className="h-6 w-6" />,
-    title: "Lorem Ipsum",
+    icon: <p className="text-2xl font-bold bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent">01</p>,
+    title: "Create Your Profile",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Sign up and create your music profile with your skills, goals, and preferences.",
+      img: <img src='/iphone1.png' className="w-42 h-45"/>
   },
   {
-    icon: <Coins className="h-6 w-6" />,
-    title: "Lorem Ipsum",
+    icon: <p className="text-2xl font-bold bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent">02</p>,
+    title: "Find Your Service Provider",
     description:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Browse through verified coaches and musicians, filter by genre, location, and expertise.",
+      img: <img src='/iphone2.png' className="w-42 h-45"/>
   },
   {
-    icon: <Coins className="h-6 w-6" />,
-    title: "Lorem Ipsum",
+    icon: <p className="text-2xl font-bold bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent">03</p>,
+    title: "Book Sessions",
     description:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "Schedule sessions with your favorite providers at times that work for you.",
+      img: <img src='/iphone3.png' className="w-42 h-45"/>
   },
 ];
 
 const FeatureAction = () => {
   return (
-    <Section className="border-b">
-      <Container className="not-prose">
+    <Section className="">
+      <Container className="not-prose ">
         <div className="flex flex-col gap-6">
-          <h3 className="text-4xl">
+          <h3 className="text-4xl bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent font-bold text-center">
             <Balancer>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            How Music Minds Works
             </Balancer>
           </h3>
-          <h4 className="text-2xl font-light opacity-70">
+          <h4 className="text-sm font-light opacity-70 text-center">
             <Balancer>
-              Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+            A simple process to connect you with the musical guidance you need.
             </Balancer>
           </h4>
 
           <div className="mt-6 grid gap-6 md:mt-12 md:grid-cols-3">
-            {featureText.map(({ icon, title, description }, index) => (
-              <div className="flex flex-col gap-4" key={index}>
+            {featureText.map(({ icon, title, description,img }, index) => (
+              <div className="flex flex-col gap-3 bg-gradient-to-r from-[#F2F1FF]  to-[#FFF0FD] rounded-lg pb-0 p-4" key={index}>
                 {icon}
-                <h4 className="text-xl text-primary">{title}</h4>
-                <p className="text-base opacity-75">{description}</p>
+                <h4 className="text-2lg text-primary font-semibold">{title}</h4>
+                <p className=" opacity-75 text-sm">{description}</p>
+               <div className="flex justify-end">  {img} </div>
               </div>
             ))}
           </div>
+          <div className="flex flex-wrap items-center justify-center gap-4 ">
+       <Link href='/'> <Button className=" w-full h-[50px] p-3 text-white "><FaApple/> | <div className="flex-col items-start pr-3"><p className="text-xs ">Get it on </p> <h4>App Store</h4></div></Button></Link>
+       <Link href='/'> <Button className=" w-full h-[50px] p-3 text-white"><IoLogoGooglePlaystore/>| <div className="flex-col items-start pr-3"><p className="text-xs text-white">Get it on </p> <h4>Play Store</h4></div></Button></Link>
+       </div> 
         </div>
       </Container>
     </Section>

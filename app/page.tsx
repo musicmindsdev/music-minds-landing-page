@@ -7,17 +7,19 @@ import FeatureAction from "@/components/home-page/featureaction";
 import FeatureRight from "@/components/home-page/feature-right";
 import CTA from "@/components/home-page/cta";
 import Footer from "@/components/home-page/footer";
+import Testimonials from "@/components/home-page/testimonials";
 
 export default function Home() {
   return (
-   <Main>
-    <Section>
-      <Container>
+   <Main >
+    <Section >
+      <Container >
         <Hero/>
-        <Feature />
+        <Feature/>
         <FeatureLeft />
         <FeatureAction />
         <FeatureRight/>
+        <Testimonials />
         <CTA />
         <Footer/>
       </Container>

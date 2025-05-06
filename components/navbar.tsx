@@ -9,6 +9,8 @@ import { NavigationMenu, NavigationMenuLink, NavigationMenuList } from "./ui/nav
 // import ModeToggle from "../mode-toggle"
 import { SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet"
 import { ModeToggle } from "./mode-toggle"
+import { FaApple } from "react-icons/fa";
+import { IoLogoGooglePlaystore } from "react-icons/io5";
 
 
 export function NavBar() {
@@ -64,13 +66,7 @@ export function NavBar() {
                         </div>
                     </SheetContent>
                 </Dialog>
-                {/* <NavigationMenu>
-                    <NavigationMenuList className="max-[825px]:hidden ">
-                        <Link href="/" className="pl-2">
-                        <img src='/Musicmindlogo.svg' className="w-15 h-15"/>
-                        </Link>
-                    </NavigationMenuList>
-                </NavigationMenu> */}
+              
                 <div className="flex items-center gap-2 max-[825px]:hidden">
                     <Link href="/">
                         <Button variant="ghost">Company</Button>
@@ -85,7 +81,10 @@ export function NavBar() {
                         <Button variant="ghost">Contact</Button>
                     </Link>
                     <Link href="/">
-                        <Button variant="ghost">How it works</Button>
+                        <Button variant="ghost">How it worksss</Button>
+                    </Link>
+                    <Link href="/">
+                        <Button className="text-white"><FaApple/> | <IoLogoGooglePlaystore/> Download App</Button>
                     </Link>
                     <ModeToggle />
                 </div>
