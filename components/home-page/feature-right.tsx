@@ -25,10 +25,10 @@ const FeatureRight = () => {
           <p className="font-light leading-[1.4] opacity-70">
           Schedule sessions with top coaches and providers around the world. Get personalized guidance to improve your technique, expand your range, and develop your unique style.</p>
           <div className="not-prose flex-col items-center gap-7">
-          <p className="flex items-center gap-2 pb-2"><span><Image src={Frame} alt="" className=" rounded-full p-2 bg-[#EAE9FF]"/></span>In-person and virtual sessions available</p>
-          <p className="flex items-center gap-2 pb-2"><span><Image src={Calendar} alt="" className=" rounded-full p-2 bg-[#EAE9FF]"/></span>Flexible scheduling to fit your routine</p>
-          <p className="flex items-center gap-2 pb-2"><span><Image src={Microphone} alt="" className=" rounded-full p-2 bg-[#EAE9FF]"/></span>Record sessions for later review and practice</p>
-          <p className="flex items-center gap-2"><span><Image src={Sms} alt="" className=" rounded-full p-2 bg-[#EAE9FF]"/></span>Get personalized feedback and exercises</p>
+          <p className="flex items-center gap-2 pb-2"><Image src={Frame} alt="" className=" rounded-full p-1 bg-[#EAE9FF]"/>In-person and virtual sessions available</p>
+          <p className="flex items-center gap-2 pb-2"><Image src={Calendar} alt="" className=" rounded-full p-1 bg-[#EAE9FF]"/>Flexible scheduling to fit your routine</p>
+          <p className="flex items-center gap-2 pb-2"><Image src={Microphone} alt="" className=" rounded-full p-1 bg-[#EAE9FF]"/>Record sessions for later review and practice</p>
+          <p className="flex items-center gap-2"><Image src={Sms} alt="" className=" rounded-full p-1 bg-[#EAE9FF]"/>Get personalized feedback and exercises</p>
           </div>
         </div>
       </Craft.Container>
