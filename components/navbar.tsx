@@ -1,16 +1,17 @@
 "use client"
 import { cn } from "@/lib/utils"
-import { BookOpen, MenuIcon } from 'lucide-react'
+import {  MenuIcon } from 'lucide-react'
 import Link from "next/link"
 import * as React from "react"
 import { Dialog, DialogClose } from "./ui/dialog"
 import { Button } from "./ui/button"
 import { NavigationMenu, NavigationMenuLink, NavigationMenuList } from "./ui/navigation-menu"
-// import ModeToggle from "../mode-toggle"
 import { SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet"
 import { ModeToggle } from "./mode-toggle"
 import { FaApple } from "react-icons/fa";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
+import Logo from "@/public/Musicmindlogo.svg"
+import Image from "next/image"
 
 
 export function NavBar() {
@@ -21,7 +22,7 @@ export function NavBar() {
             <NavigationMenu>
                     <NavigationMenuList className="max-[825px]:w-10 max-[825px]:h-10">
                         <Link href="/" className="pl-2">
-                        <img src='/Musicmindlogo.svg' className="w-15 h-15"/>
+                        <Image src={Logo} className="w-15 h-15" alt={""}/>
                         </Link>
                     </NavigationMenuList>
                 </NavigationMenu>
@@ -31,7 +32,7 @@ export function NavBar() {
                     </SheetTrigger>
                     <SheetContent side="right">
                         <SheetHeader>
-                            <SheetTitle><img src='/Musicmindlogo.svg'/></SheetTitle>
+                            <SheetTitle><Image src={Logo} alt={""}/></SheetTitle>
                             <SheetDescription>
                                 Scale and launch products with expert developers, on-demand, at a flat monthly fee
                             </SheetDescription>

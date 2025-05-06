@@ -1,24 +1,19 @@
-// React and Next.js imports
+
 import Link from "next/link";
 import Image from "next/image";
 
-// Third-party library imports
-import Balancer from "react-wrap-balancer";
-import { Camera } from "lucide-react";
 
-// Local component imports
 import { Section, Container } from "@/components/craft";
 import { Button } from "@/components/ui/button";
 import { FaApple } from "react-icons/fa";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
 
-// Asset imports
 import HeroImage from "@/public/hero1.png";
 
 const Hero = () => {
   return (
-    <Section className="bg-[url(/bg.png)] p-6 sm:p-8 pb-0 ">
-      <Container className="grid items-stretch md:grid-cols-2 md:gap-12 pb-0">
+    <Section className="bg-[url(/bg.png)] p-6 sm:p-8 pb-0  ">
+      <Container className="grid items-stretch  md:grid-cols-2 md:gap-12 pb-0">
        <div className="flex flex-col items-start justify-center gap-6 py-8">
         <div className="flex flex-col text-left justify-center">
         <h1 className="text-7xl font-bold">Unlock Your </h1>

@@ -157,18 +157,20 @@ const Flex = React.memo(
     const gapClasses = (g: number) => `gap-${g}`;
     const paddingClasses = (p: number) => `p-${p}`;
 
-    const responsiveClasses = (
-      prop: Responsive<any>,
-      classFn: (value: any) => string
+    const responsiveClasses = <T,>(
+      prop: Responsive<T>,
+      classFn: (value: T) => string
     ) => {
       if (typeof prop !== "object") return classFn(prop);
-      return Object.entries(prop)
-        .map(([breakpoint, value]) =>
-          breakpoint === "sm"
-            ? classFn(value)
-            : `${breakpoint}:${classFn(value)}`
-        )
-        .join(" ");
+      return prop && typeof prop === "object"
+        ? Object.entries(prop)
+            .map(([breakpoint, value]) =>
+              breakpoint === "sm"
+                ? classFn(value as T)
+                : `${breakpoint}:${classFn(value as T)}`
+            )
+            .join(" ")
+        : "";
     };
 
     return (

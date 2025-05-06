@@ -1,13 +1,12 @@
-// React and Next.js imports
-import Link from "next/link";
+
 import Image from "next/image";
 
-// UI component imports
 import { Section, Container } from "@/components/craft";
-import { Button } from "@/components/ui/button";
 
-// Asset imports
 import Placeholder from "@/public/feat.svg";
+import Filter from "@/public/filter.svg"
+import Verify from "@/public/verify.svg"
+import Message from "@/public/message.svg"
 
 const FeatureLeft = () => {
   return (
@@ -19,9 +18,9 @@ const FeatureLeft = () => {
           Browse through profiles of top music coaches, read reviews from other students, and find the perfect match for your musical journey.
           </p>
           <div className="not-prose flex-col items-center gap-7">
-          <p className="flex items-center gap-2 pb-2"><span><img src="/filter.svg" alt="" className=" rounded-full p-2 bg-[#EAE9FF]"/></span>Filter by music genre and expertise</p>
-          <p className="flex items-center gap-2 pb-2"><span><img src="/verify.svg" alt="" className=" rounded-full p-2 bg-[#EAE9FF]"/></span>Read verified clients reviews</p>
-          <p className="flex items-center gap-2"><span><img src="/message.svg" alt="" className=" rounded-full p-2 bg-[#EAE9FF]"/></span>Message providers before booking</p>
+          <p className="flex items-center gap-2 pb-2"><span><Image src={Filter} alt="" className=" rounded-full p-2 bg-[#EAE9FF]"/></span>Filter by music genre and expertise</p>
+          <p className="flex items-center gap-2 pb-2"><span><Image src={Verify} alt="" className=" rounded-full p-2 bg-[#EAE9FF]"/></span>Read verified clients reviews</p>
+          <p className="flex items-center gap-2"><span><Image src={Message} alt="" className=" rounded-full p-2 bg-[#EAE9FF]"/></span>Message providers before booking</p>
           </div>
         </div>
         <div className="not-prose relative flex  overflow-hidden rounded-lg ">

@@ -5,8 +5,16 @@ import Balancer from "react-wrap-balancer";
 
 import { Section, Container } from "@/components/craft";
 
-import { Coins, ArrowRight } from "lucide-react";
 import { JSX } from "react";
+import Image from "next/image";
+import Music from "@/public/music.svg"
+import Calendar from "@/public/calendar.svg"
+import Play from "@/public/play.svg"
+import MessageText from "@/public/message-text.svg"
+import Image1 from "@/public/image46.png"
+import Image2 from "@/public/image47.png"
+import Image3 from "@/public/image48.png"
+import Image4 from "@/public/image49.png"
 
 type FeatureText = {
   icon: JSX.Element;
@@ -17,7 +25,7 @@ type FeatureText = {
 
 const featureText: FeatureText[] = [
   {
-    icon: <img src='/music.svg' className=" rounded-full p-3 bg-[#EAE9FF]"/>,
+    icon: <Image src={Music} className=" rounded-full p-3 bg-[#EAE9FF]" alt={""}/>,
     title: "Expert Service Providers",
     href: "/",
     description:
@@ -25,7 +33,7 @@ const featureText: FeatureText[] = [
    
   },
   {
-    icon: <img src="/calendar.svg" className=" rounded-full p-3 bg-[#EAE9FF]" />,
+    icon: <Image src={Calendar} className=" rounded-full p-3 bg-[#EAE9FF]" alt={""} />,
     title: "Easy Scheduling",
     href: "/",
     description:
@@ -33,7 +41,7 @@ const featureText: FeatureText[] = [
   
   },
   {
-    icon: <img src="/play.svg" className=" rounded-full p-3 bg-[#EAE9FF]"/>,
+    icon: <Image src={Play} className=" rounded-full p-3 bg-[#EAE9FF]" alt={""}/>,
     title: "Progress Tracking",
     href: "/",
     description:
@@ -41,7 +49,7 @@ const featureText: FeatureText[] = [
     
   },
   {
-    icon: <img src="/message-text.svg" className=" rounded-full p-3 bg-[#EAE9FF]"/>,
+    icon: <Image src={MessageText} className=" rounded-full p-3 bg-[#EAE9FF]" alt={""}/>,
     title: "Community Support",
     href: "/",
     description:
@@ -54,15 +62,15 @@ const Feature = () => {
   return (
     <Section className="bg-white w-[100%]">
       <Container className=" flex-col ">
-      <div className="flex-col text-center pb-7">
-          <h3>TRUSTED BY ARTISTS WORLDWIDE</h3>
-          <div className="flex items-center justify-center gap-7 p-4 ">
-            <img src="/image46.png" alt="" className="filter grayscale "/>
-            <img src="/image48.png" className="filter grayscale"/>
-            <img src="/image49.png" className="filter grayscale"/>
-            <img src="/image47.png" className="filter grayscale"/>
-          </div>
-        </div>
+      <div className="flex flex-col text-center justify-center pb-7">
+  <h3>TRUSTED BY ARTISTS WORLDWIDE</h3>
+  <div className="grid grid-cols-2 gap-4 p-4 md:flex md:flex-row md:items-center md:justify-center md:gap-7">
+    <Image src={Image1} alt="" className="filter grayscale w-auto h-auto md:w-auto md:h-auto" />
+    <Image src={Image3} className="filter grayscale w-auto h-auto md:w-auto md:h-auto" alt={""} />
+    <Image src={Image4} alt="" className="filter grayscale w-auto h-auto md:w-auto md:h-auto" />
+    <Image src={Image2} className="filter grayscale w-auto h-auto md:w-auto md:h-auto" alt={""} />
+  </div>
+</div>
         <div></div>
         <div className="flex flex-col gap-6 pt-7">
           <h3 className="text-4xl bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent font-bold text-center">

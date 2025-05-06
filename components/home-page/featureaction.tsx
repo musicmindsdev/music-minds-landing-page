@@ -8,6 +8,10 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import { FaApple } from "react-icons/fa";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
+import Image from "next/image";
+import Iphone1 from "@/public/iphone1.png"
+import Iphone2 from "@/public/iphone2.png"
+import Iphone3 from "@/public/iphone3.png"
 
 type FeatureText = {
   icon: JSX.Element;
@@ -22,21 +26,21 @@ const featureText: FeatureText[] = [
     title: "Create Your Profile",
     description:
       "Sign up and create your music profile with your skills, goals, and preferences.",
-      img: <img src='/iphone1.png' className="w-42 h-45"/>
+      img: <Image src={Iphone1} className="w-42 h-45" alt={""}/>
   },
   {
     icon: <p className="text-2xl font-bold bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent">02</p>,
     title: "Find Your Service Provider",
     description:
       "Browse through verified coaches and musicians, filter by genre, location, and expertise.",
-      img: <img src='/iphone2.png' className="w-42 h-45"/>
+      img: <Image src={Iphone2} className="w-42 h-45" alt={""}/>
   },
   {
     icon: <p className="text-2xl font-bold bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent">03</p>,
     title: "Book Sessions",
     description:
       "Schedule sessions with your favorite providers at times that work for you.",
-      img: <img src='/iphone3.png' className="w-42 h-45"/>
+      img: <Image src={Iphone3} className="w-42 h-45" alt={""}/>
   },
 ];
 
