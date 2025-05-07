@@ -1,4 +1,6 @@
 "use client"
+
+import { useState } from "react"
 import { cn } from "@/lib/utils"
 import {  MenuIcon } from 'lucide-react'
 import Link from "next/link"
@@ -12,13 +14,34 @@ import { FaApple } from "react-icons/fa";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
 import Logo from "@/public/Musicmindlogo.svg"
 import Image from "next/image"
+import Info from "@/public/info-circle.png"
+import People from "@/public/people.png"
+import Case from "@/public/briefcase.png"
+import Text from "@/public/text-block.png"
+import Book from "@/public/book.png"
+import Book1 from "@/public/book1.png"
+import Youtube from "@/public/youtube.png"
+import Message from "@/public/message-question.png"
+import { MdKeyboardArrowDown,  MdKeyboardArrowUp } from "react-icons/md";
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+  } from "@/components/ui/dropdown-menu"
+  
 
 
 export function NavBar() {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleOpenChange = (open: boolean) => {
+      setIsOpen(open);
+    };
 
     return (
-        <div className="flex items-center min-w-full w-full fixed justify-center p-2 z-[50] mt-[2rem]">
-            <div className="flex justify-between  w-[95%] border dark:border-zinc-900 dark:bg-black bg-opacity-10 relative backdrop-filter backdrop-blur-lg bg-white border-white border-opacity-20 rounded-xl p-2 shadow-lg">
+        <div className="flex items-center min-w-full w-full fixed justify-center p-2 z-[50] ">
+            <div className="flex justify-between  w-[100%]  relative backdrop-filter backdrop-blur-lg bg-white border-white border-opacity-20 rounded-xl p-2 shadow-lg bg-gradient-to-r from-[#F2F1FF] to-[#FFF0FD]">
             <NavigationMenu>
                     <NavigationMenuList className="max-[825px]:w-10 max-[825px]:h-10">
                         <Link href="/" className="pl-2">
@@ -32,7 +55,7 @@ export function NavBar() {
                     </SheetTrigger>
                     <SheetContent side="right">
                         <SheetHeader>
-                            <SheetTitle><Image src={Logo} alt={""}/></SheetTitle>
+                            <SheetTitle><Image src={Logo} alt={""} className="w-15 h-15"/></SheetTitle>
                             <SheetDescription>
                                 Scale and launch products with expert developers, on-demand, at a flat monthly fee
                             </SheetDescription>
@@ -40,27 +63,27 @@ export function NavBar() {
                         <div className="flex flex-col space-y-3 mt-[1rem] z-[99]">
                             <DialogClose asChild>
                                 <Link href="/">
-                                    <Button variant="outline" className="w-full">Company</Button>
+                                    <Button variant="ghost" className="w-full">Company</Button>
                                 </Link>
                             </DialogClose>
                             <DialogClose asChild>
                                 <Link href="/">
-                                    <Button variant="outline" className="w-full">Learn</Button>
+                                    <Button variant="ghost" className="w-full">Learn</Button>
                                 </Link>
                             </DialogClose>
                             <DialogClose asChild>
                                 <Link href="/">
-                                    <Button variant="outline" className="w-full">Features</Button>
+                                    <Button variant="ghost" className="w-full">Features</Button>
                                 </Link>
                             </DialogClose>
                             <DialogClose asChild>
                                 <Link href="/">
-                                    <Button variant="outline" className="w-full">Contact</Button>
+                                    <Button variant="ghost" className="w-full">Contact</Button>
                                 </Link>
                             </DialogClose>
                             <DialogClose asChild>
                                 <Link href="/">
-                                    <Button variant="outline" className="w-full">How it works</Button>
+                                    <Button variant="ghost" className="w-full">How it works</Button>
                                 </Link>
                             </DialogClose>
                             <ModeToggle />
@@ -69,12 +92,63 @@ export function NavBar() {
                 </Dialog>
               
                 <div className="flex items-center gap-2 max-[825px]:hidden">
+                    <DropdownMenu onOpenChange={handleOpenChange}>
+                        <DropdownMenuTrigger>
                     <Link href="/">
-                        <Button variant="ghost">Company</Button>
+                        <Button variant="ghost">Company   {isOpen ? (
+            <MdKeyboardArrowUp className="h-5 w-5 text-gray-500" />
+          ) : (
+            <MdKeyboardArrowDown className="h-5 w-5 text-gray-500" />
+          )}</Button>
                     </Link>
-                    <Link href="/">
-                        <Button variant="ghost">Learn</Button>
-                    </Link>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent className="p-5 border-8 border-[#EEEDFF] rounded-lg">
+                        <DropdownMenuItem >
+                    <Image src={Info} alt="" className="pr-1"/>    <div className="flex-col items-center"> <h4 className="font-bold ">About Us</h4> <p>Learn more about the team</p></div>
+                        </DropdownMenuItem>
+                        
+                        <DropdownMenuItem >
+                        <Image src={Case} alt="" className="pr-1"/>        <div className="flex-col items-center"> <h4 className="font-bold ">Career</h4> <p>Become one of us</p></div>
+                       </DropdownMenuItem>
+                        
+                        <DropdownMenuItem >
+                        <Image src={People} alt="" className="pr-1"/>      <div className="flex-col items-center">  <h4 className="font-bold "> Culture</h4> <p>Learn what makes us who we are</p></div>
+                        </DropdownMenuItem>
+                        
+                        <DropdownMenuItem >
+                        <Image src={Text} alt="" className="pr-1"/>      <div className="flex-col items-center">  <h4 className="font-bold ">Press</h4> <p>All you need to know</p></div>              
+                        </DropdownMenuItem>
+                    </DropdownMenuContent>
+                    </DropdownMenu>
+                    <DropdownMenu onOpenChange={handleOpenChange}>
+                    <DropdownMenuTrigger>
+      <Link href="/">
+        <Button variant="ghost">
+          Learn
+          {isOpen ? (
+            <MdKeyboardArrowUp className="h-5 w-5 text-gray-500" />
+          ) : (
+            <MdKeyboardArrowDown className="h-5 w-5 text-gray-500" />
+          )}
+        </Button>
+      </Link>
+    </DropdownMenuTrigger>
+                   <DropdownMenuContent className="p-5 border-8 border-[#EEEDFF] rounded-lg">
+                    <DropdownMenuItem>
+                        <Image src={Book} alt="" className="pr-1"/> <div className="flex-col items-center"><h4 className="font-bold">Blog</h4> <p>Articles to help guide you</p></div>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                        <Image src={Youtube} alt="" className="pr-1"/> <div className="flex-col items-center"><h4 className="font-bold">YouTube</h4> <p>Tutorials to guide you</p></div>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                        <Image src={Book1} alt="" className="pr-1"/> <div className="flex-col items-center"><h4 className="font-bold">Help & Guide Desk</h4> <p>Communicate with support for guidance</p></div>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                        <Image src={Message} alt="" className="pr-1"/> <div className="flex-col items-center"><h4 className="font-bold">FAQ&apos;s </h4> <p>Questions to help clarify things</p></div>
+                    </DropdownMenuItem>
+                   </DropdownMenuContent>
+                    </DropdownMenu>
+                    
                     <Link href="/">
                         <Button variant="ghost">Features</Button>
                     </Link>

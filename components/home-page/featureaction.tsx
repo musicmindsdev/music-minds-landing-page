@@ -1,4 +1,6 @@
-import React, { JSX } from "react";
+"use client"
+
+import React, { JSX, useState, useEffect, useRef } from "react";
 
 import { Section, Container } from "@/components/craft";
 import Balancer from "react-wrap-balancer";
@@ -11,6 +13,7 @@ import Image from "next/image";
 import Iphone1 from "@/public/iphone1.png";
 import Iphone2 from "@/public/iphone2.png";
 import Iphone3 from "@/public/iphone3.png";
+import Iphone4 from "@/public/iphone4.png";
 
 type FeatureText = {
   icon: JSX.Element;
@@ -41,11 +44,59 @@ const featureText: FeatureText[] = [
       "Schedule sessions with your favorite providers at times that work for you.",
     img: <Image src={Iphone3} className="w-42 h-45" alt="" />,
   },
+  {
+    icon: <p className="text-2xl font-bold bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent">04</p>,
+    title: "Grow & Share",
+    description:
+      "Track your progress, share recordings, and connect with the music community.",
+    img: <Image src={Iphone4} className="w-42 h-45" alt="" />,
+  },
 ];
 
 const FeatureAction = () => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const scrollContainer = scrollContainerRef.current;
+    const section = sectionRef.current;
+
+    if (!scrollContainer || !section) return;
+
+    const handleScroll = () => {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainer;
+      const maxScroll = scrollWidth - clientWidth;
+      const progressPercent = (scrollLeft / maxScroll) * 100;
+      setProgress(progressPercent);
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          const onWheel = (e: WheelEvent) => {
+            e.preventDefault();
+            scrollContainer.scrollLeft += e.deltaY;
+          };
+          window.addEventListener("wheel", onWheel);
+          return () => window.removeEventListener("wheel", onWheel);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(section);
+    scrollContainer.addEventListener("scroll", handleScroll);
+
+    return () => {
+      observer.unobserve(section);
+      scrollContainer.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <Section className="">
+    <Section className="" >
       <Container className="not-prose">
         <div className="flex flex-col gap-6">
           <h3 className="text-4xl bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent font-bold text-center">
@@ -59,15 +110,33 @@ const FeatureAction = () => {
             </Balancer>
           </h4>
 
-          <div className="mt-6 grid gap-6 md:mt-12 md:grid-cols-3">
+          <div
+            className="mt-6 flex gap-6 overflow-x-auto snap-x snap-mandatory md:mt-12"
+            ref={scrollContainerRef}
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
+            <style jsx>{`
+              .snap-x::-webkit-scrollbar {
+                display: none;
+              }
+            `}</style>
             {featureText.map(({ icon, title, description, img }, index) => (
-              <div className="flex flex-col gap-3 bg-gradient-to-r from-[#F2F1FF] to-[#FFF0FD] rounded-lg pb-0 p-4" key={index}>
+              <div
+                className="flex flex-col gap-3 bg-gradient-to-r from-[#F2F1FF] to-[#FFF0FD] rounded-lg pb-0 p-4 snap-center min-w-[300px] md:min-w-[calc(33.333%-1.5rem)]"
+                key={index}
+              >
                 {icon}
                 <h4 className="text-2lg text-primary font-semibold">{title}</h4>
-                <p className="opacity-75 text-sm">{description}</p>
-                <div className="flex justify-end">{img}</div>
+                <p className="opacity-75 text-sm line-clamp-2">{description}</p>
+                <div className="flex justify-end pb-0">{img}</div>
               </div>
             ))}
+          </div>
+          <div className="w-full h-2 bg-gray-200 rounded-full mt-4">
+            <div
+              className="h-full bg-gradient-to-r from-[#5E9EFF] to-[#FE02BF] rounded-full"
+              style={{ width: `${progress}%` }}
+            />
           </div>
           <div className="w-full flex flex-col md:flex-row md:justify-center gap-4">
             <Link href="/">

@@ -82,9 +82,9 @@ export default function Testimonials() {
         Join thousands of musicians who are transforming their musical journey with Music Minds.
       </p>
       <div className="overflow-x-auto">
-        <div className="flex gap-6 w-[calc(100%*2)] sm:w-[calc(100%*1.5)] lg:w-full animate-slide-left">
+        <div className="flex gap-6 animate-slide-left">
           {topRow.map((testimonial, index) => (
-            <Card key={index} className="bg-white border border-gray-200 rounded-lg p-4 shadow-md w-[280px]">
+            <Card key={index} className="bg-white border border-gray-200 rounded-lg p-4 shadow-md min-w-[280px] max-w-[280px] min-h-[320px] max-h-[320px] overflow-hidden flex flex-col">
               <CardHeader className="p-0">
                 <div className="flex items-center space-x-3">
                   <div className="h-10 w-10 rounded-full bg-gray-300" />
@@ -99,15 +99,15 @@ export default function Testimonials() {
                   ))}
                 </div>
               </CardHeader>
-              <CardContent className="p-0 mt-2">
-                <p className="text-gray-700">{testimonial.quote}</p>
+              <CardContent className="p-0 mt-2 flex-1 overflow-y-auto">
+                <p className="text-gray-700 line-clamp-5">{testimonial.quote}</p>
               </CardContent>
             </Card>
           ))}
         </div>
-        <div className="flex gap-6 mt-6 w-[calc(100%*2)] sm:w-[calc(100%*1.5)] lg:w-full animate-slide-right">
+        <div className="flex gap-6 mt-6 animate-slide-right">
           {bottomRow.map((testimonial, index) => (
-            <Card key={index + 4} className="bg-white border border-gray-200 rounded-lg p-4 shadow-md w-[280px]">
+            <Card key={index + 4} className="bg-white border border-gray-200 rounded-lg p-4 shadow-md min-w-[280px] max-w-[280px] min-h-[320px] max-h-[320px] overflow-hidden flex flex-col">
               <CardHeader className="p-0">
                 <div className="flex items-center space-x-3">
                   <div className="h-10 w-10 rounded-full bg-gray-300" />
@@ -122,8 +122,8 @@ export default function Testimonials() {
                   ))}
                 </div>
               </CardHeader>
-              <CardContent className="p-0 mt-2">
-                <p className="text-gray-700">{testimonial.quote}</p>
+              <CardContent className="p-0 mt-2 flex-1 overflow-y-auto">
+                <p className="text-gray-700 line-clamp-5">{testimonial.quote}</p>
               </CardContent>
             </Card>
           ))}
