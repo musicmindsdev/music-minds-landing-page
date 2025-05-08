@@ -34,7 +34,7 @@ const CTA = () => {
           </h1>
           <h4 className="text-muted-foreground w-full md:w-[60%]" data-aos="fade-up" data-aos-delay="200">
             <Balancer>
-              Join Music Minds today and connect with top music coaches, track your progress, and become the musician you've always wanted to be.
+              Join Music Minds today and connect with top music coaches, track your progress, and become the musician you&apos;ve always wanted to be.
             </Balancer>
           </h4>
           <div className="not-prose flex items-center gap-2" data-aos="fade-up" data-aos-delay="300">
