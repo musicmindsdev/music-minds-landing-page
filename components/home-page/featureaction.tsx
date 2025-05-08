@@ -14,6 +14,8 @@ import Iphone1 from "@/public/iphone1.png";
 import Iphone2 from "@/public/iphone2.png";
 import Iphone3 from "@/public/iphone3.png";
 import Iphone4 from "@/public/iphone4.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 type FeatureText = {
   icon: JSX.Element;
@@ -95,16 +97,25 @@ const FeatureAction = () => {
     };
   }, []);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 50, 
+    });
+    AOS.refresh(); 
+  }, []);
+
   return (
-    <Section className="" >
+    <Section className="" data-aos="fade-in">
       <Container className="not-prose">
         <div className="flex flex-col gap-6">
-          <h3 className="text-4xl bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent font-bold text-center">
+          <h3 className="text-4xl bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent font-bold text-center" data-aos="fade-up" data-aos-delay="100">
             <Balancer>
               How Music Minds Works
             </Balancer>
           </h3>
-          <h4 className="text-sm font-light opacity-70 text-center">
+          <h4 className="text-sm font-light opacity-70 text-center" data-aos="fade-up" data-aos-delay="200">
             <Balancer>
               A simple process to connect you with the musical guidance you need.
             </Balancer>
@@ -124,6 +135,8 @@ const FeatureAction = () => {
               <div
                 className="flex flex-col gap-3 bg-gradient-to-r from-[#F2F1FF] to-[#FFF0FD] rounded-lg pb-0 p-4 snap-center min-w-[300px] md:min-w-[calc(33.333%-1.5rem)]"
                 key={index}
+                data-aos="fade-up"
+                data-aos-delay={`${300 + index * 100}`}
               >
                 {icon}
                 <h4 className="text-2lg text-primary font-semibold">{title}</h4>
@@ -132,13 +145,13 @@ const FeatureAction = () => {
               </div>
             ))}
           </div>
-          <div className="w-full h-2 bg-gray-200 rounded-full mt-4">
+          <div className="w-full h-2 bg-gray-200 rounded-full mt-4" data-aos="fade-up" data-aos-delay="700">
             <div
               className="h-full bg-gradient-to-r from-[#5E9EFF] to-[#FE02BF] rounded-full"
               style={{ width: `${progress}%` }}
             />
           </div>
-          <div className="w-full flex flex-col md:flex-row md:justify-center gap-4">
+          <div className="w-full flex flex-col md:flex-row md:justify-center gap-4" data-aos="fade-up" data-aos-delay="800">
             <Link href="/">
               <Button className="w-full h-[50px] p-3 text-white">
                 <FaApple /> | <div className="flex-col items-start pr-3"><p className="text-xs">Get it on </p><h4>App Store</h4></div>
