@@ -41,8 +41,8 @@ export function NavBar() {
 
     return (
         <div className="flex items-center min-w-full w-full fixed justify-center p-2 z-[50] ">
-            <div className="flex justify-between  w-[100%]  relative backdrop-filter backdrop-blur-lg bg-white border-white border-opacity-20 rounded-xl p-2 shadow-lg bg-gradient-to-r from-[#F2F1FF] to-[#FFF0FD]">
-            <NavigationMenu>
+            <div className="flex justify-between  w-[100%]  relative backdrop-filter backdrop-blur-lg bg-card border-white border-opacity-20 rounded-xl p-2 shadow-lg ">
+            <NavigationMenu >
                     <NavigationMenuList className="max-[825px]:w-10 max-[825px]:h-10">
                         <Link href="/" className="pl-2">
                         <Image src={Logo} className="w-15 h-15" alt={""}/>

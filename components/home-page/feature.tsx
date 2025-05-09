@@ -68,7 +68,7 @@ const Feature = () => {
   }, []);
 
   return (
-    <Section className="bg-white w-[100%]" data-aos="fade-up">
+    <Section className="bg-card w-[100%]" data-aos="fade-up">
       <Container className="flex-col">
         <div className="flex flex-col text-center justify-center pb-7">
           <h3 data-aos="fade-up" data-aos-delay="100">TRUSTED BY ARTISTS WORLDWIDE</h3>
@@ -96,7 +96,7 @@ const Feature = () => {
               ({ icon, title, description, href }, index) => (
                 <Link
                   href={`${href}`}
-                  className="flex flex-col justify-between gap-6 rounded-lg border p-6 transition-all hover:-mt-2 hover:mb-2 backdrop-filter backdrop-blur-lg bg-white border-white border-opacity-20 shadow-lg"
+                  className="flex flex-col justify-between gap-6 rounded-lg border p-6 transition-all hover:-mt-2 hover:mb-2 backdrop-filter backdrop-blur-lg bg-card border-white border-opacity-20 shadow-lg"
                   key={index}
                   data-aos="fade-up"
                   data-aos-delay={`${800 + index * 100}`}
