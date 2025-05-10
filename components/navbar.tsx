@@ -86,7 +86,7 @@ export function NavBar() {
                                     <Button variant="ghost" className="w-full">How it works</Button>
                                 </Link>
                             </DialogClose>
-                            <ModeToggle />
+                            {/* <ModeToggle /> */}
                         </div>
                     </SheetContent>
                 </Dialog>
@@ -161,7 +161,7 @@ export function NavBar() {
                     <Link href="/">
                         <Button className="text-white"><FaApple/> | <IoLogoGooglePlaystore/> Download App</Button>
                     </Link>
-                    <ModeToggle />
+                    {/* <ModeToggle /> */}
                 </div>
             </div>
         </div>

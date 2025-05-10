@@ -139,8 +139,8 @@ const FeatureAction = () => {
                 data-aos-delay={`${300 + index * 100}`}
               >
                 {icon}
-                <h4 className="text-2lg  text-card font-semibold">{title}</h4>
-                <p className="opacity-75 text-sm line-clamp-2 text-card">{description}</p>
+                <h4 className="text-2lg  text-black font-semibold">{title}</h4>
+                <p className="opacity-75 text-sm line-clamp-2 text-black">{description}</p>
                 <div className="flex justify-end pb-0">{img}</div>
               </div>
             ))}
