@@ -233,3 +233,10 @@
 body {
   font-family: "Campton", sans-serif;
 }
+
+.border-gradient {
+  border: 1px solid transparent; /* Important: Make the actual border transparent */
+  background-clip: border-box;
+  border-image-source: linear-gradient(to right, #FF00DFB2, #7F40F8, #FFFFFF, #5E9EFFB2, #5243FEB2);
+  border-image-slice: 1;
+}

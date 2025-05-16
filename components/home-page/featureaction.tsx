@@ -58,7 +58,7 @@ const featureText: FeatureText[] = [
 const FeatureAction = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
-  const [progress, setProgress] = useState(0);
+  const [, setProgress] = useState(0);
 
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
@@ -145,12 +145,7 @@ const FeatureAction = () => {
               </div>
             ))}
           </div>
-          {/* <div className="w-full h-2 bg-gray-200 rounded-full mt-4" data-aos="fade-up" data-aos-delay="700">
-            <div
-              className="h-full bg-gradient-to-r from-[#5E9EFF] to-[#FE02BF] rounded-full"
-              style={{ width: `${progress}%` }}
-            />
-          </div> */}
+         
           <div className="w-full flex flex-col md:flex-row md:justify-center gap-4" data-aos="fade-up" data-aos-delay="800">
             <Link href="/">
               <Button className="w-full h-[50px] p-3 text-white">

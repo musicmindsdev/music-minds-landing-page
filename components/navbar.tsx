@@ -8,7 +8,7 @@ import * as React from "react";
 import { Dialog, DialogClose } from "./ui/dialog";
 import { Button } from "./ui/button";
 import { NavigationMenu, NavigationMenuLink, NavigationMenuList } from "./ui/navigation-menu";
-import { SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
+import { SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
 import { FaApple } from "react-icons/fa";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
 import Logo from "@/public/Musicmindlogo.svg";
@@ -29,6 +29,7 @@ import Youtube from "@/public/youtube.svg";
 import Youtubeh from "@/public/youtubeh.svg";
 import Message from "@/public/message-question.svg";
 import Messageh from "@/public/message-questionh.svg";
+
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import {
   DropdownMenu,
@@ -39,6 +40,7 @@ import {
 
 export function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [expandedMenu, setExpandedMenu] = useState<string | null>(null);
   const [hoverStates, setHoverStates] = useState({
     aboutUs: false,
     career: false,
@@ -52,6 +54,7 @@ export function NavBar() {
 
   const handleOpenChange = (open: boolean) => {
     setIsOpen(open);
+    if (!open) setExpandedMenu(null); // Close submenu when sheet closes
   };
 
   const handleMouseEnter = (item: keyof typeof hoverStates) => {
@@ -60,6 +63,10 @@ export function NavBar() {
 
   const handleMouseLeave = (item: keyof typeof hoverStates) => {
     setHoverStates((prev) => ({ ...prev, [item]: false }));
+  };
+
+  const toggleMenu = (menu: string) => {
+    setExpandedMenu(expandedMenu === menu ? null : menu);
   };
 
   return (
@@ -72,7 +79,7 @@ export function NavBar() {
             </Link>
           </NavigationMenuList>
         </NavigationMenu>
-        <Dialog>
+        <Dialog >
           <SheetTrigger className="min-[825px]:hidden p-2 transition">
             <MenuIcon />
           </SheetTrigger>
@@ -81,34 +88,200 @@ export function NavBar() {
               <SheetTitle>
                 <Image src={Logo} alt="" className="w-15 h-15" />
               </SheetTitle>
-              <SheetDescription>
-                Scale and launch products with expert developers, on-demand, at a flat monthly fee
-              </SheetDescription>
             </SheetHeader>
-            <div className="flex flex-col space-y-3 mt-[1rem] z-[99]">
+            <div className="flex flex-col  space-y-3 mt-[1rem] z-[99]">
+              <Button
+                variant="ghost"
+                className="w-full flex items-start justify-start"
+                onClick={() => toggleMenu("company")}
+              
+              >
+                <div className="flex items-center space-x-2">
+              
+                  <span>Company</span>
+                </div>
+                {expandedMenu === "company" ? (
+                  <MdKeyboardArrowUp className="h-5 w-5 text-gray-500" />
+                ) : (
+                  <MdKeyboardArrowDown className="h-5 w-5 text-gray-500" />
+                )}
+              </Button>
+              {expandedMenu === "company" && (
+                <div className="pl-2 space-y-2">
+                  <Link href="/about">
+                    <Button
+                      variant="ghost"
+                      className="w-full flex items-start justify-start space-x-2"
+                    >
+                      <Image
+                        src={Infoh}
+                        alt=""
+                        className="h-6 w-6"
+                        width={24}
+                        height={24}
+                      />
+                      <span>About Us</span>
+                    </Button>
+                  </Link>
+                  <Link href="/">
+                    <Button
+                      variant="ghost"
+                      className="w-full flex items-start justify-start space-x-2"
+                    >
+                      <Image
+                        src={Caseh}
+                        alt=""
+                        className="h-6 w-6"
+                        width={24}
+                        height={24}
+                      />
+                      <span>Career</span>
+                    </Button>
+                  </Link>
+                  <Link href="/">
+                    <Button
+                      variant="ghost"
+                      className="w-full flex items-start justify-start space-x-2"
+                    >
+                      <Image
+                        src={Peopleh}
+                        alt=""
+                        className="h-6 w-6"
+                        width={24}
+                        height={24}
+                      />
+                      <span>Culture</span>
+                    </Button>
+                  </Link>
+                  <Link href="/">
+                    <Button
+                      variant="ghost"
+                      className="w-full flex items-start justify-start space-x-2"
+                    >
+                      <Image
+                        src={Texth}
+                        alt=""
+                        className="h-6 w-6"
+                        width={24}
+                        height={24}
+                      />
+                      <span>Press</span>
+                    </Button>
+                  </Link>
+                </div>
+              )}
+
+              <Button
+                variant="ghost"
+                className="w-full flex items-center justify-start "
+                onClick={() => toggleMenu("learn")}
+              >
+                <div className="flex items-center space-x-2">
+                 
+                  <span>Learn</span>
+                </div>
+                {expandedMenu === "learn" ? (
+                  <MdKeyboardArrowUp className="h-5 w-5 text-gray-500" />
+                ) : (
+                  <MdKeyboardArrowDown className="h-5 w-5 text-gray-500" />
+                )}
+              </Button>
+              {expandedMenu === "learn" && (
+                <div className="pl-2 space-y-2">
+                  <Link href="/">
+                    <Button
+                      variant="ghost"
+                      className="w-full flex items-start justify-start space-x-2"
+                    >
+                      <Image
+                        src={Bookh }
+                        alt=""
+                        className="h-6 w-6"
+                        width={24}
+                        height={24}
+                      />
+                      <span>Blog</span>
+                    </Button>
+                  </Link>
+                  <Link href="/">
+                    <Button
+                      variant="ghost"
+                      className="w-full flex items-start justify-start space-x-2"
+                    >
+                      <Image
+                        src={Youtubeh }
+                        alt=""
+                        className="h-6 w-6"
+                        width={24}
+                        height={24}
+                      />
+                      <span>YouTube</span>
+                    </Button>
+                  </Link>
+                  <Link href="/">
+                    <Button
+                      variant="ghost"
+                      className="w-full flex items-start justify-start space-x-2"
+                    >
+                      <Image
+                        src={Book1h }
+                        alt=""
+                        className="h-6 w-6"
+                        width={24}
+                        height={24}
+                      />
+                      <span>Help & Guide Desk</span>
+                    </Button>
+                  </Link>
+                  <Link href="/">
+                    <Button
+                      variant="ghost"
+                      className="w-full flex items-start justify-start space-x-2"
+                    >
+                      <Image
+                        src={Messageh}
+                        alt=""
+                        className="h-6 w-6"
+                        width={24}
+                        height={24}
+                      />
+                      <span>FAQ&apos;s</span>
+                    </Button>
+                  </Link>
+                </div>
+              )}
+
               <DialogClose asChild>
                 <Link href="/">
-                  <Button variant="ghost" className="w-full">Company</Button>
+                  <Button
+                    variant="ghost"
+                    className="w-full flex items-center justify-start space-x-2"
+                  >
+                   
+                    <span>Features</span>
+                  </Button>
+                </Link>
+              </DialogClose>
+              <DialogClose asChild>
+                <Link href="/contact">
+                  <Button
+                    variant="ghost"
+                    className="w-full flex items-center justify-start space-x-2"
+                  >
+                    
+                    <span>Contact</span>
+                  </Button>
                 </Link>
               </DialogClose>
               <DialogClose asChild>
                 <Link href="/">
-                  <Button variant="ghost" className="w-full">Learn</Button>
-                </Link>
-              </DialogClose>
-              <DialogClose asChild>
-                <Link href="/">
-                  <Button variant="ghost" className="w-full">Features</Button>
-                </Link>
-              </DialogClose>
-              <DialogClose asChild>
-                <Link href="/">
-                  <Button variant="ghost" className="w-full">Contact</Button>
-                </Link>
-              </DialogClose>
-              <DialogClose asChild>
-                <Link href="/">
-                  <Button variant="ghost" className="w-full">How it works</Button>
+                  <Button
+                    variant="ghost"
+                    className="w-full flex items-center justify-start space-x-2"
+                  >
+                   
+                    <span>How it works</span>
+                  </Button>
                 </Link>
               </DialogClose>
             </div>
@@ -134,11 +307,13 @@ export function NavBar() {
                 onMouseEnter={() => handleMouseEnter("aboutUs")}
                 onMouseLeave={() => handleMouseLeave("aboutUs")}
               >
+                <Link href="/about" className="flex gap-2">
                 <Image src={hoverStates.aboutUs ? Infoh : Info} alt="" className="pr-1" />
                 <div className="flex-col items-center">
                   <h4 className="font-bold">About Us</h4>
                   <p>Learn more about the team</p>
                 </div>
+                </Link>
               </DropdownMenuItem>
 
               <DropdownMenuItem
@@ -189,36 +364,43 @@ export function NavBar() {
               </Link>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="p-5 border-8 border-[#EEEDFF] rounded-lg">
-              <DropdownMenuItem 
+              <DropdownMenuItem
                 onMouseEnter={() => handleMouseEnter("blog")}
-                onMouseLeave={() => handleMouseLeave("blog")}>
+                onMouseLeave={() => handleMouseLeave("blog")}
+              >
                 <Image src={hoverStates.blog ? Bookh : Book} alt="" className="pr-1" />
                 <div className="flex-col items-center">
                   <h4 className="font-bold">Blog</h4>
                   <p>Articles to help guide you</p>
                 </div>
               </DropdownMenuItem>
-              <DropdownMenuItem   onMouseEnter={() => handleMouseEnter("youtube")}
-                onMouseLeave={() => handleMouseLeave("youtube")}>
+              <DropdownMenuItem
+                onMouseEnter={() => handleMouseEnter("youtube")}
+                onMouseLeave={() => handleMouseLeave("youtube")}
+              >
                 <Image src={hoverStates.youtube ? Youtubeh : Youtube} alt="" className="pr-1" />
                 <div className="flex-col items-center">
                   <h4 className="font-bold">YouTube</h4>
                   <p>Tutorials to guide you</p>
                 </div>
               </DropdownMenuItem>
-              <DropdownMenuItem   onMouseEnter={() => handleMouseEnter("book1")}
-                onMouseLeave={() => handleMouseLeave("book1")}>
+              <DropdownMenuItem
+                onMouseEnter={() => handleMouseEnter("book1")}
+                onMouseLeave={() => handleMouseLeave("book1")}
+              >
                 <Image src={hoverStates.book1 ? Book1h : Book1} alt="" className="pr-1" />
                 <div className="flex-col items-center">
                   <h4 className="font-bold">Help & Guide Desk</h4>
                   <p>Communicate with support for guidance</p>
                 </div>
               </DropdownMenuItem>
-              <DropdownMenuItem   onMouseEnter={() => handleMouseEnter("message")}
-                onMouseLeave={() => handleMouseLeave("message")}>
+              <DropdownMenuItem
+                onMouseEnter={() => handleMouseEnter("message")}
+                onMouseLeave={() => handleMouseLeave("message")}
+              >
                 <Image src={hoverStates.message ? Messageh : Message} alt="" className="pr-1" />
                 <div className="flex-col items-center">
-                  <h4 className="font-bold">FAQ's</h4>
+                  <h4 className="font-bold">FAQ&apos;s</h4>
                   <p>Questions to help clarify things</p>
                 </div>
               </DropdownMenuItem>
@@ -228,7 +410,7 @@ export function NavBar() {
           <Link href="/">
             <Button variant="ghost">Features</Button>
           </Link>
-          <Link href="/">
+          <Link href="/contact">
             <Button variant="ghost">Contact</Button>
           </Link>
           <Link href="/">
