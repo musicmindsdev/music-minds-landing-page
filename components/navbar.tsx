@@ -89,6 +89,7 @@ export function NavBar() {
                 <Image src={Logo} alt="" className="w-15 h-15" />
               </SheetTitle>
             </SheetHeader>
+            <div className="flex-col justify-between ">
             <div className="flex flex-col  space-y-3 mt-[1rem] z-[99]">
               <Button
                 variant="ghost"
@@ -284,6 +285,16 @@ export function NavBar() {
                   </Button>
                 </Link>
               </DialogClose>
+            </div>
+            <div className="bg-[#F2F1FF] absolute bottom-0 left-0 w-full flex justify-center items-center p-4">
+  <Link href="/">
+    <Button className="text-white w-full"> 
+      <FaApple className="mr-2" />
+      <IoLogoGooglePlaystore className="mr-2" />
+      Download App
+    </Button>
+  </Link>
+</div>
             </div>
           </SheetContent>
         </Dialog>

@@ -44,9 +44,9 @@ export default function Footer() {
           </div>
           <div className="flex flex-col items-start gap-2 min-w-[100px]">
             <h5 className="font-bold">Legal</h5>
-            <Link href="/">Privacy Policy</Link>
-            <Link href="/">Terms of Service</Link>
-            <Link href="/">Cookie policy</Link>
+            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/terms">Terms of Service</Link>
+            <Link href="/cookie">Cookie policy</Link>
             <Link href="/">Compliance</Link>
           </div>
           <div className="flex flex-col items-start gap-2 w-full max-w-[200px] md:max-w-[180px] lg:max-w-[240px] text-sm">
