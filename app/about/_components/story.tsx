@@ -27,7 +27,7 @@ const Story = () => {
   return (
     <Craft.Section
       data-aos="fade-in"
-      className="w-full py-12 bg-white"
+      className="w-full py-12 bg-card"
     >
       <Craft.Container className="flex flex-col">
         <div

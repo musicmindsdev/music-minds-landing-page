@@ -96,7 +96,7 @@ const Support = () => {
 
   return (
     <Section
-      className="py-12 bg-white"
+      className="py-12 bg-card"
       data-aos="fade-in"
     >
       <Container className="not-prose">

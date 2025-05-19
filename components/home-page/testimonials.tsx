@@ -84,7 +84,7 @@ export default function Testimonials() {
       <div className="overflow-x-auto">
         <div className="flex gap-6 animate-slide-left">
           {topRow.map((testimonial, index) => (
-            <Card key={index} className="bg-white border border-gray-200 rounded-lg p-4 shadow-md min-w-[280px] max-w-[280px] min-h-[320px] max-h-[320px] overflow-hidden flex flex-col">
+            <Card key={index} className="bg-card border rounded-lg p-4 shadow-md min-w-[280px] max-w-[280px] min-h-[320px] max-h-[320px] overflow-hidden flex flex-col">
               <CardHeader className="p-0">
                 <div className="flex items-center space-x-3">
                   <div className="h-10 w-10 rounded-full bg-gray-300" />
@@ -107,7 +107,7 @@ export default function Testimonials() {
         </div>
         <div className="flex gap-6 mt-6 animate-slide-right">
           {bottomRow.map((testimonial, index) => (
-            <Card key={index + 4} className="bg-white border border-gray-200 rounded-lg p-4 shadow-md min-w-[280px] max-w-[280px] min-h-[320px] max-h-[320px] overflow-hidden flex flex-col">
+            <Card key={index + 4} className="bg-card border  rounded-lg p-4 shadow-md min-w-[280px] max-w-[280px] min-h-[320px] max-h-[320px] overflow-hidden flex flex-col">
               <CardHeader className="p-0">
                 <div className="flex items-center space-x-3">
                   <div className="h-10 w-10 rounded-full bg-gray-300" />

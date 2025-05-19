@@ -76,7 +76,7 @@ const TermsOfUse = () => {
         {/* Main Content Area */}
         <div
           ref={contentRef}
-          className="w-full md:w-3/4 bg-[#FBFAFF] p-6 rounded-lg shadow overflow-y-auto"
+          className="w-full md:w-3/4 bg-[#FBFAFF] dark:bg-[#1E1B2B] p-6 rounded-lg shadow overflow-y-auto"
           style={{ maxHeight: "calc(100vh - 100px)" }} 
         >
           <h1 className="text-3xl font-bold text-gray-800 mb-4 text-center">Terms Of Use</h1>
