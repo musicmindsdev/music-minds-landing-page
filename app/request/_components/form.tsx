@@ -95,7 +95,7 @@ export default function SubmitRequest() {
   };
 
   return (
-    <Section className="min-h-screen bg-gray-50">
+    <Section className="min-h-screen bg-gray-50 dark:bg-[#1E1B2B]">
       <Container className="p-4 flex flex-col gap-8">
         <p className="text-light text-sm text-gray-500">MusicMinds / Submit Request</p>
         <h3 className="text-2xl sm:text-3xl md:text-5xl font-bold">

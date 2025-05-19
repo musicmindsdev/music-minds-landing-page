@@ -24,7 +24,7 @@ const featureText: FeatureText[] = [
     description:
       "If you’ve got trouble signing in, you might need to reset your password or recover your username. Click learn more for a step-by-step guide on how to manage your account.",
     buttons: (
-      <div className="flex gap-2">
+      <div className="flex gap-2 flex-wrap">
         <Button className="bg-[#E5E3FF] text-[#5243FE] rounded-full hover:bg-[#E5E3FF]">
           Account
         </Button>
@@ -44,7 +44,7 @@ const featureText: FeatureText[] = [
     description:
       "Having trouble with the KYC verification process? Click below to learn about the different KYC levels, and the step-by-step requirements for each.",
     buttons: (
-      <div className="flex gap-2">
+      <div className="flex gap-2 flex-wrap">
         <Button className="bg-[#E5E3FF] text-[#5243FE] rounded-full hover:bg-[#E5E3FF]">
           Verifications
         </Button>
@@ -64,17 +64,17 @@ const featureText: FeatureText[] = [
     description:
       "For any issues you’ve encountered, including fraud, click the link below to submit a request, and our support team will respond to you as soon as possible.",
     buttons: (
-      <div className="flex gap-2">
-        <Button className="bg-[#E5E3FF] text-[#5243FE] rounded-full hover:bg-[#E5E3FF]">
-          Fraud
-        </Button>
-        <Button className="bg-[#E5E3FF] text-[#5243FE] rounded-full hover:bg-[#E5E3FF]">
-          Security
-        </Button>
-        <Button className="bg-[#E5E3FF] text-[#5243FE] rounded-full hover:bg-[#E5E3FF]">
-          Account
-        </Button>
-      </div>
+      <div className="flex gap-2 flex-wrap">
+  <Button className="bg-[#E5E3FF] text-[#5243FE] rounded-full hover:bg-[#E5E3FF]">
+    Fraud
+  </Button>
+  <Button className="bg-[#E5E3FF] text-[#5243FE] rounded-full hover:bg-[#E5E3FF]">
+    Security
+  </Button>
+  <Button className="bg-[#E5E3FF] text-[#5243FE] rounded-full hover:bg-[#E5E3FF]">
+    Account
+  </Button>
+</div>
     ),
     cta: "Learn More",
   },
