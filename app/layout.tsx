@@ -4,7 +4,7 @@ import "./globals.css";
 import { NavBar } from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import CookieConsent from "@/components/cookieconsent";
-import SupportWidget from "@/components/SupportWidget"; 
+// import SupportWidget from "@/components/SupportWidget"; 
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
