@@ -40,7 +40,7 @@ export default function RootLayout({
           <NavBar />
           {children}
           <CookieConsent />
-          <SupportWidget /> 
+          {/* <SupportWidget />  */}
         </ThemeProvider>
       </body>
     </html>
