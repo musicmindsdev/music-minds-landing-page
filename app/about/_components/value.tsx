@@ -26,21 +26,20 @@ type FeatureText = {
 
 const featureText2: FeatureText2[] = [
   {
-    title: <h3 className="font-semibold text-black">Grit</h3>,
+    title: <h3 className="font-semibold text-black">Empowerment over gatekeeping</h3>,
     description: (
       <p className="text-xs w-[80%] line-clamp-3 text-black">
-        &apos;I can&apos;t&apos;, &apos;It&apos;s Impossible&apos;. These words don&apos;t exist in our dictionaries. It doesn&apos;t
-        matter what the task is, we never give up
+        Artists should connect, promote, and earn — directly, fairly, and with full control.
+
       </p>
     ),
     img: <Image src={Comfort} alt="Grit Icon" className="w-50 h-50" />,
   },
   {
-    title: <h3 className="font-semibold text-black">Empathy</h3>,
+    title: <h3 className="font-semibold text-black">Diversity as foundation</h3>,
     description: (
       <p className="text-xs w-[80%] line-clamp-3 text-black">
-        We put ourselves in people&apos;s shoes. There is no other way to truly understand how they feel
-        and how to help them.
+       We work to amplify underrepresented voices across gender, identity, and culture.
       </p>
     ),
     img: <Image src={True} alt="Empathy Icon" className="w-50 h-50" />,
@@ -49,21 +48,19 @@ const featureText2: FeatureText2[] = [
 
 const featureText: FeatureText[] = [
   {
-    title: <h3 className="font-semibold text-black">Candour</h3>,
+    title: <h3 className="font-semibold text-black">Community before algorithms</h3>,
     description: (
       <p className="text-xs w-[80%] line-clamp-3 text-black">
-        In all we do, honesty and openness come through. We empower our people to always speak up
-        and be heard.
+       Real networks matter. Growth should be based on talent, effort, and engagement — not ad budgets or hype.
       </p>
     ),
     img: <Image src={Justice} alt="Candour Icon" className="w-50 h-50" />,
   },
   {
-    title: <h3 className="font-semibold text-black">No Ego</h3>,
+    title: <h3 className="font-semibold text-black">Open access to learning</h3>,
     description: (
       <p className="text-xs w-[80%] line-clamp-3 text-black">
-        We prioritise getting the job done over our ego. Everyone is a DreamMaker, irrespective of
-        their level in the organisation, and every voice matters.
+        Music education should be practical, affordable, and flexible. We support both structured coaching and self-taught learning.
       </p>
     ),
     img: <Image src={Face} alt="No Ego Icon" className="w-50 h-50" />,

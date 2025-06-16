@@ -52,8 +52,7 @@ const Hero = () => {
             </h1>
           </div>
           <p className="text-left w-full sm:w-[70%] md:w-[80%] line-clamp-3" data-aos="fade-up" data-aos-delay="400">
-            Connect with top vocal coaches, songwriters, and music producers. Book sessions, improve your skills, and share your journey with the music community
-          </p>
+          Your gateway to the music world: Connect with top vocal coaches, songwriters, producers & studios. Learn, collaborate, grow — and turn your passion into real impact.  </p>
           <div className="w-full" data-aos="fade-up" data-aos-delay="500">
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link href="/">

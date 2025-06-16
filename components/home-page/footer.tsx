@@ -45,14 +45,14 @@ export default function Footer() {
           <div className="flex flex-col items-start gap-2 min-w-[100px]">
             <h5 className="font-bold">Legal</h5>
             <Link href="/privacy">Privacy Policy</Link>
-            <Link href="/terms">Terms of Service</Link>
+            <Link href="/terms">Terms & Conditions</Link>
             <Link href="/cookie">Cookie policy</Link>
             <Link href="/">Compliance</Link>
           </div>
           <div className="flex flex-col items-start gap-2 w-full max-w-[200px] md:max-w-[180px] lg:max-w-[240px] text-sm">
             <h5 className="font-bold">Contact</h5>
             <Link href="/privacy-policy" className="break-words">
-              HQ @ No 15, Street 150 Jankule Road, Abuja Nig.
+            Reichsstr. 99, D-14052 Berlin
             </Link>
             <Link href="/terms-of-service">help@musicminds.com</Link>
             <Link href="/cookie-policy">+234 709-679 0893</Link>
@@ -65,7 +65,9 @@ export default function Footer() {
               <Twitter />
             </Button>
             <Button variant="outline" size="icon">
+              <Link href='https://www.instagram.com/musicminds.io'>
               <Instagram />
+              </Link>
             </Button>
             <Button variant="outline" size="icon">
               <Facebook />

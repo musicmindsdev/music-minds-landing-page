@@ -9,8 +9,8 @@ import { Dialog, DialogClose } from "./ui/dialog";
 import { Button } from "./ui/button";
 import { NavigationMenu, NavigationMenuLink, NavigationMenuList } from "./ui/navigation-menu";
 import { SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
-import { FaApple } from "react-icons/fa";
-import { IoLogoGooglePlaystore } from "react-icons/io5";
+// import { FaApple } from "react-icons/fa";
+// import { IoLogoGooglePlaystore } from "react-icons/io5";
 import Logo from "@/public/Musicmindlogo.svg";
 import Image from "next/image";
 import Info from "@/public/info-circle.svg";
@@ -289,9 +289,10 @@ export function NavBar() {
             <div className="bg-[#F2F1FF] absolute bottom-0 left-0 w-full flex justify-center items-center p-4">
   <Link href="/">
     <Button className="text-white w-full"> 
-      <FaApple className="mr-2" />
+      {/* <FaApple className="mr-2" />
       <IoLogoGooglePlaystore className="mr-2" />
-      Download App
+      Download App */}
+      Join Waitlist
     </Button>
   </Link>
 </div>
@@ -429,7 +430,8 @@ export function NavBar() {
           </Link>
           <Link href="/">
             <Button className="text-white">
-              <FaApple /> | <IoLogoGooglePlaystore /> Download App
+              {/* <FaApple /> | <IoLogoGooglePlaystore /> Download App */}
+              Join Waitlist
             </Button>
           </Link>
         </div>

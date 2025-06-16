@@ -101,11 +101,12 @@ const Hero = () => {
             data-aos="zoom-in"
             data-aos-delay="300"
           >
-            Where Music{" "}
+           Music Minds 
+           {" "}
             <span className="bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent">
-              Meets
+            Our Culture
             </span>{" "}
-            Mastery
+            Our DNA
           </h1>
           <p
             className="w-[45%] text-center line-clamp-3"
