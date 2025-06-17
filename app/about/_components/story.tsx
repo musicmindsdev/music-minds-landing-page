@@ -5,7 +5,7 @@ import * as Craft from "@/components/craft";
 import Pic1 from "@/public/pic1.svg";
 import Pic2 from "@/public/pic2.svg";
 import { GoArrowDownLeft, GoArrowDownRight } from "react-icons/go";
-import Ceo from "@/public/Ellipse.svg";
+// import Ceo from "@/public/Ellipse.svg";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Ensure AOS CSS is imported
 import { useEffect } from "react";
@@ -75,7 +75,7 @@ const Story = () => {
               data-aos-delay="600"
             >
               We&apos;re not just building an app — we&apos;re shaping the future of independent music.
-              Musical Mindz is a platform born from real creative scenes, built by artists, producers, and educators who understand the hustle. We connect talent with opportunity, learning with practice, and creativity with community. Whether you're a newcomer or an established voice, you belong here.
+              Musical Minds is a platform born from real creative scenes, built by artists, producers, and educators who understand the hustle. We connect talent with opportunity, learning with practice, and creativity with community. Whether you&apos;re a newcomer or an established voice, you belong here.
             </span>
           </div>
         </div>
@@ -162,18 +162,18 @@ const Story = () => {
               We&apos;ve lived the challenges — DIY setups, expensive studio time, limited access, no network.
               That&apos;s why Musical Mindz exists: to lower the barriers, increase the chances, and shift the power back to the creators.
             </span>
+            <span>
+              <span className="font-medium mr-2">Our long-term goal is simple but bold:</span>
               <span>
-                <span className="font-medium mr-2">Our long-term goal is simple but bold:</span>
-                <span>
 
-              To build the most accessible and trusted platform for independent music production, collaboration, and education — across Europe, Africa, and beyond.
-                </span>
-                </span>
-              <span>
+                To build the most accessible and trusted platform for independent music production, collaboration, and education — across Europe, Africa, and beyond.
+              </span>
+            </span>
+            <span>
               <span className="font-medium mr-2">Join the Movement</span>
               Whether you&apos;re a beatmaker, songwriter, coach, engineer, or a future headliner — this is your space.
               Connect. Learn. Build. Share. Let&apos;s change the music industry from the inside out.
-              </span>
+            </span>
           </div>
           <h1
             className="text-2xl sm:text-3xl md:text-5xl font-bold flex gap-2 items-start justify-center"
@@ -183,9 +183,9 @@ const Story = () => {
             <GoArrowDownLeft />
             What  {" "}
             <span className="bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent">
-            Drives
+              Drives
             </span>{" "}
-            Us 
+            Us
           </h1>
         </div>
         {/* <div
