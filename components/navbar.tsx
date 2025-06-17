@@ -21,14 +21,14 @@ import Case from "@/public/briefcase.svg";
 import Caseh from "@/public/briefcaseh.svg";
 import Text from "@/public/text-block.svg";
 import Texth from "@/public/text-blockh.svg";
-import Book from "@/public/book.svg";
-import Bookh from "@/public/bookh.svg";
-import Book1 from "@/public/book1.svg";
-import Book1h from "@/public/book1h.svg";
-import Youtube from "@/public/youtube.svg";
-import Youtubeh from "@/public/youtubeh.svg";
-import Message from "@/public/message-question.svg";
-import Messageh from "@/public/message-questionh.svg";
+// import Book from "@/public/book.svg";
+// import Bookh from "@/public/bookh.svg";
+// import Book1 from "@/public/book1.svg";
+// import Book1h from "@/public/book1h.svg";
+// import Youtube from "@/public/youtube.svg";
+// import Youtubeh from "@/public/youtubeh.svg";
+// import Message from "@/public/message-question.svg";
+// import Messageh from "@/public/message-questionh.svg";
 
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import {
@@ -287,7 +287,7 @@ export function NavBar() {
               </DialogClose>
             </div>
             <div className="bg-[#F2F1FF] absolute bottom-0 left-0 w-full flex justify-center items-center p-4">
-  <Link href="/">
+  <Link href="/waitlist">
     <Button className="text-white w-full"> 
       {/* <FaApple className="mr-2" />
       <IoLogoGooglePlaystore className="mr-2" />
@@ -428,7 +428,7 @@ export function NavBar() {
           <Link href="/">
             <Button variant="ghost">How it works</Button>
           </Link>
-          <Link href="/">
+          <Link href="/waitlist">
             <Button className="text-white">
               {/* <FaApple /> | <IoLogoGooglePlaystore /> Download App */}
               Join Waitlist

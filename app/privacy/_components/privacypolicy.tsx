@@ -61,7 +61,7 @@ const PrivacyPolicy = () => {
                 <a
                   key={item.id}
                   href={`#${item.id}`}
-                  className="block hover:text-[#5243FE] transition-colors"
+                  className="block hover:text-[#5243FE] transition-colors md:mb-4"
                 >
                   {item.title}
                 </a>
