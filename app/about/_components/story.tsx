@@ -80,7 +80,7 @@ const Story = () => {
           </div>
         </div>
         <div
-          className="flex flex-col items-center md:grid md:grid-cols-2 md:gap-12 md:items-stretch md:justify-between mt-8 mb-8"
+          className="flex flex-col-reverse items-center md:grid md:grid-cols-2 md:gap-12 md:items-stretch md:justify-between mt-8 mb-8"
           data-aos="fade-up"
           data-aos-delay="300"
         >
@@ -103,10 +103,10 @@ const Story = () => {
             data-aos-delay="400"
           >
             <GoArrowDownLeft />
-            What We    {" "}
+            What We   
             <span className="bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent">
               Believe
-            </span>{" "}
+            </span>
           </h1>
         </div>
         <div
@@ -119,7 +119,7 @@ const Story = () => {
             data-aos="zoom-in"
             data-aos-delay="400"
           >
-            How We             {" "}
+            How We          
             <span className="bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent">
               Work
             </span>{" "}
@@ -145,7 +145,7 @@ const Story = () => {
           </div>
         </div>
         <div
-          className="flex flex-col items-center md:grid md:grid-cols-2 md:gap-12 md:items-stretch md:justify-between mt-8 mb-8"
+          className="flex flex-col-reverse items-center md:grid md:grid-cols-2 md:gap-12 md:items-stretch md:justify-between mt-8 mb-8"
           data-aos="fade-up"
           data-aos-delay="300"
         >

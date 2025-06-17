@@ -171,7 +171,7 @@ export function NavBar() {
                   </Link>
                 </div>
               )}
-
+{/* 
               <Button
                 variant="ghost"
                 className="w-full flex items-center justify-start "
@@ -250,7 +250,7 @@ export function NavBar() {
                     </Button>
                   </Link>
                 </div>
-              )}
+              )} */}
 
               <DialogClose asChild>
                 <Link href="/">
@@ -362,7 +362,7 @@ export function NavBar() {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-          <DropdownMenu onOpenChange={handleOpenChange}>
+          {/* <DropdownMenu onOpenChange={handleOpenChange}>
             <DropdownMenuTrigger>
               <Link href="/">
                 <Button variant="ghost">
@@ -417,7 +417,7 @@ export function NavBar() {
                 </div>
               </DropdownMenuItem>
             </DropdownMenuContent>
-          </DropdownMenu>
+          </DropdownMenu> */}
 
           <Link href="/">
             <Button variant="ghost">Features</Button>

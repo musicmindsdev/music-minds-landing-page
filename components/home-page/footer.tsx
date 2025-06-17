@@ -30,7 +30,7 @@ export default function Footer() {
           </div>
           <div className="flex flex-col gap-2 min-w-[100px]">
             <h5 className="font-bold">Company</h5>
-            <Link href="/">About Us</Link>
+            <Link href="/about">About Us</Link>
             <Link href="/">Contact</Link>
             <Link href="/">Careers</Link>
             <Link href="/">Blog</Link>

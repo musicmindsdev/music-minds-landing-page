@@ -77,14 +77,14 @@ const PrivacyPolicy = () => {
           className="w-full md:w-3/4 bg-[#FBFAFF] dark:bg-[#1E1B2B] p-6 rounded-lg shadow overflow-y-auto"
           style={{ maxHeight: "calc(100vh - 100px)" }}
         >
-          <h1 className="text-3xl font-bold text-gray-800 mb-4 text-center">Privacy Policy</h1>
+          <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4 text-center">Privacy Policy</h1>
           <p className="text-sm text-[#A79FFF] mb-6 text-center">
             Last Updated: May 12, 2025 | Effective Date: May 12, 2025
           </p>
 
           <section id="Overview" className="mb-6">
             <h2 className="text-xl font-semibold  mb-2">1. Overview</h2>
-            <p className="text-gray-700">
+            <p className="text-gray-700 dark:text-gray-300">
               This Privacy Policy describes how <span className="font-semibold">Musical Minds</span> (&apos;we,&apos; &apos;us,&apos; &apos;our&apos;) collects, uses, stores, and protects your personal information when you use our platform, including the website, mobile application, and related services (&apos;the Platform&apos;).
               We are committed to protecting your data in accordance with the <span className="font-semibold">EU General Data Protection Regulation (GDPR)</span> and other applicable data protection laws.
             </p>
@@ -92,7 +92,7 @@ const PrivacyPolicy = () => {
 
           <section id="data" className="mb-6">
             <h2 className="text-xl font-semibold  mb-2">2. Data Controller</h2>
-            <p className="text-gray-700">
+            <p className="text-gray-700 dark:text-gray-300">
               The data controller for all personal information processed through this platform is:
               <span className="font-semibold">[Your Company Name]</span>
               [Legal Address]
@@ -137,7 +137,7 @@ const PrivacyPolicy = () => {
 
           <section id="how" className="mb-6">
             <h2 className="text-xl font-semibold  mb-2">4. How We Use Your Data</h2>
-            <p className="text-gray-700">
+            <p className="text-gray-700 dark:text-gray-300">
               Your data may be used for the following purposes:
             </p>
             <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
@@ -152,7 +152,7 @@ const PrivacyPolicy = () => {
 
           <section id="legal" className="mb-6">
             <h2 className="text-xl font-semibold  mb-2">5. Legal Basis for Processing</h2>
-            <p className="text-gray-700">
+            <p className="text-gray-700 dark:text-gray-300">
               We process your data on one or more of the following legal bases:
             </p>
             <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
@@ -165,7 +165,7 @@ const PrivacyPolicy = () => {
 
           <section id="data-sharing" className="mb-6">
             <h2 className="text-xl font-semibold  mb-2">6. Data Sharing</h2>
-            <p className="text-gray-700">
+            <p className="text-gray-700 dark:text-gray-300">
               We only share your data when necessary:
             </p>
             <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
@@ -214,22 +214,22 @@ const PrivacyPolicy = () => {
 
           <section id="third" className="mb-6">
             <h2 className="text-xl font-semibold  mb-2">10. Third-Party Links</h2>
-            <p>Musical Minds may contain links to external websites or platforms. We are not responsible for the privacy practices of third parties. Please review their respective policies.</p>
+            <p className="text-gray-700 dark:text-gray-300">Musical Minds may contain links to external websites or platforms. We are not responsible for the privacy practices of third parties. Please review their respective policies.</p>
           </section>
 
           <section id="childrens-privacy" className="mb-6">
             <h2 className="text-xl font-semibold  mb-2">11. Children&apos;s Privacy</h2>
-            <p>The platform is intended for users <span className="font-semibold">16 years and older</span>. We do not knowingly collect data from minors. Parents may contact us to request deletion of data if needed..</p>
+            <p className="text-gray-700 dark:text-gray-300">The platform is intended for users <span className="font-semibold">16 years and older</span>. We do not knowingly collect data from minors. Parents may contact us to request deletion of data if needed..</p>
           </section>
 
           <section id="changes" className="mb-6">
             <h2 className="text-xl font-semibold  mb-2">12. Changes to This Policy</h2>
-            <p>We may update this policy as our platform evolves. You will be notified of significant changes via email or app notification.</p>
+            <p className="text-gray-700 dark:text-gray-300">We may update this policy as our platform evolves. You will be notified of significant changes via email or app notification.</p>
           </section>
 
           <section id="contact" className="mb-6">
             <h2 className="text-xl font-semibold  mb-2">13. Contact</h2>
-            <p>For questions about this Privacy Policy or data protection, contact us at:
+            <p className="text-gray-700 dark:text-gray-300">For questions about this Privacy Policy or data protection, contact us at:
               privacy@musicalmindz.com
               [Your Company Name]
               [Registered Address]</p>
