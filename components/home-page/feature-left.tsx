@@ -47,7 +47,7 @@ const FeatureLeft = () => {
             </p>
           </div>
         </div>
-        <div className="not-prose relative flex overflow-hidden rounded-lg" data-aos="fade-up" data-aos-delay="600">
+        <div className="not-prose relative flex overflow-hidden sm:mb-[-30px] md:mb-[-78px] rounded-lg" data-aos="fade-up" data-aos-delay="600">
           <Image
             src={Placeholder}
             alt="placeholder"

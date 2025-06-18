@@ -69,7 +69,7 @@ const Hero = () => {
           </div>
         </div>
         <div className="flex justify-center md:justify-end" data-aos="zoom-in" data-aos-delay="600">
-          <Image src={HeroImage} alt="Hero section image" width={600} height={400} className="w-full max-w-[600px] h-auto" />
+          <Image src={HeroImage} alt="Hero section image" width={600} height={400} className="w-full max-w-[600px] h-auto sm:mb-[-56px]" />
         </div>
       </Container>
     </Section>

@@ -37,11 +37,11 @@ const FeatureRight = () => {
         </div>
         <div className="md:hidden">
           <div className="flex flex-col-reverse">
-            <div className="not-prose relative flex overflow-hidden" data-aos="zoom-in" data-aos-delay="600">
+            <div className="not-prose relative flex  overflow-hidden" data-aos="zoom-in" data-aos-delay="600">
               <Image
                 src={Placeholder}
                 alt="placeholder"
-                className="w-110 h-159"
+                className="w-110 h-159 "
               />
             </div>
             <div className="flex flex-col gap-6 py-8 justify-center">
