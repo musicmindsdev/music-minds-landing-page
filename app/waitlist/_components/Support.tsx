@@ -81,7 +81,7 @@ const Support = () => {
           </h3>
 
           <div
-            className="mt-6 grid gap-6 md:mt-12 md:grid-cols-3"
+            className="mt-6 grid gap-6 md:mt-12 items-center justify-center md:grid-cols-3"
             data-aos="fade-up"
             data-aos-delay="300"
           >
@@ -107,22 +107,22 @@ const Support = () => {
             ))} */}
               {unlock.map(({ icon, title, description, img }, index) => (
               <div
-                className="flex flex-col gap-3 rounded-lg pb-0 p-4 snap-center min-w-[300px] md:min-w-[calc(33.333%-1.5rem)] transition-all hover:-mt-2 hover:mb-2 backdrop-filter backdrop-blur-lg shadow-lg"
+                className="flex flex-col gap-3 rounded-lg pb-0 p-4 snap-center min-w-[300px] md:min-w-[calc(33.333%-1.5rem)] transition-all hover:-mt-2 hover:mb-2 backdrop-filter backdrop-blur-lg shadow-lg dark:bg-background"
                 key={index}
                 data-aos="fade-up"
                 data-aos-delay={`${300 + index * 100}`}
               >
                 <div className="flex items-center gap-3">
                 {icon}
-                <h2 className="text-2lg  text-black font-semibold">{title}</h2>
+                <h2 className="text-2lg  font-semibold">{title}</h2>
                 </div>
-                <p className="opacity-75 text-sm line-clamp-3 text-black">{description}</p>
+                <p className="opacity-75 text-sm line-clamp-3 ">{description}</p>
                 <div className="flex justify-end pb-0">{img}</div>
               </div>
             ))}
           </div>
 
-          <div className="w-full flex flex-col gap-4 items-center  justify-center">
+          <div className="w-full flex flex-col gap-4 items-center mt-4 justify-center">
           <Image src={Users} alt={""} className=""/>
             <p className="text-center italic ">Over <span className="text-[#5243FE]">578</span> users already waiting to connect!</p>
           </div>
