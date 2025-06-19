@@ -3,6 +3,8 @@
 
 @custom-variant dark (&:is(.dark *));
 
+
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -240,3 +242,20 @@ body {
   border-image-source: linear-gradient(to right, #FF00DFB2, #7F40F8, #FFFFFF, #5E9EFFB2, #5243FEB2);
   border-image-slice: 1;
 }
+
+.goog-logo-link,
+.goog-te-gadget span {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  color: transparent !important;
+}
+
+.goog-te-gadget .goog-te-combo {
+  color: gray !important;
+}
+
+/* .goog-te-banner-frame.skiptranslate {
+  display: none !important;
+} */

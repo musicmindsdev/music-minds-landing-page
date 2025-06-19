@@ -69,6 +69,8 @@ export function NavBar() {
     setExpandedMenu(expandedMenu === menu ? null : menu);
   };
 
+
+
   return (
     <div className="flex items-center min-w-full w-full fixed justify-center p-2 z-[50]">
       <div className="flex justify-between w-[100%] relative backdrop-filter backdrop-blur-lg bg-card border-white border-opacity-20 rounded-xl p-2 shadow-lg">
@@ -79,6 +81,8 @@ export function NavBar() {
             </Link>
           </NavigationMenuList>
         </NavigationMenu>
+        
+
         <Dialog >
           <SheetTrigger className="min-[825px]:hidden p-2 transition">
             <MenuIcon />
@@ -299,8 +303,12 @@ export function NavBar() {
             </div>
           </SheetContent>
         </Dialog>
+                
+       
 
         <div className="flex items-center gap-2 max-[825px]:hidden">
+      
+                 {/* <CustomLanguageSwitcher /> */}
           <DropdownMenu onOpenChange={handleOpenChange}>
             <DropdownMenuTrigger>
               <Link href="/">
