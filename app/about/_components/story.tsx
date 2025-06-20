@@ -160,7 +160,7 @@ const Story = () => {
               data-aos-delay="600"
             >
               We&apos;ve lived the challenges — DIY setups, expensive studio time, limited access, no network.
-              That&apos;s why Musical Mindz exists: to lower the barriers, increase the chances, and shift the power back to the creators.
+              That&apos;s why Musical Minds exists: to lower the barriers, increase the chances, and shift the power back to the creators.
             </span>
             <span>
               <span className="font-medium mr-2">Our long-term goal is simple but bold:</span>

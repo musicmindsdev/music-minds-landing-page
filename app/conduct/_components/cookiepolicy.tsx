@@ -121,7 +121,7 @@ const CookiePolicy = () => {
             <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
               <li>Do not upload or share music, beats, vocals, or samples you do not own or have rights to.</li>
               <li>Respect the creative work of others — including feedback, drafts, and demo files.</li>
-              <li>Musical Mindz supports original work and protects against plagiarism and content theft.</li>
+              <li>Musical Minds supports original work and protects against plagiarism and content theft.</li>
             </ul>
           </section>
 
