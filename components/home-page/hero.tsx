@@ -45,7 +45,7 @@ const Hero = () => {
               Unlock Your
             </h1>
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent" data-aos="fade-up" data-aos-delay="200">
-              Musical
+              Music
             </h1>
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold" data-aos="fade-up" data-aos-delay="300">
               Potential

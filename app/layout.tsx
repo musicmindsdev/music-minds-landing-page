@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Music Minds",
-  description: "Unlock your musical potential",
+  description: "Unlock your Music potential",
 };
 
 export default function RootLayout({

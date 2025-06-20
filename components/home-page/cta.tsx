@@ -30,7 +30,7 @@ const CTA = () => {
       <Container className="flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="flex flex-col gap-6 md:w-1/2">
           <h1 className="!my-0 font-bold text-4xl" data-aos="fade-up" data-aos-delay="100">
-            Ready to Start Your Musical Journey?
+            Ready to Start Your Music Journey?
           </h1>
           <h4 className="text-muted-foreground w-full md:w-[60%]" data-aos="fade-up" data-aos-delay="200">
             <Balancer>

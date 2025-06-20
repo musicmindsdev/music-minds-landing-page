@@ -117,7 +117,7 @@ const FeatureAction = () => {
           </h3>
           <h4 className="text-sm font-light opacity-70 text-center" data-aos="fade-up" data-aos-delay="200">
             <Balancer>
-              A simple process to connect you with the musical guidance you need.
+              A simple process to connect you with the Music guidance you need.
             </Balancer>
           </h4>
 

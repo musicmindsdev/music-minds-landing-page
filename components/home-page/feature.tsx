@@ -82,12 +82,12 @@ const Feature = () => {
         <div className="flex flex-col gap-6 pt-7">
           <h3 className="text-4xl bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent font-bold text-center" data-aos="fade-up" data-aos-delay="600">
             <Balancer>
-              Elevate your Musical Journey
+              Elevate your Music Journey
             </Balancer>
           </h3>
           <p className="text-sm text-center line-clamp-2 font-light opacity-70" data-aos="fade-up" data-aos-delay="700">
             <Balancer>
-              Music Minds provides all the tools you need to grow your musical talents with expert guidance.
+              Music Minds provides all the tools you need to grow your Music talents with expert guidance.
             </Balancer>
           </p>
 

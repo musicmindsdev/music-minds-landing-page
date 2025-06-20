@@ -75,7 +75,7 @@ const Story = () => {
               data-aos-delay="600"
             >
               We&apos;re not just building an app — we&apos;re shaping the future of independent music.
-              Musical Minds is a platform born from real creative scenes, built by artists, producers, and educators who understand the hustle. We connect talent with opportunity, learning with practice, and creativity with community. Whether you&apos;re a newcomer or an established voice, you belong here.
+              Music Minds is a platform born from real creative scenes, built by artists, producers, and educators who understand the hustle. We connect talent with opportunity, learning with practice, and creativity with community. Whether you&apos;re a newcomer or an established voice, you belong here.
             </span>
           </div>
         </div>
@@ -94,7 +94,7 @@ const Story = () => {
               data-aos-delay="600"
             >
               Music is not just content. It&apos;s a craft, a process, and a form of expression.
-              We believe talent is everywhere — but access, visibility, and mentoring are not. That&apos;s why we created a space where anyone can learn, collaborate, grow, and take ownership of their musical journey.
+              We believe talent is everywhere — but access, visibility, and mentoring are not. That&apos;s why we created a space where anyone can learn, collaborate, grow, and take ownership of their Music journey.
             </span>
           </div>
           <h1
@@ -160,7 +160,7 @@ const Story = () => {
               data-aos-delay="600"
             >
               We&apos;ve lived the challenges — DIY setups, expensive studio time, limited access, no network.
-              That&apos;s why Musical Minds exists: to lower the barriers, increase the chances, and shift the power back to the creators.
+              That&apos;s why Music Minds exists: to lower the barriers, increase the chances, and shift the power back to the creators.
             </span>
             <span>
               <span className="font-medium mr-2">Our long-term goal is simple but bold:</span>

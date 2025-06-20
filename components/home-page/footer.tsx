@@ -24,7 +24,7 @@ export default function Footer() {
             </Link>
             <p className="leading-4 font-light">
               <Balancer>
-                Connecting aspiring musicians with world-class coaches for a transformative musical journey.
+                Connecting aspiring musicians with world-class coaches for a transformative Music journey.
               </Balancer>
             </p>
           </div>

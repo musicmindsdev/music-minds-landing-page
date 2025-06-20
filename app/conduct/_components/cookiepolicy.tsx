@@ -75,8 +75,8 @@ const CookiePolicy = () => {
           style={{ maxHeight: "calc(100vh - 100px)" }}
         >
           <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4 text-center">Music Mind - Code of Conduct</h1>
-          <h3 className="text-gray-700 dark:text-gray-300">Musical Minds is more than a marketplace. It&apos;s a community built on trust, creativity, and mutual respect. This Code of Conduct defines how we expect users to behave when using our platform, to ensure a safe, inclusive, and empowering space for all.
-            By using Musical Minds, you agree to follow these principles.
+          <h3 className="text-gray-700 dark:text-gray-300">Music Minds is more than a marketplace. It&apos;s a community built on trust, creativity, and mutual respect. This Code of Conduct defines how we expect users to behave when using our platform, to ensure a safe, inclusive, and empowering space for all.
+            By using Music Minds, you agree to follow these principles.
           </h3>
           <p className="text-sm text-[#A79FFF] mb-6 text-center">
             Last Updated: May 12, 2025 | Effective Date: May 12, 2025
@@ -121,7 +121,7 @@ const CookiePolicy = () => {
             <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
               <li>Do not upload or share music, beats, vocals, or samples you do not own or have rights to.</li>
               <li>Respect the creative work of others — including feedback, drafts, and demo files.</li>
-              <li>Musical Minds supports original work and protects against plagiarism and content theft.</li>
+              <li>Music Minds supports original work and protects against plagiarism and content theft.</li>
             </ul>
           </section>
 
@@ -168,7 +168,7 @@ const CookiePolicy = () => {
           <section id="cookies" className="mb-6">
             <h2 className="text-xl font-semibold  mb-2">Violations & Consequences
             </h2>
-            <p className="text-gray-700 dark:text-gray-300">Musical Minds reserves the right to:</p>
+            <p className="text-gray-700 dark:text-gray-300">Music Minds reserves the right to:</p>
             <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
               <li>Issue warnings or remove content.</li>
               <li>Temporarily suspend accounts.</li>
@@ -181,7 +181,7 @@ const CookiePolicy = () => {
             <h2 className="text-xl font-semibold  mb-2">Violations & Consequences
             </h2>
             <p className="text-gray-700 dark:text-gray-300">If you experience or witness behavior that violates this Code, please report it via:
-              <span className="font-semibold"> report@musicalmindz.com</span> or use the in-app reporting function.
+              <span className="font-semibold"> report@Musicmindz.com</span> or use the in-app reporting function.
               Our team treats all reports seriously and confidentially.
             </p>
           </section>
@@ -190,7 +190,7 @@ const CookiePolicy = () => {
             <h2 className="text-xl font-semibold  mb-2">Final Note
             </h2>
             <p className="text-gray-700 dark:text-gray-300">This platform was built to break barriers — not to create new ones.
-              Let&apos;s keep Musical Minds a safe, collaborative, and empowering space for everyone.
+              Let&apos;s keep Music Minds a safe, collaborative, and empowering space for everyone.
             </p>
           </section>
         </div>

@@ -79,7 +79,7 @@ export default function Testimonials() {
         What Our Users Say
       </h2>
       <p className="mb-12 text-center text-sm text-gray-500">
-        Join thousands of musicians who are transforming their musical journey with Music Minds.
+        Join thousands of musicians who are transforming their Music journey with Music Minds.
       </p>
       <div className="overflow-x-auto">
         <div className="flex gap-6 animate-slide-left">

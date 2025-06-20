@@ -85,7 +85,7 @@ const PrivacyPolicy = () => {
           <section id="Overview" className="mb-6">
             <h2 className="text-xl font-semibold  mb-2">1. Overview</h2>
             <p className="text-gray-700 dark:text-gray-300">
-              This Privacy Policy describes how <span className="font-semibold">Musical Minds</span> (&apos;we,&apos; &apos;us,&apos; &apos;our&apos;) collects, uses, stores, and protects your personal information when you use our platform, including the website, mobile application, and related services (&apos;the Platform&apos;).
+              This Privacy Policy describes how <span className="font-semibold">Music Minds</span> (&apos;we,&apos; &apos;us,&apos; &apos;our&apos;) collects, uses, stores, and protects your personal information when you use our platform, including the website, mobile application, and related services (&apos;the Platform&apos;).
               We are committed to protecting your data in accordance with the <span className="font-semibold">EU General Data Protection Regulation (GDPR)</span> and other applicable data protection laws.
             </p>
           </section>
@@ -214,7 +214,7 @@ const PrivacyPolicy = () => {
 
           <section id="third" className="mb-6">
             <h2 className="text-xl font-semibold  mb-2">10. Third-Party Links</h2>
-            <p className="text-gray-700 dark:text-gray-300">Musical Minds may contain links to external websites or platforms. We are not responsible for the privacy practices of third parties. Please review their respective policies.</p>
+            <p className="text-gray-700 dark:text-gray-300">Music Minds may contain links to external websites or platforms. We are not responsible for the privacy practices of third parties. Please review their respective policies.</p>
           </section>
 
           <section id="childrens-privacy" className="mb-6">
@@ -230,7 +230,7 @@ const PrivacyPolicy = () => {
           <section id="contact" className="mb-6">
             <h2 className="text-xl font-semibold  mb-2">13. Contact</h2>
             <p className="text-gray-700 dark:text-gray-300">For questions about this Privacy Policy or data protection, contact us at:
-              privacy@musicalmindz.com
+              privacy@Musicmindz.com
               [Your Company Name]
               [Registered Address]</p>
           </section>

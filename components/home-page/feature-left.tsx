@@ -30,7 +30,7 @@ const FeatureLeft = () => {
             Find the Perfect Service Provider
           </h3>
           <p className="font-light leading-[1.4] opacity-70" data-aos="fade-up" data-aos-delay="200">
-            Browse through profiles of top music coaches, read reviews from other students, and find the perfect match for your musical journey.
+            Browse through profiles of top music coaches, read reviews from other students, and find the perfect match for your Music journey.
           </p>
           <div className="not-prose flex-col items-center gap-7">
             <p className="flex items-center gap-2 pb-2" data-aos="fade-up" data-aos-delay="300">
