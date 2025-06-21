@@ -55,16 +55,17 @@ const Hero = () => {
           Your gateway to the music world: Connect with top vocal coaches, songwriters, producers & studios. Learn, collaborate, grow — and turn your passion into real impact.  </p>
           <div className="w-full" data-aos="fade-up" data-aos-delay="500">
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <Link href="/">
+              <Link href="/waitlist">
                 <Button className="w-full h-[50px] p-3 text-white flex items-center justify-center">
-                  <FaApple /> | <div className="flex-col items-start pl-2"><p className="text-xs">Get it on </p><h4>App Store</h4></div>
+                  {/* <FaApple /> | <div className="flex-col items-start pl-2"><p className="text-xs">Get it on </p><h4>App Store</h4></div> */}
+                  Join Waitlist
                 </Button>
               </Link>
-              <Link href="/">
+              {/* <Link href="/">
                 <Button className="w-full h-[50px] p-3 text-white flex items-center justify-center">
                   <IoLogoGooglePlaystore /> | <div className="flex-col items-start pl-2"><p className="text-xs text-white">Get it on </p><h4>Play Store</h4></div>
                 </Button>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
