@@ -78,6 +78,7 @@ const BusinessForm = () => {
       }
     } catch (err) {
       setError("An error occurred. Please try again later.");
+      console.error("Error submitting waitlist form:", err);
     }
   };
 
@@ -144,7 +145,6 @@ const BusinessForm = () => {
               <Button className="w-full sm:w-auto" onClick={handleSubmit}>
                 Get early access <GoArrowUpRight />
               </Button>
-              <span className="text-[#5243FE]">{step}/4</span>
             </div>
             {error && <p className="text-red-500 text-center">{error}</p>}
             {success && (
