@@ -5,8 +5,8 @@ import Image from "next/image";
 
 import { Section, Container } from "@/components/craft";
 import { Button } from "@/components/ui/button";
-import { FaApple } from "react-icons/fa";
-import { IoLogoGooglePlaystore } from "react-icons/io5";
+// import { FaApple } from "react-icons/fa";
+// import { IoLogoGooglePlaystore } from "react-icons/io5";
 
 import HeroImage from "@/public/hero1.png";
 import AOS from "aos";
