@@ -5,10 +5,10 @@ import Balancer from "react-wrap-balancer";
 import { Section, Container } from "@/components/craft";
 import Image from "next/image";
 import { JSX } from "react";
-import Ceo from "@/public/Ellipse1.svg";
-import Coo from "@/public/Ellipse2.svg";
-import Vp from "@/public/Ellipse3.svg";
-import Cmo from "@/public/Ellipse4.svg";
+import Ceo from "@/public/marshall.jpg";
+import Coo from "@/public/Bartosz.jpeg";
+import Vp from "@/public/Aisha.jpeg";
+import Cmo from "@/public/fidelis.jpeg";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Ensure AOS CSS is imported
 import { useEffect } from "react";
@@ -22,52 +22,52 @@ type FeatureText = {
 
 const featureText: FeatureText[] = [
   {
-    img: <Image src={Ceo} alt="CEO Image" className="mx-auto block" />,
+    img: <Image src={Ceo} alt="CEO Image" className="mx-auto block w-50 h-50 rounded-full" />,
     title: (
       <div>
-        <h3 className="text-sm">Mike Simorankir</h3>
-        <p className="text-xs">Founder & CEO</p>
+        <h3 className="text-sm">Marshall Odii        </h3>
+        <p className="text-xs">Chief Technology  Officer          </p>
       </div>
     ),
     href: "/",
     description:
-      "Mike, MBA, has 15+years of experience serving as Head of Talent & Acquisition in Universal Music Group.",
+      "Marshall is a very experienced with a strong background in technology strategy, core product engineering principles, team leadership, and product innovation. Skilled at driving scalable solutions, overseeing development, and aligning tech initiatives with business goals.",
   },
   {
-    img: <Image src={Coo} alt="COO Image" className="mx-auto block" />,
+    img: <Image src={Coo} alt="COO Image" className="mx-auto block w-50 h-50 rounded-full " />,
     title: (
       <div>
-        <h3 className="text-sm">Stanley George .L.</h3>
-        <p className="text-xs">Co-founder & COO</p>
+        <h3 className="text-sm">Bartosz Jarocki        </h3>
+        <p className="text-xs">Head of Music Partnership        </p>
       </div>
     ),
     href: "/",
     description:
-      "Stan, MBA, has 8+years of experience serving as Head of Talent & Acquisition in Universal Music Group.",
+      "He possess deep industry expertise and a strong network across labels, artists, and platforms. Proven track record in building strategic alliances, driving artist collaborations, and leading innovative campaigns that amplify brand and music synergy.",
   },
   {
-    img: <Image src={Vp} alt="VP Image" className="mx-auto block" />,
+    img: <Image src={Vp} alt="VP Image" className="mx-auto block rounded-full w-50 h-50" />,
     title: (
       <div>
-        <h3 className="text-sm">Ella Baker. J.</h3>
-        <p className="text-xs">VP, Operations</p>
+        <h3 className="text-sm">Aisha Madarati</h3>
+        <p className="text-xs">Artist Relations and Content Host</p>
       </div>
     ),
     href: "/",
     description:
-      "Ella, MBA, has 10 years of experience serving as Head of Talent & Acquisition in Universal Music Group.",
+      "Music and media professional with over 20 years of experience in social media, format development, community building, label management, and artist development. An On-camera host of own formats as well as organization and execution of content behind the scenes",
   },
   {
-    img: <Image src={Cmo} alt="CMO Image" className="mx-auto block" />,
+    img: <Image src={Cmo} alt="CMO Image" className="mx-auto block w-50 h-50 rounded-full" />,
     title: (
       <div>
-        <h3 className="text-sm">Sally Justine</h3>
-        <p className="text-xs">Chief Marketing Officer</p>
+        <h3 className="text-sm">Fidelis Victory</h3>
+        <p className="text-xs">Development Coordinator</p>
       </div>
     ),
     href: "/",
     description:
-      "Sally, MBA, has 15+years of experience serving as Head of Talent & Acquisition in Universal Music Group.",
+      "Well Experienced project coordinator skilled in managing timelines, resources, and teams to deliver successful outcomes. Strong communicator and problem-solver with a proven track record of keeping projects on track and within scope.",
   },
 ];
 
