@@ -1,12 +1,11 @@
-// app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { NavBar } from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import CookieConsent from "@/components/cookieconsent";
-import Script from "next/script";
-import { GoogleTranslateWidget } from "@/components/GoogleTranslateWidget";
+import I18nProvider from "@/components/I18nProvider";
+import NavBar from "@/components/navbar";
+import { getServerLocale } from "@/lib/i18n";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,44 +22,28 @@ export const metadata: Metadata = {
   description: "Unlock your Music potential",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getServerLocale();
+  console.log(`Root layout locale: ${locale}`);
+
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang={locale} suppressHydrationWarning>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <NavBar />
-          {children}
-          <GoogleTranslateWidget />
+          <I18nProvider locale={locale}>
+            <NavBar locale={locale} />
+            {children}
+          </I18nProvider>
           <CookieConsent />
-          {/* Google Translate Scripts */}
-          <Script
-            src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-            strategy="afterInteractive"
-          />
-          <Script id="google-translate-init" strategy="afterInteractive">
-            {`
-              function googleTranslateElementInit() {
-                new google.translate.TranslateElement(
-                  {
-                    pageLanguage: 'en',
-                    includedLanguages: 'en,es,fr,de,ja', // English, Spanish, French, German, Japanese
-                  },
-                  'google_translate_element'
-                );
-              }
-            `}
-          </Script>
         </ThemeProvider>
       </body>
     </html>

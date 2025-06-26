@@ -1,16 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
-import { MenuIcon } from 'lucide-react';
+import { MenuIcon } from "lucide-react";
 import Link from "next/link";
-import * as React from "react";
 import { Dialog, DialogClose } from "./ui/dialog";
 import { Button } from "./ui/button";
 import { NavigationMenu, NavigationMenuLink, NavigationMenuList } from "./ui/navigation-menu";
 import { SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
-// import { FaApple } from "react-icons/fa";
-// import { IoLogoGooglePlaystore } from "react-icons/io5";
 import Logo from "@/public/Musicmindlogo.svg";
 import Image from "next/image";
 import Info from "@/public/info-circle.svg";
@@ -21,15 +19,6 @@ import Case from "@/public/briefcase.svg";
 import Caseh from "@/public/briefcaseh.svg";
 import Text from "@/public/text-block.svg";
 import Texth from "@/public/text-blockh.svg";
-// import Book from "@/public/book.svg";
-// import Bookh from "@/public/bookh.svg";
-// import Book1 from "@/public/book1.svg";
-// import Book1h from "@/public/book1h.svg";
-// import Youtube from "@/public/youtube.svg";
-// import Youtubeh from "@/public/youtubeh.svg";
-// import Message from "@/public/message-question.svg";
-// import Messageh from "@/public/message-questionh.svg";
-
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import {
   DropdownMenu,
@@ -37,8 +26,13 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import React from "react";
+import LanguageSwitcher from "./LanguageSwitcher";
 
-export function NavBar() {
+export default function NavBar({ locale }: { locale: string }) {
+  const { t } = useTranslation("common");
+  console.log(`NavBar locale: ${locale}, t is function: ${typeof t === "function"}`);
+
   const [isOpen, setIsOpen] = useState(false);
   const [expandedMenu, setExpandedMenu] = useState<string | null>(null);
   const [hoverStates, setHoverStates] = useState({
@@ -46,15 +40,11 @@ export function NavBar() {
     career: false,
     culture: false,
     press: false,
-    blog: false,
-    youtube: false,
-    book1: false,
-    message: false,
   });
 
   const handleOpenChange = (open: boolean) => {
     setIsOpen(open);
-    if (!open) setExpandedMenu(null); // Close submenu when sheet closes
+    if (!open) setExpandedMenu(null);
   };
 
   const handleMouseEnter = (item: keyof typeof hoverStates) => {
@@ -69,11 +59,17 @@ export function NavBar() {
     setExpandedMenu(expandedMenu === menu ? null : menu);
   };
 
-
+  if (typeof t !== "function") {
+    console.warn(`NavBar: t is not a function for locale ${locale}`);
+    return null;
+  }
 
   return (
     <div className="flex items-center min-w-full w-full fixed justify-center p-2 z-[50]">
       <div className="flex justify-between w-[100%] relative backdrop-filter backdrop-blur-lg bg-card border-white border-opacity-20 rounded-xl p-2 shadow-lg">
+     <div className="min-[825px]:hidden">
+      <LanguageSwitcher currentLocale={locale} />
+      </div>
         <NavigationMenu>
           <NavigationMenuList className="max-[825px]:w-10 max-[825px]:h-10">
             <Link href="/" className="pl-2">
@@ -81,9 +77,8 @@ export function NavBar() {
             </Link>
           </NavigationMenuList>
         </NavigationMenu>
-        
 
-        <Dialog >
+        <Dialog>
           <SheetTrigger className="min-[825px]:hidden p-2 transition">
             <MenuIcon />
           </SheetTrigger>
@@ -93,234 +88,113 @@ export function NavBar() {
                 <Image src={Logo} alt="" className="w-15 h-15" />
               </SheetTitle>
             </SheetHeader>
-            <div className="flex-col justify-between ">
-            <div className="flex flex-col  space-y-3 mt-[1rem] z-[99]">
-              <Button
-                variant="ghost"
-                className="w-full flex items-start justify-start"
-                onClick={() => toggleMenu("company")}
-              
-              >
-                <div className="flex items-center space-x-2">
-              
-                  <span>Company</span>
-                </div>
-                {expandedMenu === "company" ? (
-                  <MdKeyboardArrowUp className="h-5 w-5 text-gray-500" />
-                ) : (
-                  <MdKeyboardArrowDown className="h-5 w-5 text-gray-500" />
-                )}
-              </Button>
-              {expandedMenu === "company" && (
-                <div className="pl-2 space-y-2">
-                  <Link href="/about">
-                    <Button
-                      variant="ghost"
-                      className="w-full flex items-start justify-start space-x-2"
-                    >
-                      <Image
-                        src={Infoh}
-                        alt=""
-                        className="h-6 w-6"
-                        width={24}
-                        height={24}
-                      />
-                      <span>About Us</span>
-                    </Button>
-                  </Link>
-                  <Link href="/">
-                    <Button
-                      variant="ghost"
-                      className="w-full flex items-start justify-start space-x-2"
-                    >
-                      <Image
-                        src={Caseh}
-                        alt=""
-                        className="h-6 w-6"
-                        width={24}
-                        height={24}
-                      />
-                      <span>Career</span>
-                    </Button>
-                  </Link>
-                  <Link href="/">
-                    <Button
-                      variant="ghost"
-                      className="w-full flex items-start justify-start space-x-2"
-                    >
-                      <Image
-                        src={Peopleh}
-                        alt=""
-                        className="h-6 w-6"
-                        width={24}
-                        height={24}
-                      />
-                      <span>Culture</span>
-                    </Button>
-                  </Link>
-                  <Link href="/">
-                    <Button
-                      variant="ghost"
-                      className="w-full flex items-start justify-start space-x-2"
-                    >
-                      <Image
-                        src={Texth}
-                        alt=""
-                        className="h-6 w-6"
-                        width={24}
-                        height={24}
-                      />
-                      <span>Press</span>
-                    </Button>
-                  </Link>
-                </div>
-              )}
-{/* 
-              <Button
-                variant="ghost"
-                className="w-full flex items-center justify-start "
-                onClick={() => toggleMenu("learn")}
-              >
-                <div className="flex items-center space-x-2">
-                 
-                  <span>Learn</span>
-                </div>
-                {expandedMenu === "learn" ? (
-                  <MdKeyboardArrowUp className="h-5 w-5 text-gray-500" />
-                ) : (
-                  <MdKeyboardArrowDown className="h-5 w-5 text-gray-500" />
-                )}
-              </Button>
-              {expandedMenu === "learn" && (
-                <div className="pl-2 space-y-2">
-                  <Link href="/">
-                    <Button
-                      variant="ghost"
-                      className="w-full flex items-start justify-start space-x-2"
-                    >
-                      <Image
-                        src={Bookh }
-                        alt=""
-                        className="h-6 w-6"
-                        width={24}
-                        height={24}
-                      />
-                      <span>Blog</span>
-                    </Button>
-                  </Link>
-                  <Link href="/">
-                    <Button
-                      variant="ghost"
-                      className="w-full flex items-start justify-start space-x-2"
-                    >
-                      <Image
-                        src={Youtubeh }
-                        alt=""
-                        className="h-6 w-6"
-                        width={24}
-                        height={24}
-                      />
-                      <span>YouTube</span>
-                    </Button>
-                  </Link>
-                  <Link href="/">
-                    <Button
-                      variant="ghost"
-                      className="w-full flex items-start justify-start space-x-2"
-                    >
-                      <Image
-                        src={Book1h }
-                        alt=""
-                        className="h-6 w-6"
-                        width={24}
-                        height={24}
-                      />
-                      <span>Help & Guide Desk</span>
-                    </Button>
-                  </Link>
-                  <Link href="/">
-                    <Button
-                      variant="ghost"
-                      className="w-full flex items-start justify-start space-x-2"
-                    >
-                      <Image
-                        src={Messageh}
-                        alt=""
-                        className="h-6 w-6"
-                        width={24}
-                        height={24}
-                      />
-                      <span>FAQ&apos;s</span>
-                    </Button>
-                  </Link>
-                </div>
-              )} */}
-
-              <DialogClose asChild>
-                <Link href="/">
-                  <Button
-                    variant="ghost"
-                    className="w-full flex items-center justify-start space-x-2"
-                  >
-                   
-                    <span>Features</span>
-                  </Button>
-                </Link>
-              </DialogClose>
-              <DialogClose asChild>
-                <Link href="/contact">
-                  <Button
-                    variant="ghost"
-                    className="w-full flex items-center justify-start space-x-2"
-                  >
-                    
-                    <span>Contact</span>
-                  </Button>
-                </Link>
-              </DialogClose>
-              <DialogClose asChild>
-                <Link href="/">
-                  <Button
-                    variant="ghost"
-                    className="w-full flex items-center justify-start space-x-2"
-                  >
-                   
-                    <span>How it works</span>
-                  </Button>
-                </Link>
-              </DialogClose>
-            </div>
-            <div className="bg-[#F2F1FF] absolute bottom-0 left-0 w-full flex justify-center items-center p-4">
-  <Link href="/waitlist">
-    <Button className="text-white w-full"> 
-      {/* <FaApple className="mr-2" />
-      <IoLogoGooglePlaystore className="mr-2" />
-      Download App */}
-      Join Waitlist
-    </Button>
-  </Link>
-</div>
-            </div>
-          </SheetContent>
-        </Dialog>
-                
-       
-
-        <div className="flex items-center gap-2 max-[825px]:hidden">
-      
-                 {/* <CustomLanguageSwitcher /> */}
-          <DropdownMenu onOpenChange={handleOpenChange}>
-            <DropdownMenuTrigger>
-              <Link href="/">
-                <Button variant="ghost">
-                  Company{" "}
-                  {isOpen ? (
+            <div className="flex-col justify-between">
+              <div className="flex flex-col space-y-3 mt-[1rem] z-[99]">
+                <Button
+                  variant="ghost"
+                  className="w-full flex items-start justify-start"
+                  onClick={() => toggleMenu("company")}
+                >
+                  <div className="flex items-center space-x-2">
+                    <span>{t("navbar.company")}</span>
+                  </div>
+                  {expandedMenu === "company" ? (
                     <MdKeyboardArrowUp className="h-5 w-5 text-gray-500" />
                   ) : (
                     <MdKeyboardArrowDown className="h-5 w-5 text-gray-500" />
                   )}
                 </Button>
-              </Link>
+                {expandedMenu === "company" && (
+                  <div className="pl-2 space-y-2">
+                    <Link href="/about">
+                      <Button
+                        variant="ghost"
+                        className="w-full flex items-start justify-start space-x-2"
+                      >
+                        <Image src={Infoh} alt="" className="h-6 w-6" width={24} height={24} />
+                        <span>{t("navbar.about_us")}</span>
+                      </Button>
+                    </Link>
+                    <Link href="/career">
+                      <Button
+                        variant="ghost"
+                        className="w-full flex items-start justify-start space-x-2"
+                      >
+                        <Image src={Caseh} alt="" className="h-6 w-6" width={24} height={24} />
+                        <span>{t("navbar.career")}</span>
+                      </Button>
+                    </Link>
+                    <Link href="/culture">
+                      <Button
+                        variant="ghost"
+                        className="w-full flex items-start justify-start space-x-2"
+                      >
+                        <Image src={Peopleh} alt="" className="h-6 w-6" width={24} height={24} />
+                        <span>{t("navbar.culture")}</span>
+                      </Button>
+                    </Link>
+                    <Link href="/press">
+                      <Button
+                        variant="ghost"
+                        className="w-full flex items-start justify-start space-x-2"
+                      >
+                        <Image src={Texth} alt="" className="h-6 w-6" width={24} height={24} />
+                        <span>{t("navbar.press")}</span>
+                      </Button>
+                    </Link>
+                  </div>
+                )}
+                <DialogClose asChild>
+                  <Link href="/features">
+                    <Button
+                      variant="ghost"
+                      className="w-full flex items-center justify-start space-x-2"
+                    >
+                      <span>{t("navbar.features")}</span>
+                    </Button>
+                  </Link>
+                </DialogClose>
+                <DialogClose asChild>
+                  <Link href="/contact">
+                    <Button
+                      variant="ghost"
+                      className="w-full flex items-center justify-start space-x-2"
+                    >
+                      <span>{t("navbar.contact")}</span>
+                    </Button>
+                  </Link>
+                </DialogClose>
+                <DialogClose asChild>
+                  <Link href="/how-it-works">
+                    <Button
+                      variant="ghost"
+                      className="w-full flex items-center justify-start space-x-2"
+                    >
+                      <span>{t("navbar.how_it_works")}</span>
+                    </Button>
+                  </Link>
+                </DialogClose>
+              </div>
+              <div className="bg-[#F2F1FF] absolute bottom-0 left-0 w-full flex justify-center items-center p-4">
+                <Link href="/waitlist">
+                  <Button className="text-white w-full">{t("navbar.join_waitlist")}</Button>
+                </Link>
+              </div>
+            </div>
+          </SheetContent>
+        </Dialog>
+
+        <div className="flex items-center gap-2 max-[825px]:hidden">
+          <DropdownMenu onOpenChange={handleOpenChange}>
+            <DropdownMenuTrigger>
+              <Button variant="ghost">
+                {t("navbar.company")}{" "}
+                {isOpen ? (
+                  <MdKeyboardArrowUp className="h-5 w-5 text-gray-500" />
+                ) : (
+                  <MdKeyboardArrowDown className="h-5 w-5 text-gray-500" />
+                )}
+              </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="p-5 border-8 border-[#EEEDFF] rounded-lg">
               <DropdownMenuItem
@@ -328,120 +202,64 @@ export function NavBar() {
                 onMouseLeave={() => handleMouseLeave("aboutUs")}
               >
                 <Link href="/about" className="flex gap-2">
-                <Image src={hoverStates.aboutUs ? Infoh : Info} alt="" className="pr-1" />
-                <div className="flex-col items-center">
-                  <h4 className="font-bold">About Us</h4>
-                  <p>Learn more about the team</p>
-                </div>
+                  <Image src={hoverStates.aboutUs ? Infoh : Info} alt="" className="pr-1" />
+                  <div className="flex-col items-center">
+                    <h4 className="font-bold">{t("navbar.about_us")}</h4>
+                    <p>{t("navbar.about_us_description")}</p>
+                  </div>
                 </Link>
               </DropdownMenuItem>
-
               <DropdownMenuItem
                 onMouseEnter={() => handleMouseEnter("career")}
                 onMouseLeave={() => handleMouseLeave("career")}
               >
-                <Image src={hoverStates.career ? Caseh : Case} alt="" className="pr-1" />
-                <div className="flex-col items-center">
-                  <h4 className="font-bold">Career</h4>
-                  <p>Become one of us</p>
-                </div>
+                <Link href="/career" className="flex gap-2">
+                  <Image src={hoverStates.career ? Caseh : Case} alt="" className="pr-1" />
+                  <div className="flex-col items-center">
+                    <h4 className="font-bold">{t("navbar.career")}</h4>
+                    <p>{t("navbar.career_description")}</p>
+                  </div>
+                </Link>
               </DropdownMenuItem>
-
               <DropdownMenuItem
                 onMouseEnter={() => handleMouseEnter("culture")}
                 onMouseLeave={() => handleMouseLeave("culture")}
               >
-                <Image src={hoverStates.culture ? Peopleh : People} alt="" className="pr-1" />
-                <div className="flex-col items-center">
-                  <h4 className="font-bold">Culture</h4>
-                  <p>Learn what makes us who we are</p>
-                </div>
+                <Link href="/culture" className="flex gap-2">
+                  <Image src={hoverStates.culture ? Peopleh : People} alt="" className="pr-1" />
+                  <div className="flex-col items-center">
+                    <h4 className="font-bold">{t("navbar.culture")}</h4>
+                    <p>{t("navbar.culture_description")}</p>
+                  </div>
+                </Link>
               </DropdownMenuItem>
-
               <DropdownMenuItem
                 onMouseEnter={() => handleMouseEnter("press")}
                 onMouseLeave={() => handleMouseLeave("press")}
               >
-                <Image src={hoverStates.press ? Texth : Text} alt="" className="pr-1" />
-                <div className="flex-col items-center">
-                  <h4 className="font-bold">Press</h4>
-                  <p>All you need to know</p>
-                </div>
+                <Link href="/press" className="flex gap-2">
+                  <Image src={hoverStates.press ? Texth : Text} alt="" className="pr-1" />
+                  <div className="flex-col items-center">
+                    <h4 className="font-bold">{t("navbar.press")}</h4>
+                    <p>{t("navbar.press_description")}</p>
+                  </div>
+                </Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-          {/* <DropdownMenu onOpenChange={handleOpenChange}>
-            <DropdownMenuTrigger>
-              <Link href="/">
-                <Button variant="ghost">
-                  Learn{" "}
-                  {isOpen ? (
-                    <MdKeyboardArrowUp className="h-5 w-5 text-gray-500" />
-                  ) : (
-                    <MdKeyboardArrowDown className="h-5 w-5 text-gray-500" />
-                  )}
-                </Button>
-              </Link>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="p-5 border-8 border-[#EEEDFF] rounded-lg">
-              <DropdownMenuItem
-                onMouseEnter={() => handleMouseEnter("blog")}
-                onMouseLeave={() => handleMouseLeave("blog")}
-              >
-                <Image src={hoverStates.blog ? Bookh : Book} alt="" className="pr-1" />
-                <div className="flex-col items-center">
-                  <h4 className="font-bold">Blog</h4>
-                  <p>Articles to help guide you</p>
-                </div>
-              </DropdownMenuItem>
-              <DropdownMenuItem
-                onMouseEnter={() => handleMouseEnter("youtube")}
-                onMouseLeave={() => handleMouseLeave("youtube")}
-              >
-                <Image src={hoverStates.youtube ? Youtubeh : Youtube} alt="" className="pr-1" />
-                <div className="flex-col items-center">
-                  <h4 className="font-bold">YouTube</h4>
-                  <p>Tutorials to guide you</p>
-                </div>
-              </DropdownMenuItem>
-              <DropdownMenuItem
-                onMouseEnter={() => handleMouseEnter("book1")}
-                onMouseLeave={() => handleMouseLeave("book1")}
-              >
-                <Image src={hoverStates.book1 ? Book1h : Book1} alt="" className="pr-1" />
-                <div className="flex-col items-center">
-                  <h4 className="font-bold">Help & Guide Desk</h4>
-                  <p>Communicate with support for guidance</p>
-                </div>
-              </DropdownMenuItem>
-              <DropdownMenuItem
-                onMouseEnter={() => handleMouseEnter("message")}
-                onMouseLeave={() => handleMouseLeave("message")}
-              >
-                <Image src={hoverStates.message ? Messageh : Message} alt="" className="pr-1" />
-                <div className="flex-col items-center">
-                  <h4 className="font-bold">FAQ&apos;s</h4>
-                  <p>Questions to help clarify things</p>
-                </div>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu> */}
-
-          <Link href="/">
-            <Button variant="ghost">Features</Button>
+          <Link href="/features">
+            <Button variant="ghost">{t("navbar.features")}</Button>
           </Link>
           <Link href="/contact">
-            <Button variant="ghost">Contact</Button>
+            <Button variant="ghost">{t("navbar.contact")}</Button>
           </Link>
-          <Link href="/">
-            <Button variant="ghost">How it works</Button>
+          <Link href="/how-it-works">
+            <Button variant="ghost">{t("navbar.how_it_works")}</Button>
           </Link>
           <Link href="/waitlist">
-            <Button className="text-white">
-              {/* <FaApple /> | <IoLogoGooglePlaystore /> Download App */}
-              Join Waitlist
-            </Button>
+            <Button className="text-white">{t("navbar.join_waitlist")}</Button>
           </Link>
+          <LanguageSwitcher currentLocale={locale} />
         </div>
       </div>
     </div>

@@ -1,0 +1,94 @@
+{
+    "navbar": {
+      "company": "Unternehmen",
+      "about_us": "Über uns",
+      "about_us_description": "Erfahren Sie mehr über das Team",
+      "career": "Karriere",
+      "career_description": "Werden Sie einer von uns",
+      "culture": "Kultur",
+      "culture_description": "Erfahren Sie, was uns ausmacht",
+      "press": "Presse",
+      "press_description": "Alles, was Sie wissen müssen",
+      "features": "Funktionen",
+      "contact": "Kontakt",
+      "how_it_works": "So funktioniert's",
+      "join_waitlist": "Warteliste beitreten"
+    },
+    "hero": {
+      "title_part1": "Entfesseln Sie Ihr",
+      "title_part2": "Musik",
+      "title_part3": "Potenzial",
+      "description": "Ihr Tor zur Musikwelt: Verbinden Sie sich mit Top-Gesangstrainer:innen, Songwriter:innen, Produzent:innen und Studios. Lernen, zusammenarbeiten, wachsen — und Ihre Leidenschaft in echte Wirkung verwandeln.",
+      "join_waitlist": "Warteliste beitreten"
+    },
+    "feature": {
+      "trusted_by_artists": "VERTRAUEN VON KÜNSTLERN WELTWEIT",
+      "elevate_your_music_journey": "Heben Sie Ihre Musikreise auf ein neues Level",
+      "elevate_your_music_journey_description": "Music Minds bietet alle Werkzeuge, die Sie benötigen, um Ihre musikalischen Talente mit fachkundiger Anleitung zu entwickeln.",
+      "expert_service_providers": "Experten-Dienstleister",
+      "expert_service_providers_description": "Verbinden Sie sich mit professionellen Dienstleistern aus verschiedenen Musikbereichen, von Songwritern bis Produzenten, für personalisierte Sitzungen, die auf Sie zugeschnitten sind.",
+      "easy_scheduling": "Einfache Terminplanung",
+      "easy_scheduling_description": "Buchen und verwalten Sie Ihre Sitzungen mit Dienstleistern über unser intuitives Planungssystem. Keine zeitraubenden E-Mail-Ketten mehr.",
+      "progress_tracking": "Fortschrittsverfolgung",
+      "progress_tracking_description": "Zeichnen Sie Ihre Sitzungen auf, verfolgen Sie Ihren Fortschritt und teilen Sie Ihre Verbesserungen mit Freunden, Coaches und der Community.",
+      "community_support": "Community-Unterstützung",
+      "community_support_description": "Verbinden Sie sich mit anderen Musiker:innen, teilen Sie Erfahrungen und lassen Sie sich von einer unterstützenden Gemeinschaft inspirieren."
+    },
+    "feature_left": {
+      "find_perfect_provider": "Finden Sie den perfekten Dienstleister",
+      "find_perfect_provider_description": "Durchsuchen Sie Profile von Top-Musiktrainern, lesen Sie Bewertungen anderer Schüler:innen und finden Sie die perfekte Übereinstimmung für Ihre Musikreise.",
+      "filter_by_genre": "Nach Musikgenre und Expertise filtern",
+      "read_reviews": "Verifizierte Kundenbewertungen lesen",
+      "message_providers": "Vor der Buchung mit Dienstleistern kommunizieren"
+    },
+    "feature_action": {
+      "how_music_minds_works": "So funktioniert Music Minds",
+      "how_music_minds_works_description": "Ein einfacher Prozess, um Sie mit der musikalischen Anleitung zu verbinden, die Sie benötigen.",
+      "create_profile": "Erstellen Sie Ihr Profil",
+      "create_profile_description": "Registrieren Sie sich und erstellen Sie Ihr Musikprofil mit Ihren Fähigkeiten, Zielen und Vorlieben.",
+      "find_provider": "Finden Sie Ihren Dienstleister",
+      "find_provider_description": "Durchsuchen Sie verifizierte Trainer:innen und Musiker:innen, filtern Sie nach Genre, Standort und Expertise.",
+      "book_sessions": "Sitzungen buchen",
+      "book_sessions_description": "Planen Sie Sitzungen mit Ihren bevorzugten Dienstleistern zu Zeiten, die Ihnen passen.",
+      "grow_share": "Wachsen & Teilen",
+      "grow_share_description": "Verfolgen Sie Ihren Fortschritt, teilen Sie Aufnahmen und verbinden Sie sich mit der Musik-Community.",
+      "get_it_on": "Jetzt herunterladen",
+      "app_store": "App Store",
+      "play_store": "Play Store"
+    },
+    "feature_right": {
+      "book_sessions": "Sitzungen mit Dienstleistern in Minuten buchen",
+      "book_sessions_description": "Planen Sie Sitzungen mit Top-Trainer:innen und Dienstleistern weltweit. Erhalten Sie personalisierte Anleitung, um Ihre Technik zu verbessern, Ihren Bereich zu erweitern und Ihren einzigartigen Stil zu entwickeln.",
+      "in_person_virtual": "Persönliche und virtuelle Sitzungen verfügbar",
+      "flexible_scheduling": "Flexible Terminplanung, die zu Ihrem Alltag passt",
+      "record_sessions": "Sitzungen für spätere Überprüfung und Übung aufzeichnen",
+      "personalized_feedback": "Personalisierte Rückmeldungen und Übungen erhalten"
+    },
+    "cta": {
+      "ready_to_start": "Bereit, Ihre Musikreise zu beginnen?",
+      "ready_to_start_description": "Treten Sie Music Minds heute bei, verbinden Sie sich mit Top-Musiktrainer:innen, verfolgen Sie Ihren Fortschritt und werden Sie die Musiker:in, die Sie immer sein wollten.",
+      "download_app": "App herunterladen"
+    },
+    "footer": {
+      "description": "Verbindung von aufstrebenden Musiker:innen mit Weltklasse-Trainer:innen für eine transformative Musikreise.",
+      "company": "Unternehmen",
+      "about_us": "Über uns",
+      "contact": "Kontakt",
+      "careers": "Karriere",
+      "blog": "Blog",
+      "resources": "Ressourcen",
+      "help_center": "Hilfezentrum",
+      "community": "Gemeinschaft",
+      "tutorials": "Tutorials",
+      "events": "Veranstaltungen",
+      "legal": "Rechtliches",
+      "privacy_policy": "Datenschutzrichtlinie",
+      "terms_conditions": "Allgemeine Geschäftsbedingungen",
+      "code_of_conduct": "Verhaltenskodex",
+      "compliance": "Compliance",
+      "address": "Reichsstr. 99, D-14052 Berlin",
+      "email": "help@musicminds.com",
+      "phone": "+234 709-679 0893",
+      "copyright": "© 2025 Music Minds. Alle Rechte vorbehalten"
+    }
+  }

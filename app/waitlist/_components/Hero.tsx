@@ -280,7 +280,7 @@ const Hero = () => {
     <>
       <Toaster richColors position="top-right" />
       <Section
-        className="w-full bg-[url('/bg4.png')] bg-no-repeat bg-cover px-4 pt-4 sm:px-6 sm:pt-6 md:px-8 md:pt-8 pb-0"
+        className="w-full bg-[url('/bg4.png')] dark:bg-[url('/darkbg.png')] bg-no-repeat bg-cover px-4 pt-4 sm:px-6 sm:pt-6 md:px-8 md:pt-8 pb-0"
         data-aos="fade-in"
       >
         <Container className="flex items-center justify-center gap-6 md:grid-cols-2 md:gap-12 pb-0 mt-9">

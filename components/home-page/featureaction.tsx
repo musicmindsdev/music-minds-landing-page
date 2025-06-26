@@ -1,10 +1,8 @@
-"use client"
+"use client";
 
 import React, { JSX, useState, useEffect, useRef } from "react";
-
 import { Section, Container } from "@/components/craft";
 import Balancer from "react-wrap-balancer";
-
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { FaApple } from "react-icons/fa";
@@ -16,6 +14,7 @@ import Iphone3 from "@/public/iphone3.png";
 import Iphone4 from "@/public/iphone4.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useTranslation } from "react-i18next";
 
 type FeatureText = {
   icon: JSX.Element;
@@ -24,41 +23,56 @@ type FeatureText = {
   img: JSX.Element;
 };
 
-const featureText: FeatureText[] = [
-  {
-    icon: <p className="text-2xl font-bold bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent">01</p>,
-    title: "Create Your Profile",
-    description:
-      "Sign up and create your music profile with your skills, goals, and preferences.",
-    img: <Image src={Iphone1} className="w-42 h-45" alt="" />,
-  },
-  {
-    icon: <p className="text-2xl font-bold bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent">02</p>,
-    title: "Find Your Service Provider",
-    description:
-      "Browse through verified coaches and musicians, filter by genre, location, and expertise.",
-    img: <Image src={Iphone2} className="w-42 h-45" alt="" />,
-  },
-  {
-    icon: <p className="text-2xl font-bold bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent">03</p>,
-    title: "Book Sessions",
-    description:
-      "Schedule sessions with your favorite providers at times that work for you.",
-    img: <Image src={Iphone3} className="w-42 h-45" alt="" />,
-  },
-  {
-    icon: <p className="text-2xl font-bold bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent">04</p>,
-    title: "Grow & Share",
-    description:
-      "Track your progress, share recordings, and connect with the music community.",
-    img: <Image src={Iphone4} className="w-42 h-45" alt="" />,
-  },
-];
+const FeatureAction  =  ({ locale }: { locale: string }) => {
+  const { t } = useTranslation("common");
+  console.log(`FeatureAction locale: ${locale}, t is function: ${typeof t === "function"}`);
 
-const FeatureAction = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const [, setProgress] = useState(0);
+
+  const featureText: FeatureText[] = [
+    {
+      icon: (
+        <p className="text-2xl font-bold bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent">
+          01
+        </p>
+      ),
+      title: t("feature_action.create_profile"),
+      description: t("feature_action.create_profile_description"),
+      img: <Image src={Iphone1} className="w-42 h-45" alt="" />,
+    },
+    {
+      icon: (
+        <p className="text-2xl font-bold bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent">
+          02
+        </p>
+      ),
+      title: t("feature_action.find_provider"),
+      description: t("feature_action.find_provider_description"),
+      img: <Image src={Iphone2} className="w-42 h-45" alt="" />,
+    },
+    {
+      icon: (
+        <p className="text-2xl font-bold bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent">
+          03
+        </p>
+      ),
+      title: t("feature_action.book_sessions"),
+      description: t("feature_action.book_sessions_description"),
+      img: <Image src={Iphone3} className="w-42 h-45" alt="" />,
+    },
+    {
+      icon: (
+        <p className="text-2xl font-bold bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent">
+          04
+        </p>
+      ),
+      title: t("feature_action.grow_share"),
+      description: t("feature_action.grow_share_description"),
+      img: <Image src={Iphone4} className="w-42 h-45" alt="" />,
+    },
+  ];
 
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
@@ -101,24 +115,33 @@ const FeatureAction = () => {
     AOS.init({
       duration: 1000,
       once: true,
-      offset: 50, 
+      offset: 50,
     });
-    AOS.refresh(); 
+    AOS.refresh();
   }, []);
+
+  if (typeof t !== "function") {
+    console.warn(`Hero: t is not a function for locale ${locale}`);
+    return null;
+  }
 
   return (
     <Section className="" data-aos="fade-in">
       <Container className="not-prose">
         <div className="flex flex-col gap-6">
-          <h3 className="text-4xl bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent font-bold text-center" data-aos="fade-up" data-aos-delay="100">
-            <Balancer>
-              How Music Minds Works
-            </Balancer>
+          <h3
+            className="text-4xl bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent font-bold text-center"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <Balancer>{t("feature_action.how_music_minds_works")}</Balancer>
           </h3>
-          <h4 className="text-sm font-light opacity-70 text-center" data-aos="fade-up" data-aos-delay="200">
-            <Balancer>
-              A simple process to connect you with the Music guidance you need.
-            </Balancer>
+          <h4
+            className="text-sm font-light opacity-70 text-center"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <Balancer>{t("feature_action.how_music_minds_works_description")}</Balancer>
           </h4>
 
           <div
@@ -139,22 +162,34 @@ const FeatureAction = () => {
                 data-aos-delay={`${300 + index * 100}`}
               >
                 {icon}
-                <h4 className="text-2lg  text-black font-semibold">{title}</h4>
+                <h4 className="text-2lg text-black font-semibold">{title}</h4>
                 <p className="opacity-75 text-sm line-clamp-2 text-black">{description}</p>
                 <div className="flex justify-end pb-0">{img}</div>
               </div>
             ))}
           </div>
-         
-          <div className="w-full flex flex-col md:flex-row md:justify-center gap-4" data-aos="fade-up" data-aos-delay="800">
-            <Link href="/">
+
+          <div
+            className="w-full flex flex-col md:flex-row md:justify-center gap-4"
+            data-aos="fade-up"
+            data-aos-delay="800"
+          >
+            <Link href={`/${locale}`}>
               <Button className="w-full h-[50px] p-3 text-white">
-                <FaApple /> | <div className="flex-col items-start pr-3"><p className="text-xs">Get it on </p><h4>App Store</h4></div>
+                <FaApple /> |{" "}
+                <div className="flex-col items-start pr-3">
+                  <p className="text-xs">{t("feature_action.get_it_on")}</p>
+                  <h4>{t("feature_action.app_store")}</h4>
+                </div>
               </Button>
             </Link>
-            <Link href="/">
+            <Link href={`/${locale}`}>
               <Button className="w-full h-[50px] p-3 text-white">
-                <IoLogoGooglePlaystore /> | <div className="flex-col items-start pr-3"><p className="text-xs text-white">Get it on </p><h4>Play Store</h4></div>
+                <IoLogoGooglePlaystore /> |{" "}
+                <div className="flex-col items-start pr-3">
+                  <p className="text-xs text-white">{t("feature_action.get_it_on")}</p>
+                  <h4>{t("feature_action.play_store")}</h4>
+                </div>
               </Button>
             </Link>
           </div>

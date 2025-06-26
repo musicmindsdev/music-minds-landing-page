@@ -60,7 +60,7 @@ const Hero = () => {
 
   return (
     <Section
-      className="w-full bg-[url('/bg1.png')] bg-no-repeat bg-cover p-4 sm:p-6 md:p-8 pb-0"
+      className="w-full bg-[url('/bg1.png')]  dark:bg-[url('/darkbg1.png')] bg-no-repeat bg-cover p-4 sm:p-6 md:p-8 pb-0"
       data-aos="fade-in"
     >
       <Container className="flex items-center justify-center gap-6 md:grid-cols-2 md:gap-12 pb-0 mt-9">
