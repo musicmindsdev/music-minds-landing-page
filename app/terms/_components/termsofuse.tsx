@@ -2,23 +2,28 @@
 
 import { useEffect, useState, useRef } from "react";
 import { Section, Container } from "@/components/craft";
+import { useTranslation } from "react-i18next";
 
-const TermsOfUse = () => {
+export default function TermsOfUse({ locale }: { locale: string }) {
+  const { t } = useTranslation("common");
   const contentRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
 
+  console.log(`TermsOfUse: locale=${locale}, t is function: ${typeof t === "function"}`);
+
+
   const tableOfContents = [
-    { id: "introduction", title: "Scope of Application" },
-    { id: "definitions", title: "Role of Music Minds" },
-    { id: "User", title: "User Accounts & Eligibility" },
-    { id: "Bookings", title: "Bookings & Payments" },
-    { id: "Subscription", title: "Subscription Models" },
-    { id: "ratings", title: "Ratings, Reviews & Content" },
-    { id: "limitation", title: "Limitation of Liability" },
-    { id: "platform", title: "Platform Availability & Updates" },
-    { id: "termination", title: "Termination & Deletion" },
-    { id: "law", title: "Applicable Law & Jurisdiction" },
-    { id: "contact", title: "Contact" },
+    { id: "introduction", title: t("terms.table_of_contents.introduction") },
+    { id: "definitions", title: t("terms.table_of_contents.definitions") },
+    { id: "User", title: t("terms.table_of_contents.User") },
+    { id: "Bookings", title: t("terms.table_of_contents.Bookings") },
+    { id: "Subscription", title: t("terms.table_of_contents.Subscription") },
+    { id: "ratings", title: t("terms.table_of_contents.ratings") },
+    { id: "limitation", title: t("terms.table_of_contents.limitation") },
+    { id: "platform", title: t("terms.table_of_contents.platform") },
+    { id: "termination", title: t("terms.table_of_contents.termination") },
+    { id: "law", title: t("terms.table_of_contents.law") },
+    { id: "contact", title: t("terms.table_of_contents.contact") },
   ];
 
   useEffect(() => {
@@ -27,34 +32,44 @@ const TermsOfUse = () => {
         const { scrollTop, scrollHeight, clientHeight } = contentRef.current;
         const progress = (scrollTop / (scrollHeight - clientHeight)) * 100;
         setScrollProgress(Math.min(Math.max(progress, 0), 100));
+        console.log(`TermsOfUse: Scroll progress: ${progress.toFixed(2)}%`);
       }
     };
 
     const contentElement = contentRef.current;
     if (contentElement) {
       contentElement.addEventListener("scroll", handleScroll);
-      return () => contentElement.removeEventListener("scroll", handleScroll);
+      console.log("TermsOfUse: Scroll event listener added");
+      return () => {
+        contentElement.removeEventListener("scroll", handleScroll);
+        console.log("TermsOfUse: Scroll event listener removed");
+      };
     }
   }, []);
 
+  if (typeof t !== "function") {
+    console.warn(`TermsOfUse: t is not a function for locale ${locale}`);
+    return null;
+  }
+
   return (
-    <Section className="min-h-screen ">
+    <Section className="min-h-screen">
       <Container className="p-4 flex flex-col md:flex-row gap-6">
         {/* Sidebar with Progress Bar and Table of Contents */}
         <div className="w-full md:w-1/4 flex">
           {/* Progress Bar */}
-          <div className="w-2  rounded-r-full mr-2 sticky top-0 h-full">
+          <div className="w-2 rounded-r-full mr-2 sticky top-0 h-full">
             <div
               className="bg-[#5243FE] rounded-r-full transition-all duration-300"
               style={{ height: `${scrollProgress}%`, width: "100%" }}
             />
           </div>
           <div
-            className="w-full  p-4 rounded-lg overflow-y-auto"
-            style={{ maxHeight: "calc(100vh - 100px)" }} // Adjust based on header/footer height
+            className="w-full p-4 rounded-lg overflow-y-auto"
+            style={{ maxHeight: "calc(100vh - 100px)" }}
           >
-            <h2 className="text-lg font-semibold text-[#5243FE] mb-4">Terms & Conditions </h2>
-            <nav className="space-y-2  text-gray-600">
+            <h2 className="text-lg font-semibold text-[#5243FE] mb-4">{t("terms.title")}</h2>
+            <nav className="space-y-2 text-gray-600">
               {tableOfContents.map((item) => (
                 <a
                   key={item.id}
@@ -65,7 +80,6 @@ const TermsOfUse = () => {
                 </a>
               ))}
             </nav>
-
           </div>
         </div>
 
@@ -75,119 +89,151 @@ const TermsOfUse = () => {
           className="w-full md:w-3/4 bg-[#FBFAFF] dark:bg-[#1E1B2B] p-6 rounded-lg shadow overflow-y-auto"
           style={{ maxHeight: "calc(100vh - 100px)" }}
         >
-          <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4 text-center">Terms & Conditions </h1>
+          <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4 text-center">
+            {t("terms.title")}
+          </h1>
           <p className="text-sm text-[#A79FFF] mb-6 text-center">
-            Last Updated: May 12, 2025 | Effective Date: May 12, 2025
+            {t("terms.last_updated", { date: "May 12, 2025" })}
           </p>
 
           <section id="introduction" className="mb-6">
-            <h2 className="text-xl font-semibold  mb-2">1. Scope of Application</h2>
+            <h2 className="text-xl font-semibold mb-2">{t("terms.introduction.title")}</h2>
             <p className="text-gray-700 dark:text-gray-300">
-              These Terms and Conditions govern the use of the Music Minds platform (&apos;the Platform&apos;) operated by [Your Company Name], including the website, mobile application, and all related services. By registering or using the Platform, users accept these Terms in full.
-              The Platform connects individuals seeking Music services (&apos;End Users&apos;) with service providers such as vocal coaches, producers, musicians, and studios (&apos;Providers&apos;).
-
+              {t("terms.introduction.content", { company: "Music Minds GmbH" })}
             </p>
           </section>
 
           <section id="definitions" className="mb-6">
-            <h2 className="text-xl font-semibold  mb-2">2. Role of Music Minds</h2>
+            <h2 className="text-xl font-semibold mb-2">{t("terms.definitions.title")}</h2>
             <p className="text-gray-700 dark:text-gray-300">
-              Music Minds is a <span className="font-semibold">neutral digital intermediary</span>. We <span className="font-semibold">do not provide Music services ourselves</span>, and we <span className="font-semibold">are not a contracting party</span> to agreements made between End Users and Providers.
+              {t("terms.definitions.paragraph1")}
+              <span className="font-semibold">{t("terms.definitions.neutral_intermediary")}</span>.
+              {t("terms.definitions.paragraph2")}
+              <span className="font-semibold">{t("terms.definitions.no_services")}</span>,
+              {t("terms.definitions.paragraph3")}
+              <span className="font-semibold">{t("terms.definitions.no_contracting_party")}</span>.
             </p>
-            <p className="text-gray-700 dark:text-gray-300">Music Minds is <span className="font-semibold">not liable</span> for:</p>
+            <p className="text-gray-700 dark:text-gray-300">{t("terms.definitions.not_liable")}</p>
             <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
-              <li>The quality, execution, or delivery of services by Providers</li>
-              <li>Any damages, financial losses, or disputes between users</li>
-              <li>Cancellations, delays, or communication issues between parties</li>
+              <li>{t("terms.definitions.liability_list.quality")}</li>
+              <li>{t("terms.definitions.liability_list.damages")}</li>
+              <li>{t("terms.definitions.liability_list.cancellations")}</li>
             </ul>
-            <p className="text-gray-700 dark:text-gray-300">We offer <span className="font-semibold">technical infrastructure only</span>. Any support offered is purely voluntary and <span className="font-semibold">without legal obligation</span>.</p>
+            <p className="text-gray-700 dark:text-gray-300">
+              {t("terms.definitions.paragraph4")}
+              <span className="font-semibold">{t("terms.definitions.technical_infrastructure")}</span>.
+              {t("terms.definitions.paragraph5")}
+              <span className="font-semibold">{t("terms.definitions.no_legal_obligation")}</span>.
+            </p>
           </section>
+
           <section id="User" className="mb-6">
-            <h2 className="text-xl font-semibold  mb-2">3. User Accounts & Eligibility</h2>
+            <h2 className="text-xl font-semibold mb-2">{t("terms.User.title")}</h2>
             <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
-              <li>Only individuals aged 16 or older may register.</li>
-              <li>Users are responsible for ensuring that all information provided is accurate and up to date.</li>
-              <li>Music Minds may suspend or delete accounts in case of abuse, fraud, or breach of terms.</li>
+              <li>{t("terms.User.list.age")}</li>
+              <li>{t("terms.User.list.accurate_info")}</li>
+              <li>{t("terms.User.list.suspension")}</li>
             </ul>
           </section>
+
           <section id="Bookings" className="mb-6">
-            <h2 className="text-xl font-semibold  mb-2">4. Bookings & Payments</h2>
+            <h2 className="text-xl font-semibold mb-2">{t("terms.Bookings.title")}</h2>
             <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
-              <li>Bookings are made directly between End Users and Providers.</li>
-              <li>Payment is processed through third-party services integrated into the Platform.</li>
-              <li>Music Minds charges a <span className="font-semibold">10%</span> service fee per successful booking.</li>
-              <li>We reserve the right to adjust fees with prior notice.</li>
+              <li>{t("terms.Bookings.list.direct_bookings")}</li>
+              <li>{t("terms.Bookings.list.payment_processing")}</li>
+              <li>
+                {t("terms.Bookings.list.service_fee", { fee: "10%" })}
+              </li>
+              <li>{t("terms.Bookings.list.fee_adjustment")}</li>
             </ul>
-            <p>Providers are solely responsible for:</p>
+            <p>{t("terms.Bookings.providers_responsible")}</p>
             <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
-              <li>Service quality</li>
-              <li>Fulfillment of agreed sessions</li>
-              <li>Legal obligations such as tax reporting or invoicing</li>
+              <li>{t("terms.Bookings.providers_list.quality")}</li>
+              <li>{t("terms.Bookings.providers_list.fulfillment")}</li>
+              <li>{t("terms.Bookings.providers_list.legal_obligations")}</li>
             </ul>
-            <p>Music Minds is not liable for missed sessions, non-performance, or dissatisfaction unless caused by technical failures of the Platform.</p>
+            <p>{t("terms.Bookings.liability")}</p>
           </section>
+
           <section id="Subscription" className="mb-6">
-            <h2 className="text-xl font-semibold  mb-2">5. Subscription Models</h2>
+            <h2 className="text-xl font-semibold mb-2">{t("terms.Subscription.title")}</h2>
             <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
-              <li>Users can subscribe to premium features (e.g., ad-free use, loyalty rewards, messaging).</li>
-              <li>Providers may choose a premium plan to unlock additional visibility and tools.</li>
-              <li>Subscriptions renew monthly unless cancelled in advance.</li>
+              <li>{t("terms.Subscription.list.premium_features")}</li>
+              <li>{t("terms.Subscription.list.provider_plan")}</li>
+              <li>{t("terms.Subscription.list.renewal")}</li>
             </ul>
-            <p>Refunds are generally excluded unless due to <span className="font-semibold">technical issues caused by Music Minds.</span> Any <span className="font-semibold">goodwill refunds</span> are issued <span>without legal entitlement.</span></p>
-          </section>
-          <section id="ratings" className="mb-6">
-            <h2 className="text-xl font-semibold  mb-2">6. Ratings, Reviews & Content</h2>
-            <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
-              <li>Users may rate each other after completed bookings.</li>
-              <li>Offensive, fake, or defamatory content is prohibited.</li>
-              <li>Music Minds reserves the right to moderate or delete content without justification.</li>
-            </ul>
-            <p>By uploading content (e.g., audio, images), users grant Music Minds a <span className="font-semibold">non-exclusive, worldwide license</span> to display it on the Platform for promotional and functional purposes.</p>
-          </section>
-          <section id="limitation" className="mb-6">
-            <h2 className="text-xl font-semibold  mb-2">7. Limitation of Liability</h2>
-            <p>To the fullest extent permitted by law, Music Minds shall not be liable for:</p>
-            <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
-              <li>Indirect or consequential damages</li>
-              <li>Personal, legal, or financial disputes between users</li>
-              <li>Data loss or third-party service failures (e.g., payment gateways)</li>
-            </ul>
-            <p>Our <span>total liability</span>, if any, is limited to <span>the amount paid by the user in the last 3 months.</span></p>
-          </section>
-          <section id="platform" className="mb-6">
-            <h2 className="text-xl font-semibold  mb-2">8. Platform Availability & Updates</h2>
-            <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
-              <li>We aim to ensure 99% uptime but cannot guarantee uninterrupted service.</li>
-              <li>Maintenance, updates, or external factors may cause outages.</li>
-              <li>We reserve the right to modify, update, or discontinue features without prior notice.</li>
-            </ul>
-          </section>
-          <section id="termination" className="mb-6">
-            <h2 className="text-xl font-semibold  mb-2">9. Termination & Deletion</h2>
-            <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
-              <li>Users may delete their account at any time.</li>
-              <li>Music Minds may terminate access in cases of fraud, abuse, or legal violations.</li>
-              <li>Data retention follows GDPR-compliant standards.</li>
-            </ul>
-          </section>
-          <section id="law" className="mb-6">
-            <h2 className="text-xl font-semibold  mb-2">10. Applicable Law & Jurisdiction</h2>
-            <p>These Terms are governed by the laws of the Federal Republic of Germany.
-              Place of jurisdiction for all disputes is [Insert City, e.g., Berlin], Germany.
+            <p>
+              {t("terms.Subscription.refunds")}
+              <span className="font-semibold">{t("terms.Subscription.technical_issues")}</span>
+              {t("terms.Subscription.goodwill_refunds")}
+              <span className="font-semibold">{t("terms.Subscription.no_entitlement")}</span>
             </p>
           </section>
+
+          <section id="ratings" className="mb-6">
+            <h2 className="text-xl font-semibold mb-2">{t("terms.ratings.title")}</h2>
+            <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
+              <li>{t("terms.ratings.list.ratings")}</li>
+              <li>{t("terms.ratings.list.content_policy")}</li>
+              <li>{t("terms.ratings.list.moderation")}</li>
+            </ul>
+            <p>
+              {t("terms.ratings.content_license")}
+              <span className="font-semibold">{t("terms.ratings.non_exclusive_license")}</span>
+              {t("terms.ratings.content_license_end")}
+            </p>
+          </section>
+
+          <section id="limitation" className="mb-6">
+            <h2 className="text-xl font-semibold mb-2">{t("terms.limitation.title")}</h2>
+            <p>{t("terms.limitation.intro")}</p>
+            <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
+              <li>{t("terms.limitation.list.indirect_damages")}</li>
+              <li>{t("terms.limitation.list.disputes")}</li>
+              <li>{t("terms.limitation.list.data_loss")}</li>
+            </ul>
+            <p>
+              {t("terms.limitation.total_liability")}
+              <span>{t("terms.limitation.liability_amount")}</span>
+            </p>
+          </section>
+
+          <section id="platform" className="mb-6">
+            <h2 className="text-xl font-semibold mb-2">{t("terms.platform.title")}</h2>
+            <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
+              <li>{t("terms.platform.list.uptime")}</li>
+              <li>{t("terms.platform.list.outages")}</li>
+              <li>{t("terms.platform.list.modifications")}</li>
+            </ul>
+          </section>
+
+          <section id="termination" className="mb-6">
+            <h2 className="text-xl font-semibold mb-2">{t("terms.termination.title")}</h2>
+            <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
+              <li>{t("terms.termination.list.delete_account")}</li>
+              <li>{t("terms.termination.list.termination")}</li>
+              <li>{t("terms.termination.list.data_retention")}</li>
+            </ul>
+          </section>
+
+          <section id="law" className="mb-6">
+            <h2 className="text-xl font-semibold mb-2">{t("terms.law.title")}</h2>
+            <p>{t("terms.law.content", { city: "Berlin" })}</p>
+          </section>
+
           <section id="contact" className="mb-6">
-            <h2 className="text-xl font-semibold  mb-2">11. Contact</h2>
-            <p>Music Minds / [Your Company Legal Name]
-              [Address]
-              [Email]
-              [Business Registration Info]
+            <h2 className="text-xl font-semibold mb-2">{t("terms.contact.title")}</h2>
+            <p>
+              {t("terms.contact.content", {
+                company: "Music Minds GmbH",
+                address: "Reichsstr. 99, D-14052 Berlin",
+                email: "help@musicminds.com",
+                registration: "HRB 123456 B",
+              })}
             </p>
           </section>
         </div>
       </Container>
     </Section>
   );
-};
-
-export default TermsOfUse;
+}

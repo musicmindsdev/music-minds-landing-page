@@ -2,25 +2,29 @@
 
 import { useEffect, useState, useRef } from "react";
 import { Section, Container } from "@/components/craft";
+import { useTranslation } from "react-i18next";
 
-const PrivacyPolicy = () => {
+export default function PrivacyPolicy({ locale }: { locale: string }) {
+  const { t } = useTranslation("common");
   const contentRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
 
+  console.log(`PrivacyPolicy: locale=${locale}, t is function: ${typeof t === "function"}`);
+
   const tableOfContents = [
-    { id: "Overview", title: "Overview" },
-    { id: "data", title: "Data Controller" },
-    { id: "what", title: "Information We Collect" },
-    { id: "how", title: "How We Use Your Data" },
-    { id: "legal", title: "Legal Basis for Processing" },
-    { id: "data-sharing", title: "Data Sharing" },
-    { id: "storage", title: "Data Storage & Security" },
-    { id: "right", title: " Your Rights" },
-    { id: "cook", title: "Cookies" },
-    { id: "third", title: "Third-Party Links" },
-    { id: "childrens-privacy", title: "Children's Privacy" },
-    { id: "changes", title: "Changes to This Policy" },
-    { id: "contact", title: "Contact" },
+    { id: "Overview", title: t("privacy.table_of_contents.Overview") },
+    { id: "data", title: t("privacy.table_of_contents.data") },
+    { id: "what", title: t("privacy.table_of_contents.what") },
+    { id: "how", title: t("privacy.table_of_contents.how") },
+    { id: "legal", title: t("privacy.table_of_contents.legal") },
+    { id: "data-sharing", title: t("privacy.table_of_contents.data_sharing") },
+    { id: "storage", title: t("privacy.table_of_contents.storage") },
+    { id: "right", title: t("privacy.table_of_contents.right") },
+    { id: "cook", title: t("privacy.table_of_contents.cook") },
+    { id: "third", title: t("privacy.table_of_contents.third") },
+    { id: "childrens-privacy", title: t("privacy.table_of_contents.childrens_privacy") },
+    { id: "changes", title: t("privacy.table_of_contents.changes") },
+    { id: "contact", title: t("privacy.table_of_contents.contact") },
   ];
 
   useEffect(() => {
@@ -29,33 +33,43 @@ const PrivacyPolicy = () => {
         const { scrollTop, scrollHeight, clientHeight } = contentRef.current;
         const progress = (scrollTop / (scrollHeight - clientHeight)) * 100;
         setScrollProgress(Math.min(Math.max(progress, 0), 100));
+        console.log(`PrivacyPolicy: Scroll progress: ${progress.toFixed(2)}%`);
       }
     };
 
     const contentElement = contentRef.current;
     if (contentElement) {
       contentElement.addEventListener("scroll", handleScroll);
-      return () => contentElement.removeEventListener("scroll", handleScroll);
+      console.log("PrivacyPolicy: Scroll event listener added");
+      return () => {
+        contentElement.removeEventListener("scroll", handleScroll);
+        console.log("PrivacyPolicy: Scroll event listener removed");
+      };
     }
   }, []);
 
+  if (typeof t !== "function") {
+    console.warn(`PrivacyPolicy: t is not a function for locale ${locale}`);
+    return null;
+  }
+
   return (
-    <Section className="min-h-screen ">
+    <Section className="min-h-screen">
       <Container className="p-4 flex flex-col md:flex-row gap-6">
         {/* Sidebar with Progress Bar and Table of Contents */}
         <div className="w-full md:w-1/4 flex">
           {/* Progress Bar */}
-          <div className="w-2  rounded-r-full mr-2 sticky top-0 h-full">
+          <div className="w-2 rounded-r-full mr-2 sticky top-0 h-full">
             <div
               className="bg-[#5243FE] rounded-r-full transition-all duration-300"
               style={{ height: `${scrollProgress}%`, width: "100%" }}
             />
           </div>
           <div
-            className="w-full  p-4 rounded-lg overflow-y-auto"
-            style={{ maxHeight: "calc(100vh - 100px)" }} // Adjust based on header/footer height
+            className="w-full p-4 rounded-lg overflow-y-auto"
+            style={{ maxHeight: "calc(100vh - 100px)" }}
           >
-            <h2 className="text-lg font-semibold text-[#5243FE] mb-4">PRIVACY POLICY</h2>
+            <h2 className="text-lg font-semibold text-[#5243FE] mb-4">{t("privacy.title")}</h2>
             <nav className="space-y-2 text-gray-600">
               {tableOfContents.map((item) => (
                 <a
@@ -67,7 +81,6 @@ const PrivacyPolicy = () => {
                 </a>
               ))}
             </nav>
-
           </div>
         </div>
 
@@ -77,167 +90,204 @@ const PrivacyPolicy = () => {
           className="w-full md:w-3/4 bg-[#FBFAFF] dark:bg-[#1E1B2B] p-6 rounded-lg shadow overflow-y-auto"
           style={{ maxHeight: "calc(100vh - 100px)" }}
         >
-          <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4 text-center">Privacy Policy</h1>
+          <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4 text-center">
+            {t("privacy.title")}
+          </h1>
           <p className="text-sm text-[#A79FFF] mb-6 text-center">
-            Last Updated: May 12, 2025 | Effective Date: May 12, 2025
+            {t("privacy.last_updated", { date: "May 12, 2025" })}
           </p>
 
           <section id="Overview" className="mb-6">
-            <h2 className="text-xl font-semibold  mb-2">1. Overview</h2>
+            <h2 className="text-xl font-semibold mb-2">{t("privacy.Overview.title")}</h2>
             <p className="text-gray-700 dark:text-gray-300">
-              This Privacy Policy describes how <span className="font-semibold">Music Minds</span> (&apos;we,&apos; &apos;us,&apos; &apos;our&apos;) collects, uses, stores, and protects your personal information when you use our platform, including the website, mobile application, and related services (&apos;the Platform&apos;).
-              We are committed to protecting your data in accordance with the <span className="font-semibold">EU General Data Protection Regulation (GDPR)</span> and other applicable data protection laws.
+              {t("privacy.Overview.content", { company: "Music Minds" })}
+              <span className="font-semibold">{t("privacy.Overview.gdpr")}</span>
+              {t("privacy.Overview.content_end")}
             </p>
           </section>
 
           <section id="data" className="mb-6">
-            <h2 className="text-xl font-semibold  mb-2">2. Data Controller</h2>
+            <h2 className="text-xl font-semibold mb-2">{t("privacy.data.title")}</h2>
             <p className="text-gray-700 dark:text-gray-300">
-              The data controller for all personal information processed through this platform is:
-              <span className="font-semibold">[Your Company Name]</span>
-              [Legal Address]
-              [Email Address]
-              [Business Registration Number]
+              {t("privacy.data.content", {
+                company: "Music Minds GmbH",
+                address: "Reichsstr. 99, D-14052 Berlin",
+                email: "privacy@musicminds.com",
+                registration: "HRB 123456 B",
+              })}
             </p>
           </section>
 
           <section id="what" className="mb-6">
-            <h2 className="text-xl font-semibold  mb-2">3. What Data We Collect</h2>
-            <p>We may collect and process the following types of data:</p>
-            <p className="font-semibold">a. Account Information</p>
+            <h2 className="text-xl font-semibold mb-2">{t("privacy.what.title")}</h2>
+            <p>{t("privacy.what.intro")}</p>
+            <p className="font-semibold">{t("privacy.what.account_info.title")}</p>
             <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
-              <li>Name, email address, phone number</li>
-              <li>Username, profile photo, biography</li>
-              <li>Location (city or country)</li>
+              <li>{t("privacy.what.account_info.list.name")}</li>
+              <li>{t("privacy.what.account_info.list.profile")}</li>
+              <li>{t("privacy.what.account_info.list.location")}</li>
             </ul>
-            <p className="font-semibold">b. Booking & Payment Data</p>
+            <p className="font-semibold">{t("privacy.what.booking_data.title")}</p>
             <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
-              <li>Session history</li>
-              <li>Payment status (via payment processor)</li>
-              <li>Service category and transaction metadata</li>
+              <li>{t("privacy.what.booking_data.list.history")}</li>
+              <li>{t("privacy.what.booking_data.list.payment")}</li>
+              <li>{t("privacy.what.booking_data.list.metadata")}</li>
             </ul>
-            <p className="font-semibold">c. Usage & Device Data</p>
+            <p className="font-semibold">{t("privacy.what.usage_data.title")}</p>
             <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
-              <li>App usage statistics</li>
-              <li>IP address, device type, browser</li>
-              <li>Language settings, time zone</li>
+              <li>{t("privacy.what.usage_data.list.stats")}</li>
+              <li>{t("privacy.what.usage_data.list.device")}</li>
+              <li>{t("privacy.what.usage_data.list.settings")}</li>
             </ul>
-            <p className="font-semibold">d. Communication Data</p>
+            <p className="font-semibold">{t("privacy.what.communication_data.title")}</p>
             <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
-              <li>Messages between users (encrypted)</li>
-              <li>Support requests</li>
-              <li>Ratings and feedback</li>
+              <li>{t("privacy.what.communication_data.list.messages")}</li>
+              <li>{t("privacy.what.communication_data.list.support")}</li>
+              <li>{t("privacy.what.communication_data.list.feedback")}</li>
             </ul>
-            <p className="font-semibold">e. Media & Content</p>
+            <p className="font-semibold">{t("privacy.what.media_content.title")}</p>
             <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
-              <li>Audio uploads, beats, demos, files shared through your profile</li>
+              <li>{t("privacy.what.media_content.list.uploads")}</li>
             </ul>
-            <p>We do <span className="font-semibold">not</span> collect sensitive personal data (e.g., health, religion, biometrics) unless you voluntarily provide it.</p>
+            <p>
+              {t("privacy.what.sensitive_data")}
+              <span className="font-semibold">{t("privacy.what.not")}</span>
+              {t("privacy.what.sensitive_data_end")}
+            </p>
           </section>
 
           <section id="how" className="mb-6">
-            <h2 className="text-xl font-semibold  mb-2">4. How We Use Your Data</h2>
-            <p className="text-gray-700 dark:text-gray-300">
-              Your data may be used for the following purposes:
-            </p>
+            <h2 className="text-xl font-semibold mb-2">{t("privacy.how.title")}</h2>
+            <p className="text-gray-700 dark:text-gray-300">{t("privacy.how.intro")}</p>
             <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
-              <li>To provide core features of the platform (e.g., booking, messaging, coaching)</li>
-              <li>To enable payments and invoice generation via external payment providers</li>
-              <li>To personalize your experience and recommend relevant services</li>
-              <li>To improve platform functionality through analytics and feedback</li>
-              <li>To send transactional and occasional marketing emails (opt-in only)</li>
-              <li>To comply with legal obligations (e.g., tax documentation, fraud prevention)</li>
+              <li>{t("privacy.how.list.features")}</li>
+              <li>{t("privacy.how.list.payments")}</li>
+              <li>{t("privacy.how.list.personalization")}</li>
+              <li>{t("privacy.how.list.analytics")}</li>
+              <li>{t("privacy.how.list.marketing")}</li>
+              <li>{t("privacy.how.list.legal")}</li>
             </ul>
           </section>
 
           <section id="legal" className="mb-6">
-            <h2 className="text-xl font-semibold  mb-2">5. Legal Basis for Processing</h2>
-            <p className="text-gray-700 dark:text-gray-300">
-              We process your data on one or more of the following legal bases:
-            </p>
+            <h2 className="text-xl font-semibold mb-2">{t("privacy.legal.title")}</h2>
+            <p className="text-gray-700 dark:text-gray-300">{t("privacy.legal.intro")}</p>
             <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
-              <li><span className="font-semibold">Performance of a contract</span> (Art. 6(1)(b) GDPR): when you register, book, or subscribe.</li>
-              <li><span className="font-semibold">Legitimate interests </span>(Art. 6(1)(f)): to improve platform performance and protect users.</li>
-              <li><span className="font-semibold">Consent </span>(Art. 6(1)(a)): for optional marketing and cookies.</li>
-              <li><span className="font-semibold">Legal obligation </span>(Art. 6(1)(c)): e.g., when required by tax law or court order.</li>
+              <li>
+                <span className="font-semibold">{t("privacy.legal.list.contract")}</span>
+                {t("privacy.legal.list.contract_desc")}
+              </li>
+              <li>
+                <span className="font-semibold">{t("privacy.legal.list.interests")}</span>
+                {t("privacy.legal.list.interests_desc")}
+              </li>
+              <li>
+                <span className="font-semibold">{t("privacy.legal.list.consent")}</span>
+                {t("privacy.legal.list.consent_desc")}
+              </li>
+              <li>
+                <span className="font-semibold">{t("privacy.legal.list.obligation")}</span>
+                {t("privacy.legal.list.obligation_desc")}
+              </li>
             </ul>
           </section>
 
           <section id="data-sharing" className="mb-6">
-            <h2 className="text-xl font-semibold  mb-2">6. Data Sharing</h2>
-            <p className="text-gray-700 dark:text-gray-300">
-              We only share your data when necessary:
-            </p>
+            <h2 className="text-xl font-semibold mb-2">{t("privacy.data_sharing.title")}</h2>
+            <p className="text-gray-700 dark:text-gray-300">{t("privacy.data_sharing.intro")}</p>
             <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
-              <li>With other users for agreed transactions (e.g., booking confirmation)</li>
-              <li>With external services (e.g., Stripe or PayPal for payment)</li>
-              <li>With service providers (e.g., cloud storage, analytics tools like Google Analytics)</li>
-              <li>With authorities if legally required</li>
+              <li>{t("privacy.data_sharing.list.transactions")}</li>
+              <li>{t("privacy.data_sharing.list.payment_providers")}</li>
+              <li>{t("privacy.data_sharing.list.service_providers")}</li>
+              <li>{t("privacy.data_sharing.list.authorities")}</li>
             </ul>
-            <p>We never sell your personal data.</p>
+            <p>{t("privacy.data_sharing.no_sell")}</p>
           </section>
 
           <section id="storage" className="mb-6">
-            <h2 className="text-xl font-semibold  mb-2">7. Data Storage & Security</h2>
+            <h2 className="text-xl font-semibold mb-2">{t("privacy.storage.title")}</h2>
             <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
-              <li>Data is stored on secure, GDPR-compliant servers within the EU or equivalent jurisdictions. </li>
-              <li>Communication (e.g., messages, login) is encrypted using industry-standard protocols (SSL/TLS).</li>
-              <li>Access to user data is restricted to authorized personnel only.</li>
+              <li>{t("privacy.storage.list.servers")}</li>
+              <li>{t("privacy.storage.list.encryption")}</li>
+              <li>{t("privacy.storage.list.access")}</li>
             </ul>
-            <p>We retain personal data as long as needed for your active account or for legal compliance (e.g., up to 10 years for financial records).</p>
+            <p>{t("privacy.storage.retention")}</p>
           </section>
 
           <section id="right" className="mb-6">
-            <h2 className="text-xl font-semibold  mb-2">8. Your Rights</h2>
-            <p>As a user under GDPR, you have the right to:</p>
+            <h2 className="text-xl font-semibold mb-2">{t("privacy.right.title")}</h2>
+            <p>{t("privacy.right.intro")}</p>
             <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
-              <li><span className="font-semibold">Access:</span> Request a copy of your personal data. </li>
-              <li><span className="font-semibold">Rectify:</span> Correct inaccurate or outdated data. </li>
-              <li><span className="font-semibold">Delete:</span> Request erasure of your data (“right to be forgotten”). </li>
-              <li><span className="font-semibold">Restrict: </span>Limit the processing under certain conditions. </li>
-              <li><span className="font-semibold">Portability:</span> Receive your data in a structured, machine-readable format. </li>
-              <li><span className="font-semibold">Object:</span> Withdraw consent or oppose certain types of processing. </li>
+              <li>
+                <span className="font-semibold">{t("privacy.right.list.access")}</span>
+                {t("privacy.right.list.access_desc")}
+              </li>
+              <li>
+                <span className="font-semibold">{t("privacy.right.list.rectify")}</span>
+                {t("privacy.right.list.rectify_desc")}
+              </li>
+              <li>
+                <span className="font-semibold">{t("privacy.right.list.delete")}</span>
+                {t("privacy.right.list.delete_desc")}
+              </li>
+              <li>
+                <span className="font-semibold">{t("privacy.right.list.restrict")}</span>
+                {t("privacy.right.list.restrict_desc")}
+              </li>
+              <li>
+                <span className="font-semibold">{t("privacy.right.list.portability")}</span>
+                {t("privacy.right.list.portability_desc")}
+              </li>
+              <li>
+                <span className="font-semibold">{t("privacy.right.list.object")}</span>
+                {t("privacy.right.list.object_desc")}
+              </li>
             </ul>
-            <p>To exercise your rights, please contact: [Insert Contact Email]</p>
+            <p>{t("privacy.right.contact", { email: "privacy@musicminds.com" })}</p>
           </section>
 
           <section id="cook" className="mb-6">
-            <h2 className="text-xl font-semibold  mb-2">9. Cookies</h2>
-            <p>The website and app may use cookies or similar technologies to:</p>
+            <h2 className="text-xl font-semibold mb-2">{t("privacy.cook.title")}</h2>
+            <p>{t("privacy.cook.intro")}</p>
             <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
-              <li>Store session data </li>
-              <li>Analyze traffic patterns </li>
-              <li>Improve usability</li>
+              <li>{t("privacy.cook.list.session")}</li>
+              <li>{t("privacy.cook.list.analytics")}</li>
+              <li>{t("privacy.cook.list.usability")}</li>
             </ul>
-            <p>You can manage your cookie preferences via your browser settings or in-app options.</p>
+            <p>{t("privacy.cook.settings")}</p>
           </section>
 
           <section id="third" className="mb-6">
-            <h2 className="text-xl font-semibold  mb-2">10. Third-Party Links</h2>
-            <p className="text-gray-700 dark:text-gray-300">Music Minds may contain links to external websites or platforms. We are not responsible for the privacy practices of third parties. Please review their respective policies.</p>
+            <h2 className="text-xl font-semibold mb-2">{t("privacy.third.title")}</h2>
+            <p className="text-gray-700 dark:text-gray-300">{t("privacy.third.content")}</p>
           </section>
 
           <section id="childrens-privacy" className="mb-6">
-            <h2 className="text-xl font-semibold  mb-2">11. Children&apos;s Privacy</h2>
-            <p className="text-gray-700 dark:text-gray-300">The platform is intended for users <span className="font-semibold">16 years and older</span>. We do not knowingly collect data from minors. Parents may contact us to request deletion of data if needed..</p>
+            <h2 className="text-xl font-semibold mb-2">{t("privacy.childrens_privacy.title")}</h2>
+            <p className="text-gray-700 dark:text-gray-300">
+              {t("privacy.childrens_privacy.content")}
+              <span className="font-semibold">{t("privacy.childrens_privacy.age")}</span>
+              {t("privacy.childrens_privacy.content_end", { email: "privacy@musicminds.com" })}
+            </p>
           </section>
 
           <section id="changes" className="mb-6">
-            <h2 className="text-xl font-semibold  mb-2">12. Changes to This Policy</h2>
-            <p className="text-gray-700 dark:text-gray-300">We may update this policy as our platform evolves. You will be notified of significant changes via email or app notification.</p>
+            <h2 className="text-xl font-semibold mb-2">{t("privacy.changes.title")}</h2>
+            <p className="text-gray-700 dark:text-gray-300">{t("privacy.changes.content")}</p>
           </section>
 
           <section id="contact" className="mb-6">
-            <h2 className="text-xl font-semibold  mb-2">13. Contact</h2>
-            <p className="text-gray-700 dark:text-gray-300">For questions about this Privacy Policy or data protection, contact us at:
-              privacy@Musicmindz.com
-              [Your Company Name]
-              [Registered Address]</p>
+            <h2 className="text-xl font-semibold mb-2">{t("privacy.contact.title")}</h2>
+            <p className="text-gray-700 dark:text-gray-300">
+              {t("privacy.contact.content", {
+                email: "privacy@musicminds.com",
+                company: "Music Minds GmbH",
+                address: "Reichsstr. 99, D-14052 Berlin",
+              })}
+            </p>
           </section>
         </div>
       </Container>
     </Section>
   );
-};
-
-export default PrivacyPolicy;
+}

@@ -1,8 +1,8 @@
 
 import {  Container, Main, Section } from "@/components/craft";
-import CookiePolicy from "./_components/cookiepolicy";
 import { cookies } from "next/headers";
 import { Footer } from "@/components/home-page/footer";
+import CodeOfConduct from "./_components/cookiepolicy";
 
 
 const supportedLngs = ["de", "en", "fr"];
@@ -33,7 +33,7 @@ export default function Home() {
    <Main >
     <Section >
       <Container >
-        <CookiePolicy/>
+        <CodeOfConduct locale={locale}/>
         <Footer locale={locale} />
       </Container>
     </Section>

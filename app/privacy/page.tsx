@@ -33,7 +33,7 @@ export default function Home() {
    <Main >
     <Section >
       <Container >
-        <PrivacyPolicy/>
+        <PrivacyPolicy locale={locale}/>
         <Footer locale={locale} />
       </Container>
     </Section>

@@ -274,5 +274,391 @@
       "email": "help@musicminds.com",
       "phone": "+234 709-679 0893",
       "copyright": "© 2025 Music Minds. All rights reserved"
+    },
+    "terms": {
+    "title": "Terms & Conditions",
+    "last_updated": "Last Updated: {date} | Effective Date: {date}",
+    "table_of_contents": {
+      "introduction": "Scope of Application",
+      "definitions": "Role of Music Minds",
+      "User": "User Accounts & Eligibility",
+      "Bookings": "Bookings & Payments",
+      "Subscription": "Subscription Models",
+      "ratings": "Ratings, Reviews & Content",
+      "limitation": "Limitation of Liability",
+      "platform": "Platform Availability & Updates",
+      "termination": "Termination & Deletion",
+      "law": "Applicable Law & Jurisdiction",
+      "contact": "Contact"
+    },
+    "introduction": {
+      "title": "1. Scope of Application",
+      "content": "These Terms and Conditions govern the use of the Music Minds platform ('the Platform') operated by {company}, including the website, mobile application, and all related services. By registering or using the Platform, users accept these Terms in full. The Platform connects individuals seeking Music services ('End Users') with service providers such as vocal coaches, producers, musicians, and studios ('Providers')."
+    },
+    "definitions": {
+      "title": "2. Role of Music Minds",
+      "paragraph1": "Music Minds is a ",
+      "neutral_intermediary": "neutral digital intermediary",
+      "paragraph2": ". We ",
+      "no_services": "do not provide Music services ourselves",
+      "paragraph3": ", and we ",
+      "no_contracting_party": "are not a contracting party",
+      "not_liable": "Music Minds is not liable for:",
+      "liability_list": {
+        "quality": "The quality, execution, or delivery of services by Providers",
+        "damages": "Any damages, financial losses, or disputes between users",
+        "cancellations": "Cancellations, delays, or communication issues between parties"
+      },
+      "paragraph4": "We offer ",
+      "technical_infrastructure": "technical infrastructure only",
+      "paragraph5": ". Any support offered is purely voluntary and ",
+      "no_legal_obligation": "without legal obligation"
+    },
+    "User": {
+      "title": "3. User Accounts & Eligibility",
+      "list": {
+        "age": "Only individuals aged 16 or older may register.",
+        "accurate_info": "Users are responsible for ensuring that all information provided is accurate and up to date.",
+        "suspension": "Music Minds may suspend or delete accounts in case of abuse, fraud, or breach of terms."
+      }
+    },
+    "Bookings": {
+      "title": "4. Bookings & Payments",
+      "list": {
+        "direct_bookings": "Bookings are made directly between End Users and Providers.",
+        "payment_processing": "Payment is processed through third-party services integrated into the Platform.",
+        "service_fee": "Music Minds charges a {fee} service fee per successful booking.",
+        "fee_adjustment": "We reserve the right to adjust fees with prior notice."
+      },
+      "providers_responsible": "Providers are solely responsible for:",
+      "providers_list": {
+        "quality": "Service quality",
+        "fulfillment": "Fulfillment of agreed sessions",
+        "legal_obligations": "Legal obligations such as tax reporting or invoicing"
+      },
+      "liability": "Music Minds is not liable for missed sessions, non-performance, or dissatisfaction unless caused by technical failures of the Platform."
+    },
+    "Subscription": {
+      "title": "5. Subscription Models",
+      "list": {
+        "premium_features": "Users can subscribe to premium features (e.g., ad-free use, loyalty rewards, messaging).",
+        "provider_plan": "Providers may choose a premium plan to unlock additional visibility and tools.",
+        "renewal": "Subscriptions renew monthly unless cancelled in advance."
+      },
+      "refunds": "Refunds are generally excluded unless due to ",
+      "technical_issues": "technical issues caused by Music Minds",
+      "goodwill_refunds": ". Any goodwill refunds are issued ",
+      "no_entitlement": "without legal entitlement"
+    },
+    "ratings": {
+      "title": "6. Ratings, Reviews & Content",
+      "list": {
+        "ratings": "Users may rate each other after completed bookings.",
+        "content_policy": "Offensive, fake, or defamatory content is prohibited.",
+        "moderation": "Music Minds reserves the right to moderate or delete content without justification."
+      },
+      "content_license": "By uploading content (e.g., audio, images), users grant Music Minds a ",
+      "non_exclusive_license": "non-exclusive, worldwide license",
+      "content_license_end": " to display it on the Platform for promotional and functional purposes."
+    },
+    "limitation": {
+      "title": "7. Limitation of Liability",
+      "intro": "To the fullest extent permitted by law, Music Minds shall not be liable for:",
+      "list": {
+        "indirect_damages": "Indirect or consequential damages",
+        "disputes": "Personal, legal, or financial disputes between users",
+        "data_loss": "Data loss or third-party service failures (e.g., payment gateways)"
+      },
+      "total_liability": "Our total liability, if any, is limited to ",
+      "liability_amount": "the amount paid by the user in the last 3 months"
+    },
+    "platform": {
+      "title": "8. Platform Availability & Updates",
+      "list": {
+        "uptime": "We aim to ensure 99% uptime but cannot guarantee uninterrupted service.",
+        "outages": "Maintenance, updates, or external factors may cause outages.",
+        "modifications": "We reserve the right to modify, update, or discontinue features without prior notice."
+      }
+    },
+    "termination": {
+      "title": "9. Termination & Deletion",
+      "list": {
+        "delete_account": "Users may delete their account at any time.",
+        "termination": "Music Minds may terminate access in cases of fraud, abuse, or legal violations.",
+        "data_retention": "Data retention follows GDPR-compliant standards."
+      }
+    },
+    "law": {
+      "title": "10. Applicable Law & Jurisdiction",
+      "content": "These Terms are governed by the laws of the Federal Republic of Germany. Place of jurisdiction for all disputes is {city}, Germany."
+    },
+    "contact": {
+      "title": "11. Contact",
+      "content": "Music Minds / {company}\n{address}\n{email}\nBusiness Registration: {registration}"
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "last_updated": "Last Updated: {date} | Effective Date: {date}",
+    "table_of_contents": {
+      "Overview": "Overview",
+      "data": "Data Controller",
+      "what": "Information We Collect",
+      "how": "How We Use Your Data",
+      "legal": "Legal Basis for Processing",
+      "data_sharing": "Data Sharing",
+      "storage": "Data Storage & Security",
+      "right": "Your Rights",
+      "cook": "Cookies",
+      "third": "Third-Party Links",
+      "childrens_privacy": "Children's Privacy",
+      "changes": "Changes to This Policy",
+      "contact": "Contact"
+    },
+    "Overview": {
+      "title": "1. Overview",
+      "content": "This Privacy Policy describes how {company} ('we,' 'us,' 'our') collects, uses, stores, and protects your personal information when you use our platform, including the website, mobile application, and related services ('the Platform'). We are committed to protecting your data in accordance with the ",
+      "gdpr": "EU General Data Protection Regulation (GDPR)",
+      "content_end": " and other applicable data protection laws."
+    },
+    "data": {
+      "title": "2. Data Controller",
+      "content": "The data controller for all personal information processed through this platform is: {company}\n{address}\n{email}\nBusiness Registration: {registration}"
+    },
+    "what": {
+      "title": "3. What Data We Collect",
+      "intro": "We may collect and process the following types of data:",
+      "account_info": {
+        "title": "a. Account Information",
+        "list": {
+          "name": "Name, email address, phone number",
+          "profile": "Username, profile photo, biography",
+          "location": "Location (city or country)"
+        }
+      },
+      "booking_data": {
+        "title": "b. Booking & Payment Data",
+        "list": {
+          "history": "Session history",
+          "payment": "Payment status (via payment processor)",
+          "metadata": "Service category and transaction metadata"
+        }
+      },
+      "usage_data": {
+        "title": "c. Usage & Device Data",
+        "list": {
+          "stats": "App usage statistics",
+          "device": "IP address, device type, browser",
+          "settings": "Language settings, time zone"
+        }
+      },
+      "communication_data": {
+        "title": "d. Communication Data",
+        "list": {
+          "messages": "Messages between users (encrypted)",
+          "support": "Support requests",
+          "feedback": "Ratings and feedback"
+        }
+      },
+      "media_content": {
+        "title": "e. Media & Content",
+        "list": {
+          "uploads": "Audio uploads, beats, demos, files shared through your profile"
+        }
+      },
+      "sensitive_data": "We do ",
+      "not": "not",
+      "sensitive_data_end": " collect sensitive personal data (e.g., health, religion, biometrics) unless you voluntarily provide it."
+    },
+    "how": {
+      "title": "4. How We Use Your Data",
+      "intro": "Your data may be used for the following purposes:",
+      "list": {
+        "features": "To provide core features of the platform (e.g., booking, messaging, coaching)",
+        "payments": "To enable payments and invoice generation via external payment providers",
+        "personalization": "To personalize your experience and recommend relevant services",
+        "analytics": "To improve platform functionality through analytics and feedback",
+        "marketing": "To send transactional and occasional marketing emails (opt-in only)",
+        "legal": "To comply with legal obligations (e.g., tax documentation, fraud prevention)"
+      }
+    },
+    "legal": {
+      "title": "5. Legal Basis for Processing",
+      "intro": "We process your data on one or more of the following legal bases:",
+      "list": {
+        "contract": "Performance of a contract",
+        "contract_desc": " (Art. 6(1)(b) GDPR): when you register, book, or subscribe.",
+        "interests": "Legitimate interests",
+        "interests_desc": " (Art. 6(1)(f)): to improve platform performance and protect users.",
+        "consent": "Consent",
+        "consent_desc": " (Art. 6(1)(a)): for optional marketing and cookies.",
+        "obligation": "Legal obligation",
+        "obligation_desc": " (Art. 6(1)(c)): e.g., when required by tax law or court order."
+      }
+    },
+    "data_sharing": {
+      "title": "6. Data Sharing",
+      "intro": "We only share your data when necessary:",
+      "list": {
+        "transactions": "With other users for agreed transactions (e.g., booking confirmation)",
+        "payment_providers": "With external services (e.g., Stripe or PayPal for payment)",
+        "service_providers": "With service providers (e.g., cloud storage, analytics tools like Google Analytics)",
+        "authorities": "With authorities if legally required"
+      },
+      "no_sell": "We never sell your personal data."
+    },
+    "storage": {
+      "title": "7. Data Storage & Security",
+      "list": {
+        "servers": "Data is stored on secure, GDPR-compliant servers within the EU or equivalent jurisdictions.",
+        "encryption": "Communication (e.g., messages, login) is encrypted using industry-standard protocols (SSL/TLS).",
+        "access": "Access to user data is restricted to authorized personnel only."
+      },
+      "retention": "We retain personal data as long as needed for your active account or for legal compliance (e.g., up to 10 years for financial records)."
+    },
+    "right": {
+      "title": "8. Your Rights",
+      "intro": "As a user under GDPR, you have the right to:",
+      "list": {
+        "access": "Access",
+        "access_desc": ": Request a copy of your personal data.",
+        "rectify": "Rectify",
+        "rectify_desc": ": Correct inaccurate or outdated data.",
+        "delete": "Delete",
+        "delete_desc": ": Request erasure of your data (“right to be forgotten”).",
+        "restrict": "Restrict",
+        "restrict_desc": ": Limit the processing under certain conditions.",
+        "portability": "Portability",
+        "portability_desc": ": Receive your data in a structured, machine-readable format.",
+        "object": "Object",
+        "object_desc": ": Withdraw consent or oppose certain types of processing."
+      },
+      "contact": "To exercise your rights, please contact: {email}"
+    },
+    "cook": {
+      "title": "9. Cookies",
+      "intro": "The website and app may use cookies or similar technologies to:",
+      "list": {
+        "session": "Store session data",
+        "analytics": "Analyze traffic patterns",
+        "usability": "Improve usability"
+      },
+      "settings": "You can manage your cookie preferences via your browser settings or in-app options."
+    },
+    "third": {
+      "title": "10. Third-Party Links",
+      "content": "Music Minds may contain links to external websites or platforms. We are not responsible for the privacy practices of third parties. Please review their respective policies."
+    },
+    "childrens_privacy": {
+      "title": "11. Children's Privacy",
+      "content": "The platform is intended for users ",
+      "age": "16 years and older",
+      "content_end": ". We do not knowingly collect data from minors. Parents may contact us to request deletion of data if needed at: {email}"
+    },
+    "changes": {
+      "title": "12. Changes to This Policy",
+      "content": "We may update this policy as our platform evolves. You will be notified of significant changes via email or app notification."
+    },
+    "contact": {
+      "title": "13. Contact",
+      "content": "For questions about this Privacy Policy or data protection, contact us at: {email}\n{company}\n{address}"
+    }
+  },
+  "code_of_conduct": {
+    "title": "Code of Conduct",
+    "description": "Music Minds is more than a marketplace. It's a community built on trust, creativity, and mutual respect. This Code of Conduct defines how we expect users to behave when using our platform, to ensure a safe, inclusive, and empowering space for all. By using Music Minds, you agree to follow these principles.",
+    "last_updated": "Last Updated: {date} | Effective Date: {date}",
+    "table_of_contents": {
+      "respect": "Respect All Users",
+      "definitions": "Be Honest & Transparent",
+      "information-we-collect": "Show Up, Follow Through",
+      "how-we-use": "Respect Intellectual Property",
+      "information-sharing": "Use the Platform Fairly",
+      "data-security": "Keep Communication Appropriate",
+      "your Rights": "Protect Privacy",
+      "international-data": "Support Community Growth",
+      "cookies": "Violations & Consequences",
+      "childrens-privacy": "Final Note"
+    },
+    "respect": {
+      "title": "1. Respect All Users",
+      "list": {
+        "professionalism": "Treat all artists, coaches, producers, and learners with professionalism and kindness.",
+        "no_harassment": "Harassment, discrimination, hate speech, or offensive behavior of any kind will not be tolerated.",
+        "no_pressure": "Do not pressure, insult, or exploit other users — either in communication or transactions."
+      }
+    },
+    "definitions": {
+      "title": "2. Be Honest & Transparent",
+      "list": {
+        "truthful_services": "Only offer services you can actually deliver, and represent your skills truthfully.",
+        "no_fake": "Do not create fake accounts, fake reviews, or misleading profiles.",
+        "clear_communication": "Communicate clearly and professionally when booking or being booked."
+      }
+    },
+    "information-we-collect": {
+      "title": "3. Show Up, Follow Through",
+      "list": {
+        "honor_commitments": "If you agree to a session or service, honor it — or cancel with reasonable notice.",
+        "punctuality": "End users and providers alike are expected to be on time and prepared.",
+        "suspension": "Missed appointments without valid reason may lead to suspension."
+      }
+    },
+    "how-we-use": {
+      "title": "4. Respect Intellectual Property",
+      "list": {
+        "no_unauthorized_content": "Do not upload or share music, beats, vocals, or samples you do not own or have rights to.",
+        "respect_work": "Respect the creative work of others — including feedback, drafts, and demo files.",
+        "originality": "Music Minds supports original work and protects against plagiarism and content theft."
+      }
+    },
+    "information-sharing": {
+      "title": "5. Use the Platform Fairly",
+      "list": {
+        "no_circumvention": "Do not attempt to circumvent payment systems (e.g., by moving off-platform for deals).",
+        "ethical_tools": "Paid visibility tools must be used ethically — no keyword spam or misleading campaigns.",
+        "honest_feedback": "Feedback systems should reflect real experiences — not be used for retaliation or manipulation."
+      }
+    },
+    "data-security": {
+      "title": "6. Keep Communication Appropriate",
+      "list": {
+        "professional_messages": "Messages should remain professional and relevant to bookings, learning, or collaboration.",
+        "no_inappropriate_content": "Sexual content, unsolicited promotions, or aggressive tone will lead to immediate action.",
+        "moderation": "Our moderation team reviews flagged content regularly and reserves the right to intervene."
+      }
+    },
+    "your Rights": {
+      "title": "7. Protect Privacy",
+      "list": {
+        "no_sharing": "Do not share personal information of others without consent.",
+        "no_unauthorized_recording": "Do not record sessions without permission from all parties.",
+        "confidentiality": "Keep platform conversations confidential unless agreed otherwise."
+      }
+    },
+    "international-data": {
+      "title": "8. Support Community Growth",
+      "list": {
+        "respectful_recommendations": "Recommend others respectfully and truthfully.",
+        "culture_of_growth": "Contribute to a culture of learning, openness, and growth.",
+        "diversity": "Celebrate diversity — in sound, identity, and origin."
+      }
+    },
+    "cookies": {
+      "title": "9. Violations & Consequences",
+      "intro": "Music Minds reserves the right to:",
+      "list": {
+        "warnings": "Issue warnings or remove content.",
+        "suspension": "Temporarily suspend accounts.",
+        "ban": "Permanently ban users in case of serious or repeated violations."
+      },
+      "legal_action": "Repeated or serious breaches may result in legal action if applicable.",
+      "report": "If you experience or witness behavior that violates this Code, please report it via: <span class=\"font-semibold\">report@musicminds.com</span> or use the in-app reporting function. Our team treats all reports seriously and confidentially."
+    },
+    "childrens-privacy": {
+      "title": "10. Final Note",
+      "content": "This platform was built to break barriers — not to create new ones. Let's keep Music Minds a safe, collaborative, and empowering space for everyone."
     }
   }
+}
+  

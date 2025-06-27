@@ -18,7 +18,7 @@ function getServerLocale(): string {
       return locale;
     }
   } catch (error) {
-    console.log("Could not access cookies:", error);
+    console.log("Could not a ccess cookies:", error);
   }
   
   return defaultLocale;
@@ -33,7 +33,7 @@ export default function Home() {
    <Main >
     <Section >
       <Container >
-        <TermsOfUse />
+        <TermsOfUse locale={locale} />
         <Footer locale={locale} />
       </Container>
     </Section>
