@@ -1,10 +1,10 @@
 
 import {  Container, Main, Section } from "@/components/craft";
-import Hero from "./_components/HeroB";
+import Herob from "./_components/HeroB";
 import Support from "./_components/support";
-import Cta from "./_components/ctaaa";
 import { Footer } from "@/components/home-page/footer";
 import { cookies } from "next/headers";
+import CTAC from "./_components/ctaaa";
 
 const supportedLngs = ["de", "en", "fr"];
 const defaultLocale = "en";
@@ -32,9 +32,9 @@ export default function Home() {
    <Main >
     <Section >
       <Container >
-        <Hero/>
-        <Support/>
-        <Cta />
+        <Herob locale={locale}/>
+        <Support locale={locale}/>
+        <CTAC  locale={locale}/>
         <Footer locale={locale} />
       </Container>
     </Section>

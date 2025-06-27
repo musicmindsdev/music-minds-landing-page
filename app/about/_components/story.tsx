@@ -2,27 +2,40 @@
 
 import Image from "next/image";
 import * as Craft from "@/components/craft";
+import { GoArrowDownLeft, GoArrowDownRight } from "react-icons/go";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import Pic1 from "@/public/pic1.svg";
 import Pic2 from "@/public/pic2.svg";
-import { GoArrowDownLeft, GoArrowDownRight } from "react-icons/go";
-// import Ceo from "@/public/Ellipse.svg";
-import AOS from "aos";
-import "aos/dist/aos.css"; // Ensure AOS CSS is imported
-import { useEffect } from "react";
 
-const Story = () => {
+export default function Story({ locale }: { locale: string }) {
+  const { t } = useTranslation("common");
+  console.log(`Story: locale=${locale}, t is function: ${typeof t === "function"}`);
+
   useEffect(() => {
-    AOS.init({
-      duration: 1000, // Duration of animations (in milliseconds)
-      offset: 50, // Start animation 50px before the element is in view
-      once: false, // Allow animations to replay on scroll
-      mirror: true, // Replay animations when scrolling back up
-    });
-
-    return () => {
-      AOS.refreshHard(); // Clean up AOS on component unmount
-    };
+    try {
+      AOS.init({
+        duration: 1000,
+        offset: 50,
+        once: false,
+        mirror: true,
+      });
+      console.log("Story: AOS initialized");
+      return () => {
+        AOS.refreshHard();
+        console.log("Story: AOS cleaned up");
+      };
+    } catch (error) {
+      console.error("Story: AOS initialization error:", error);
+    }
   }, []);
+
+  if (typeof t !== "function") {
+    console.warn(`Story: t is not a function for locale ${locale}`);
+    return null;
+  }
 
   return (
     <Craft.Section
@@ -37,20 +50,20 @@ const Story = () => {
         >
           <Image
             src={Pic1}
-            alt="Story Image 1"
+            alt={t("story.image1_alt")}
             className="w-full max-w-full sm:max-w-[60%] h-auto"
             width={780}
           />
           <Image
             src={Pic2}
-            alt="Story Image 2"
+            alt={t("story.image2_alt")}
             className="w-full max-w-full sm:max-w-[40%] h-auto mt-4 sm:mt-0"
             width={500}
           />
         </div>
 
         <div
-          className="flex flex-col items-center md:grid md:grid-cols-2 md:gap-12 md:items-stretch md:justify-between mt-8  mb-8"
+          className="flex flex-col items-center md:grid md:grid-cols-2 md:gap-12 md:items-stretch md:justify-between mt-8 mb-8"
           data-aos="fade-up"
           data-aos-delay="300"
         >
@@ -59,9 +72,9 @@ const Story = () => {
             data-aos="zoom-in"
             data-aos-delay="400"
           >
-            Who We     {" "}
+            {t("story.who_we_are_title")}{" "}
             <span className="bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent">
-              Are
+              {t("story.who_we_are_highlight")}
             </span>{" "}
             <GoArrowDownRight />
           </h1>
@@ -74,8 +87,7 @@ const Story = () => {
               data-aos="fade-up"
               data-aos-delay="600"
             >
-              We&apos;re not just building an app — we&apos;re shaping the future of independent music.
-              Music Minds is a platform born from real creative scenes, built by artists, producers, and educators who understand the hustle. We connect talent with opportunity, learning with practice, and creativity with community. Whether you&apos;re a newcomer or an established voice, you belong here.
+              {t("story.who_we_are_description")}
             </span>
           </div>
         </div>
@@ -93,8 +105,7 @@ const Story = () => {
               data-aos="fade-up"
               data-aos-delay="600"
             >
-              Music is not just content. It&apos;s a craft, a process, and a form of expression.
-              We believe talent is everywhere — but access, visibility, and mentoring are not. That&apos;s why we created a space where anyone can learn, collaborate, grow, and take ownership of their Music journey.
+              {t("story.what_we_believe_description")}
             </span>
           </div>
           <h1
@@ -103,14 +114,14 @@ const Story = () => {
             data-aos-delay="400"
           >
             <GoArrowDownLeft />
-            What We   
+            {t("story.what_we_believe_title")}{" "}
             <span className="bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent">
-              Believe
+              {t("story.what_we_believe_highlight")}
             </span>
           </h1>
         </div>
         <div
-          className="flex flex-col items-center md:grid md:grid-cols-2 md:gap-12 md:items-stretch md:justify-between mt-8  mb-8"
+          className="flex flex-col items-center md:grid md:grid-cols-2 md:gap-12 md:items-stretch md:justify-between mt-8 mb-8"
           data-aos="fade-up"
           data-aos-delay="300"
         >
@@ -119,9 +130,9 @@ const Story = () => {
             data-aos="zoom-in"
             data-aos-delay="400"
           >
-            How We          
+            {t("story.how_we_work_title")}{" "}
             <span className="bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent">
-              Work
+              {t("story.how_we_work_highlight")}
             </span>{" "}
             <GoArrowDownRight />
           </h1>
@@ -134,13 +145,7 @@ const Story = () => {
               data-aos="fade-up"
               data-aos-delay="600"
             >
-              We&apos;re a lean, international team combining digital innovation with deep cultural insight.
-              We move fast, listen closely, and build for impact. Our approach blends:
-              Human-centered technology
-              Inclusive user experiences
-              Scalable learning environments
-              Feedback-driven development cycles
-              Every feature is tested with real users. Every decision starts with creator needs.
+              {t("story.how_we_work_description")}
             </span>
           </div>
         </div>
@@ -149,7 +154,6 @@ const Story = () => {
           data-aos="fade-up"
           data-aos-delay="300"
         >
-
           <div
             className="w-[80%] text-center md:text-justify flex flex-col gap-4"
             data-aos="fade-left"
@@ -159,20 +163,15 @@ const Story = () => {
               data-aos="fade-up"
               data-aos-delay="600"
             >
-              We&apos;ve lived the challenges — DIY setups, expensive studio time, limited access, no network.
-              That&apos;s why Music Minds exists: to lower the barriers, increase the chances, and shift the power back to the creators.
+              {t("story.what_drives_us_description1")}
             </span>
             <span>
-              <span className="font-medium mr-2">Our long-term goal is simple but bold:</span>
-              <span>
-
-                To build the most accessible and trusted platform for independent music production, collaboration, and education — across Europe, Africa, and beyond.
-              </span>
+              <span className="font-medium mr-2">{t("story.what_drives_us_goal_label")}</span>
+              <span>{t("story.what_drives_us_goal")}</span>
             </span>
             <span>
-              <span className="font-medium mr-2">Join the Movement</span>
-              Whether you&apos;re a beatmaker, songwriter, coach, engineer, or a future headliner — this is your space.
-              Connect. Learn. Build. Share. Let&apos;s change the music industry from the inside out.
+              <span className="font-medium mr-2">{t("story.what_drives_us_join_label")}</span>
+              {t("story.what_drives_us_join")}
             </span>
           </div>
           <h1
@@ -181,90 +180,13 @@ const Story = () => {
             data-aos-delay="400"
           >
             <GoArrowDownLeft />
-            What  {" "}
+            {t("story.what_drives_us_title")}{" "}
             <span className="bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent">
-              Drives
-            </span>{" "}
-            Us
+              {t("story.what_drives_us_highlight")}
+            </span>
           </h1>
         </div>
-        {/* <div
-          className="flex flex-col items-center md:grid md:grid-cols-2 md:gap-12 md:items-stretch md:justify-between mt-8"
-          data-aos="fade-up"
-          data-aos-delay="300"
-        >
-          <h1
-            className="text-2xl sm:text-3xl md:text-5xl font-bold flex gap-2 items-start justify-center"
-            data-aos="zoom-in"
-            data-aos-delay="400"
-          >
-            Our{" "}
-            <span className="bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent">
-              Story
-            </span>{" "}
-            <GoArrowDownRight />
-          </h1>
-          <div
-            className="w-[80%] text-center md:text-justify flex flex-col gap-4"
-            data-aos="fade-left"
-            data-aos-delay="500"
-          >
-            <span
-              className="font-semibold"
-              data-aos="fade-up"
-              data-aos-delay="600"
-            >
-              Our founder, Mike started MusicMinds because he wanted to make it easy for anyone to do
-              what he does; connecting people, in this case connecting artist and service provider
-              thereby bridging the gap to both getting access to talent and people who can harness
-              that talent.
-            </span>
-            <span
-              data-aos="fade-up"
-              data-aos-delay="700"
-            >
-              He wanted to make sure that those who served and worked alongside during his time as an
-              industry veteran had an equal opportunity to access services and talent, enabling proper
-              financial mobilization in the industry while also providing a nuanced and accessible
-              means for collaboration. This vision extended to helping artists ranging from musician,
-              stage managers, college student, budding and aspiring artists, producers to savvy
-              executives, and everyone in between save toward what matters the most to them from the
-              comfort of their phone.
-            </span>
-            <span
-              data-aos="fade-up"
-              data-aos-delay="800"
-            >
-              Anyone in music looking to connect with a large community of professionals, talents
-              should definitely consider MusicMinds as it is the best option out there. The “First of
-              its kind: some might say. The MusicMinds team is united around our core philosophy;
-              united we stand, divided we fall.
-            </span>
-            <div
-              className="flex gap-3 items-center justify-center md:justify-start"
-              data-aos="fade-up"
-              data-aos-delay="900"
-            >
-              <Image src={Ceo} alt="CEO Image" />
-              <div>
-                <h3 className="text-sm font-semibold">Mike Simorankir</h3>
-                <p className="text-xs">Founder & CEO</p>
-              </div>
-            </div>
-            <span
-              className="font-semibold text-center md:text-left"
-              data-aos="fade-up"
-              data-aos-delay="1000"
-            >
-              “Our goal is simple, to build a better system that fosters collaboration between actors
-              within the music industry - with a product that is simple, more reliable, lower cost
-              and transparent.”
-            </span>
-          </div>
-        </div> */}
       </Craft.Container>
     </Craft.Section>
   );
-};
-
-export default Story;
+}

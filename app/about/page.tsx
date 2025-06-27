@@ -1,12 +1,12 @@
 
 import {  Container, Main, Section } from "@/components/craft";
-import Hero from "./_components/HeroA";
+import Heroc from "./_components/Hero";
 import Story from "./_components/story";
-import Feature from "./_components/Feature";
 import Value from "./_components/value";
 import CTAA from "./_components/ctaa";
 import { Footer } from "@/components/home-page/footer";
 import { cookies } from "next/headers";
+import Feature1 from "./_components/Feature";
 
 
 const supportedLngs = ["de", "en", "fr"];
@@ -35,11 +35,11 @@ export default function Home() {
    <Main >
     <Section >
       <Container >
-        <Hero/>
-        <Story/>
-        <Feature/>
-        <Value/>
-        <CTAA/>
+        <Heroc locale={locale}/>
+        <Story locale={locale}/>
+        <Feature1 locale={locale}/>
+        <Value locale={locale}/>
+        <CTAA locale={locale}/>
         <Footer locale={locale} />
       </Container>
     </Section>

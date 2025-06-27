@@ -9,14 +9,9 @@ import True from "@/public/True.svg";
 import Justice from "@/public/Justice.svg";
 import Face from "@/public/Face.svg";
 import AOS from "aos";
-import "aos/dist/aos.css"; // Ensure AOS CSS is imported
+import "aos/dist/aos.css";
 import { useEffect } from "react";
-
-type FeatureText2 = {
-  title: JSX.Element;
-  description: JSX.Element;
-  img: JSX.Element;
-};
+import { useTranslation } from "react-i18next";
 
 type FeatureText = {
   title: JSX.Element;
@@ -24,62 +19,74 @@ type FeatureText = {
   img: JSX.Element;
 };
 
-const featureText2: FeatureText2[] = [
-  {
-    title: <h3 className="font-semibold text-black">Empowerment over gatekeeping</h3>,
-    description: (
-      <p className="text-xs w-[80%] line-clamp-3 text-black">
-        Artists should connect, promote, and earn — directly, fairly, and with full control.
+export default function Value({ locale }: { locale: string }) {
+  const { t } = useTranslation("common");
+  console.log(`Value: locale=${locale}, t is function: ${typeof t === "function"}`);
 
-      </p>
-    ),
-    img: <Image src={Comfort} alt="Grit Icon" className="w-50 h-50" />,
-  },
-  {
-    title: <h3 className="font-semibold text-black">Diversity as foundation</h3>,
-    description: (
-      <p className="text-xs w-[80%] line-clamp-3 text-black">
-       We work to amplify underrepresented voices across gender, identity, and culture.
-      </p>
-    ),
-    img: <Image src={True} alt="Empathy Icon" className="w-50 h-50" />,
-  },
-];
-
-const featureText: FeatureText[] = [
-  {
-    title: <h3 className="font-semibold text-black">Community before algorithms</h3>,
-    description: (
-      <p className="text-xs w-[80%] line-clamp-3 text-black">
-       Real networks matter. Growth should be based on talent, effort, and engagement — not ad budgets or hype.
-      </p>
-    ),
-    img: <Image src={Justice} alt="Candour Icon" className="w-50 h-50" />,
-  },
-  {
-    title: <h3 className="font-semibold text-black">Open access to learning</h3>,
-    description: (
-      <p className="text-xs w-[80%] line-clamp-3 text-black">
-        Music education should be practical, affordable, and flexible. We support both structured coaching and self-taught learning.
-      </p>
-    ),
-    img: <Image src={Face} alt="No Ego Icon" className="w-50 h-50" />,
-  },
-];
-
-const Value = () => {
   useEffect(() => {
-    AOS.init({
-      duration: 1000, // Duration of animations (in milliseconds)
-      offset: 50, // Start animation 50px before the element is in view
-      once: false, // Allow animations to replay on scroll
-      mirror: true, // Replay animations when scrolling back up
-    });
-
-    return () => {
-      AOS.refreshHard(); // Clean up AOS on component unmount
-    };
+    try {
+      AOS.init({
+        duration: 1000,
+        offset: 50,
+        once: false,
+        mirror: true,
+      });
+      console.log("Value: AOS initialized");
+      return () => {
+        AOS.refreshHard();
+        console.log("Value: AOS cleaned up");
+      };
+    } catch (error) {
+      console.error("Value: AOS initialization error:", error);
+    }
   }, []);
+
+  if (typeof t !== "function") {
+    console.warn(`Value: t is not a function for locale ${locale}`);
+    return null;
+  }
+
+  const featureText2: FeatureText[] = [
+    {
+      title: <h3 className="font-semibold text-black">{t("value.empowerment_title")}</h3>,
+      description: (
+        <p className="text-xs w-[80%] line-clamp-3 text-black">
+          {t("value.empowerment_description")}
+        </p>
+      ),
+      img: <Image src={Comfort} alt={t("value.empowerment_alt")} className="w-50 h-50" />,
+    },
+    {
+      title: <h3 className="font-semibold text-black">{t("value.diversity_title")}</h3>,
+      description: (
+        <p className="text-xs w-[80%] line-clamp-3 text-black">
+          {t("value.diversity_description")}
+        </p>
+      ),
+      img: <Image src={True} alt={t("value.diversity_alt")} className="w-50 h-50" />,
+    },
+  ];
+
+  const featureText: FeatureText[] = [
+    {
+      title: <h3 className="font-semibold text-black">{t("value.community_title")}</h3>,
+      description: (
+        <p className="text-xs w-[80%] line-clamp-3 text-black">
+          {t("value.community_description")}
+        </p>
+      ),
+      img: <Image src={Justice} alt={t("value.community_alt")} className="w-50 h-50" />,
+    },
+    {
+      title: <h3 className="font-semibold text-black">{t("value.learning_title")}</h3>,
+      description: (
+        <p className="text-xs w-[80%] line-clamp-3 text-black">
+          {t("value.learning_description")}
+        </p>
+      ),
+      img: <Image src={Face} alt={t("value.learning_alt")} className="w-50 h-50" />,
+    },
+  ];
 
   return (
     <Section
@@ -95,9 +102,9 @@ const Value = () => {
               data-aos-delay="200"
             >
               <Balancer>
-                Our{" "}
+                {t("value.main_title")}{" "}
                 <span className="bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent">
-                  Values
+                  {t("value.main_title_highlight")}
                 </span>
               </Balancer>
             </h1>
@@ -107,7 +114,7 @@ const Value = () => {
               data-aos-delay="300"
             >
               <Balancer>
-                At MusicMinds, our core values guide the work we do to power the dreams of millions.
+                {t("value.sub_title")}
               </Balancer>
             </h4>
           </div>
@@ -121,7 +128,7 @@ const Value = () => {
                 key={index}
                 className="w-[350px] flex flex-col items-end p-5 pb-0 rounded-lg bg-gradient-to-r from-[#F2F1FF] to-[#FFF0FD]"
                 data-aos="fade-up"
-                data-aos-delay={`${500 + index * 100}`} // Staggered animation for each card
+                data-aos-delay={`${500 + index * 100}`}
               >
                 <div>
                   {title}
@@ -141,7 +148,7 @@ const Value = () => {
                 key={index}
                 className="w-[350px] flex flex-col items-end p-5 pb-0 rounded-lg bg-gradient-to-r from-[#F2F1FF] to-[#FFF0FD]"
                 data-aos="fade-up"
-                data-aos-delay={`${500 + index * 100}`} // Staggered animation for each card
+                data-aos-delay={`${500 + index * 100}`}
               >
                 <div>
                   {title}
@@ -155,6 +162,4 @@ const Value = () => {
       </Container>
     </Section>
   );
-};
-
-export default Value;
+}

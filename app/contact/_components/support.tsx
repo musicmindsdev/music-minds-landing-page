@@ -7,7 +7,8 @@ import { ArrowRight } from "lucide-react";
 import { JSX, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import AOS from "aos";
-import "aos/dist/aos.css"; // Ensure AOS CSS is imported
+import "aos/dist/aos.css";
+import { useTranslation } from "react-i18next";
 
 type FeatureText = {
   title: string;
@@ -17,82 +18,92 @@ type FeatureText = {
   cta?: string;
 };
 
-const featureText: FeatureText[] = [
-  {
-    title: "Trouble signing in?",
-    href: "/",
-    description:
-      "If you’ve got trouble signing in, you might need to reset your password or recover your username. Click learn more for a step-by-step guide on how to manage your account.",
-    buttons: (
-      <div className="flex gap-2 flex-wrap">
-        <Button className="bg-[#E5E3FF] text-[#5243FE] rounded-full hover:bg-[#E5E3FF]">
-          Account
-        </Button>
-        <Button className="bg-[#E5E3FF] text-[#5243FE] rounded-full hover:bg-[#E5E3FF]">
-          Sign in
-        </Button>
-        <Button className="bg-[#E5E3FF] text-[#5243FE] rounded-full hover:bg-[#E5E3FF]">
-          Dashboard
-        </Button>
-      </div>
-    ),
-    cta: "Learn More",
-  },
-  {
-    title: "Need help with KYC?",
-    href: "/",
-    description:
-      "Having trouble with the KYC verification process? Click below to learn about the different KYC levels, and the step-by-step requirements for each.",
-    buttons: (
-      <div className="flex gap-2 flex-wrap">
-        <Button className="bg-[#E5E3FF] text-[#5243FE] rounded-full hover:bg-[#E5E3FF]">
-          Verifications
-        </Button>
-        <Button className="bg-[#E5E3FF] text-[#5243FE] rounded-full hover:bg-[#E5E3FF]">
-          Bookings
-        </Button>
-        <Button className="bg-[#E5E3FF] text-[#5243FE] rounded-full hover:bg-[#E5E3FF]">
-          Security
-        </Button>
-      </div>
-    ),
-    cta: "Learn More",
-  },
-  {
-    title: "Compromised account?",
-    href: "/",
-    description:
-      "For any issues you’ve encountered, including fraud, click the link below to submit a request, and our support team will respond to you as soon as possible.",
-    buttons: (
-      <div className="flex gap-2 flex-wrap">
-  <Button className="bg-[#E5E3FF] text-[#5243FE] rounded-full hover:bg-[#E5E3FF]">
-    Fraud
-  </Button>
-  <Button className="bg-[#E5E3FF] text-[#5243FE] rounded-full hover:bg-[#E5E3FF]">
-    Security
-  </Button>
-  <Button className="bg-[#E5E3FF] text-[#5243FE] rounded-full hover:bg-[#E5E3FF]">
-    Account
-  </Button>
-</div>
-    ),
-    cta: "Learn More",
-  },
-];
+export default function Support({ locale }: { locale: string }) {
+  const { t } = useTranslation("common");
+  console.log(`Support: locale=${locale}, t is function: ${typeof t === "function"}`);
 
-const Support = () => {
   useEffect(() => {
-    AOS.init({
-      duration: 1000, // Duration of animations (in milliseconds)
-      offset: 50, // Start animation 50px before the element is in view
-      once: false, // Allow animations to replay on scroll
-      mirror: true, // Replay animations when scrolling back up
-    });
-
-    return () => {
-      AOS.refreshHard(); // Clean up AOS on component unmount
-    };
+    try {
+      AOS.init({
+        duration: 1000,
+        offset: 50,
+        once: false,
+        mirror: true,
+      });
+      console.log("Support: AOS initialized");
+      return () => {
+        AOS.refreshHard();
+        console.log("Support: AOS cleaned up");
+      };
+    } catch (error) {
+      console.error("Support: AOS initialization error:", error);
+    }
   }, []);
+
+  if (typeof t !== "function") {
+    console.warn(`Support: t is not a function for locale ${locale}`);
+    return null;
+  }
+
+  const featureText: FeatureText[] = [
+    {
+      title: t("support.feature1_title"),
+      href: "/",
+      description: t("support.feature1_description"),
+      buttons: (
+        <div className="flex gap-2 flex-wrap">
+          <Button className="bg-[#E5E3FF] text-[#5243FE] rounded-full hover:bg-[#E5E3FF]">
+            {t("support.feature1_button1")}
+          </Button>
+          <Button className="bg-[#E5E3FF] text-[#5243FE] rounded-full hover:bg-[#E5E3FF]">
+            {t("support.feature1_button2")}
+          </Button>
+          <Button className="bg-[#E5E3FF] text-[#5243FE] rounded-full hover:bg-[#E5E3FF]">
+            {t("support.feature1_button3")}
+          </Button>
+        </div>
+      ),
+      cta: t("support.feature1_cta"),
+    },
+    {
+      title: t("support.feature2_title"),
+      href: "/",
+      description: t("support.feature2_description"),
+      buttons: (
+        <div className="flex gap-2 flex-wrap">
+          <Button className="bg-[#E5E3FF] text-[#5243FE] rounded-full hover:bg-[#E5E3FF]">
+            {t("support.feature2_button1")}
+          </Button>
+          <Button className="bg-[#E5E3FF] text-[#5243FE] rounded-full hover:bg-[#E5E3FF]">
+            {t("support.feature2_button2")}
+          </Button>
+          <Button className="bg-[#E5E3FF] text-[#5243FE] rounded-full hover:bg-[#E5E3FF]">
+            {t("support.feature2_button3")}
+          </Button>
+        </div>
+      ),
+      cta: t("support.feature2_cta"),
+    },
+    {
+      title: t("support.feature3_title"),
+      href: "/",
+      description: t("support.feature3_description"),
+      buttons: (
+        <div className="flex gap-2 flex-wrap">
+          <Button className="bg-[#E5E3FF] text-[#5243FE] rounded-full hover:bg-[#E5E3FF]">
+            {t("support.feature3_button1")}
+          </Button>
+          <Button className="bg-[#E5E3FF] text-[#5243FE] rounded-full hover:bg-[#E5E3FF]">
+            {t("support.feature3_button2")}
+          </Button>
+          <Button className="bg-[#E5E3FF] text-[#5243FE] rounded-full hover:bg-[#E5E3FF]">
+            {t("support.feature3_button3")}
+          </Button>
+        </div>
+      ),
+      cta: t("support.feature3_cta"),
+    },
+  ];
 
   return (
     <Section
@@ -107,11 +118,11 @@ const Support = () => {
             data-aos-delay="200"
           >
             <Balancer>
-              Get{" "}
+              {t("support.main_title")}{" "}
               <span className="bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent">
-                quick support
+                {t("support.main_title_highlight")}
               </span>{" "}
-              on popular issues
+              {t("support.main_title_part2")}
             </Balancer>
           </h3>
 
@@ -126,7 +137,7 @@ const Support = () => {
                 className="flex flex-col justify-between gap-6 rounded-lg p-6 transition-all hover:-mt-2 hover:mb-2 backdrop-filter backdrop-blur-lg shadow-lg"
                 key={index}
                 data-aos="fade-right"
-                data-aos-delay={`${400 + index * 100}`} // Staggered animation for each card
+                data-aos-delay={`${400 + index * 100}`}
               >
                 <div className="grid gap-4">
                   <h4 className="text-xl text-primary font-semibold">{title}</h4>
@@ -145,6 +156,4 @@ const Support = () => {
       </Container>
     </Section>
   );
-};
-
-export default Support;
+}

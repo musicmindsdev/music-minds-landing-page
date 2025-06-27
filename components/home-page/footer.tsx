@@ -22,7 +22,7 @@ export  function Footer({ locale }: { locale: string }) {
       <Section className="">
         <Container className="flex flex-col items-start md:flex-row md:items-center md:justify-between gap-4 md:gap-2 lg:gap-7 p-4 w-full max-w-full">
           <div className="not-prose flex flex-col gap-6 w-full max-w-[200px] md:max-w-[180px] lg:max-w-[240px]">
-            <Link href={`/${locale}`}>
+            <Link href={``}>
               <h3 className="sr-only">Music Minds</h3>
               <Image
                 src={Logo}
@@ -38,33 +38,33 @@ export  function Footer({ locale }: { locale: string }) {
           </div>
           <div className="flex flex-col gap-2 min-w-[100px]">
             <h5 className="font-bold">{t("footer.company")}</h5>
-            <Link href={`/${locale}/about`}>{t("footer.about_us")}</Link>
-            <Link href={`/${locale}/contact`}>{t("footer.contact")}</Link>
-            <Link href={`/${locale}`}>{t("footer.careers")}</Link>
-            <Link href={`/${locale}`}>{t("footer.blog")}</Link>
+            <Link href={`/about`}>{t("footer.about_us")}</Link>
+            <Link href={`/contact`}>{t("footer.contact")}</Link>
+            <Link href={``}>{t("footer.careers")}</Link>
+            <Link href={``}>{t("footer.blog")}</Link>
           </div>
           <div className="flex flex-col items-start gap-2 md:items-center min-w-[100px]">
             <h5 className="font-bold">{t("footer.resources")}</h5>
-            <Link href={`/${locale}`}>{t("footer.help_center")}</Link>
-            <Link href={`/${locale}`}>{t("footer.community")}</Link>
-            <Link href={`/${locale}`}>{t("footer.tutorials")}</Link>
-            <Link href={`/${locale}`}>{t("footer.events")}</Link>
+            <Link href={``}>{t("footer.help_center")}</Link>
+            <Link href={``}>{t("footer.community")}</Link>
+            <Link href={``}>{t("footer.tutorials")}</Link>
+            <Link href={``}>{t("footer.events")}</Link>
           </div>
           <div className="flex flex-col items-start gap-2 min-w-[100px]">
             <h5 className="font-bold">{t("footer.legal")}</h5>
-            <Link href={`/${locale}/privacy`}>{t("footer.privacy_policy")}</Link>
-            <Link href={`/${locale}/terms`}>{t("footer.terms_conditions")}</Link>
-            <Link href={`/${locale}/conduct`}>{t("footer.code_of_conduct")}</Link>
-            <Link href={`/${locale}`}>{t("footer.compliance")}</Link>
+            <Link href={`/privacy`}>{t("footer.privacy_policy")}</Link>
+            <Link href={`/terms`}>{t("footer.terms_conditions")}</Link>
+            <Link href={`/conduct`}>{t("footer.code_of_conduct")}</Link>
+            <Link href={``}>{t("footer.compliance")}</Link>
           </div>
           <div className="flex flex-col items-start gap-2 w-full max-w-[200px] md:max-w-[180px] lg:max-w-[240px] text-sm">
             <h5 className="font-bold">{t("footer.contact")}</h5>
-            <Link href={`/${locale}/privacy-policy`} className="break-words">
+            <Link href={`/privacy-policy`} className="break-words">
               {t("footer.address")}
             </Link>
-            <Link href={`/${locale}/terms-of-service`}>{t("footer.email")}</Link>
-            <Link href={`/${locale}/cookie-policy`}>{t("footer.phone")}</Link>
-            <Link href={`/${locale}`}>{t("footer.events")}</Link>
+            <Link href={`/terms-of-service`}>{t("footer.email")}</Link>
+            <Link href={`/cookie-policy`}>{t("footer.phone")}</Link>
+            <Link href={``}>{t("footer.events")}</Link>
           </div>
         </Container>
         <Container className="not-prose flex flex-col justify-between gap-6 border-t md:flex-row md:items-center md:gap-2 w-full max-w-full">

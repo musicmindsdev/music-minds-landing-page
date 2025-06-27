@@ -1,9 +1,9 @@
 
 import {  Container, Main, Section } from "@/components/craft";
-import Hero from "./_components/Hero";
-import Support from "./_components/Support";
 import { Footer } from "@/components/home-page/footer";
 import { cookies } from "next/headers";
+import Herod from "./_components/Hero";
+import Support1 from "./_components/Support";
 
 
 const supportedLngs = ["de", "en", "fr"];
@@ -32,8 +32,8 @@ export default function Home() {
    <Main >
     <Section >
       <Container >
-        <Hero/>
-        <Support/>
+        <Herod locale={locale}/>
+        <Support1 locale={locale}/>
        <Footer locale={locale} />
       </Container>
     </Section>

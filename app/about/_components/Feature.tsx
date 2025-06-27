@@ -8,10 +8,11 @@ import { JSX } from "react";
 import Ceo from "@/public/marshall.jpg";
 import Coo from "@/public/Bartosz.jpeg";
 import Vp from "@/public/Aisha.jpeg";
-import Cmo from "@/public/fidelis.jpeg";
+import Cmo from "@/public/fidelis1.jpeg";
 import AOS from "aos";
-import "aos/dist/aos.css"; // Ensure AOS CSS is imported
+import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 type FeatureText = {
   img: JSX.Element;
@@ -20,70 +21,103 @@ type FeatureText = {
   href?: string;
 };
 
-const featureText: FeatureText[] = [
-  {
-    img: <Image src={Cmo} alt="CMO Image" className="mx-auto block w-50 h-50 rounded-full object-cover" />,
-    title: (
-      <div>
-        <h3 className="text-sm">Fidelis Victory</h3>
-        <p className="text-xs">Development Coordinator</p>
-      </div>
-    ),
-    href: "/",
-    description:
-      "Well Experienced project coordinator skilled in managing timelines, resources, and teams to deliver successful outcomes. Strong communicator and problem-solver with a proven track record of keeping projects on track and within scope.",
-  },
-  {
-    img: <Image src={Coo} alt="COO Image" className="mx-auto block w-50 h-50 rounded-full object-fill" />,
-    title: (
-      <div>
-        <h3 className="text-sm">Bartosz Jarocki        </h3>
-        <p className="text-xs">Head of Music Partnership        </p>
-      </div>
-    ),
-    href: "/",
-    description:
-      "He possess deep industry expertise and a strong network across labels, artists, and platforms. Proven track record in building strategic alliances, driving artist collaborations, and leading innovative campaigns that amplify brand and music synergy.",
-  },
-  {
-    img: <Image src={Ceo} alt="CEO Image" className="mx-auto block w-50 h-50 rounded-full" />,
-    title: (
-      <div>
-        <h3 className="text-sm">Marshall Odii        </h3>
-        <p className="text-xs">Chief Technology  Officer          </p>
-      </div>
-    ),
-    href: "/",
-    description:
-      "Marshall is a very experienced with a strong background in technology strategy, core product engineering principles, team leadership, and product innovation. Skilled at driving scalable solutions, overseeing development, and aligning tech initiatives with business goals.",
-  },
-  {
-    img: <Image src={Vp} alt="VP Image" className="mx-auto block rounded-full w-50 h-50 object-fill" />,
-    title: (
-      <div>
-        <h3 className="text-sm">Aisha Madarati</h3>
-        <p className="text-xs">Artist Relations and Content Host</p>
-      </div>
-    ),
-    href: "/",
-    description:
-      "Music and media professional with over 20 years of experience in social media, format development, community building, label management, and artist development. An On-camera host of own formats as well as organization and execution of content behind the scenes",
-  },
-];
+export default function Feature1({ locale }: { locale: string }) {
+  const { t } = useTranslation("common");
+  console.log(`Feature1: locale=${locale}, t is function: ${typeof t === "function"}`);
 
-const Feature = () => {
   useEffect(() => {
-    AOS.init({
-      duration: 1000, // Duration of animations (in milliseconds)
-      offset: 50, // Start animation 50px before the element is in view
-      once: false, // Allow animations to replay on scroll
-      mirror: true, // Replay animations when scrolling back up
-    });
-
-    return () => {
-      AOS.refreshHard(); // Clean up AOS on component unmount
-    };
+    try {
+      AOS.init({
+        duration: 1000,
+        offset: 50,
+        once: false,
+        mirror: true,
+      });
+      console.log("Feature1: AOS initialized");
+      return () => {
+        AOS.refreshHard();
+        console.log("Feature1: AOS cleaned up");
+      };
+    } catch (error) {
+      console.error("Feature1: AOS initialization error:", error);
+    }
   }, []);
+
+  if (typeof t !== "function") {
+    console.warn(`Feature1: t is not a function for locale ${locale}`);
+    return null;
+  }
+
+  const featureText: FeatureText[] = [
+    {
+      img: (
+        <Image
+          src={Cmo}
+          alt={t("feature1.cmo_alt")}
+          className="mx-auto block w-50 h-50 rounded-full object-cover"
+        />
+      ),
+      title: (
+        <div>
+          <h3 className="text-sm">{t("feature1.cmo_name")}</h3>
+          <p className="text-xs">{t("feature1.cmo_role")}</p>
+        </div>
+      ),
+      href: "/",
+      description: t("feature1.cmo_description"),
+    },
+    {
+      img: (
+        <Image
+          src={Coo}
+          alt={t("feature1.coo_alt")}
+          className="mx-auto block w-50 h-50 rounded-full object-fill"
+        />
+      ),
+      title: (
+        <div>
+          <h3 className="text-sm">{t("feature1.coo_name")}</h3>
+          <p className="text-xs">{t("feature1.coo_role")}</p>
+        </div>
+      ),
+      href: "/",
+      description: t("feature1.coo_description"),
+    },
+    {
+      img: (
+        <Image
+          src={Ceo}
+          alt={t("feature1.ceo_alt")}
+          className="mx-auto block w-50 h-50 rounded-full"
+        />
+      ),
+      title: (
+        <div>
+          <h3 className="text-sm">{t("feature1.ceo_name")}</h3>
+          <p className="text-xs">{t("feature1.ceo_role")}</p>
+        </div>
+      ),
+      href: "/",
+      description: t("feature1.ceo_description"),
+    },
+    {
+      img: (
+        <Image
+          src={Vp}
+          alt={t("feature1.vp_alt")}
+          className="mx-auto block rounded-full w-50 h-50 object-fill"
+        />
+      ),
+      title: (
+        <div>
+          <h3 className="text-sm">{t("feature1.vp_name")}</h3>
+          <p className="text-xs">{t("feature1.vp_role")}</p>
+        </div>
+      ),
+      href: "/",
+      description: t("feature1.vp_description"),
+    },
+  ];
 
   return (
     <Section
@@ -98,11 +132,11 @@ const Feature = () => {
             data-aos-delay="200"
           >
             <Balancer>
-              Our{" "}
+              {t("feature1.main_title")}{" "}
               <span className="bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent">
-                team
+                {t("feature1.main_title_highlight")}
               </span>{" "}
-              has over 100 years of combined experience!
+              {t("feature1.main_title_part2")}
             </Balancer>
           </h1>
           <h4
@@ -111,8 +145,7 @@ const Feature = () => {
             data-aos-delay="300"
           >
             <Balancer>
-              Our team brings experience, innovation and creativity to the music marketing experience
-              to ensure your plans are in good hands.
+              {t("feature1.sub_title")}
             </Balancer>
           </h4>
 
@@ -127,7 +160,7 @@ const Feature = () => {
                 className="flex flex-col justify-between items-center gap-6 rounded-lg border p-6 transition-all hover:-mt-2 hover:mb-2 backdrop-filter backdrop-blur-lg bg-card border-card border-opacity-20 shadow-lg"
                 key={index}
                 data-aos="fade-right"
-                data-aos-delay={`${500 + index * 100}`} // Staggered animation for each card
+                data-aos-delay={`${500 + index * 100}`}
               >
                 <div className="grid gap-4 items-center justify-center">
                   {img}
@@ -142,6 +175,4 @@ const Feature = () => {
       </Container>
     </Section>
   );
-};
-
-export default Feature;
+}

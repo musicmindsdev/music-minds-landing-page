@@ -8,6 +8,7 @@ import { JSX, useEffect } from "react";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 import Help from "@/public/help.svg";
 import Support from "@/public/support.svg";
 import Answers from "@/public/answers.svg";
@@ -20,47 +21,61 @@ type FeatureText = {
   cta?: string;
 };
 
-const featureText: FeatureText[] = [
-  {
-    icon: <Image src={Help} alt="Get Help Icon" className="h-15 w-15" />,
-    title: "Get Help",
-    href: "/request",
-    description: "Experiencing problem? Talk to us about it and we will get right on it",
-    cta: "Submit an Issue",
-  },
-  {
-    icon: <Image src={Support} alt="Engage Support Icon" className="h-15 w-15" />,
-    title: "Engage Support",
-    href: "/",
-    description: "Experiencing problem? Talk to us about it and we will get right on it",
-    cta: "Chat with us",
-  },
-  {
-    icon: <Image src={Answers} alt="Find Answers Icon" className="h-15 w-15" />,
-    title: "Find Answers",
-    href: "/",
-    description: "Experiencing problem? Talk to us about it and we will get right on it",
-    cta: "Visit help centre",
-  },
-];
+export default function Herob({ locale }: { locale: string }) {
+  const { t } = useTranslation("common");
+  console.log(`Herob: locale=${locale}, t is function: ${typeof t === "function"}`);
 
-const Hero = () => {
   useEffect(() => {
-    AOS.init({
-      duration: 1000, // Duration of animations (in milliseconds)
-      offset: 50, // Start animation 50px before the element is in view
-      once: false, // Allow animations to replay on scroll
-      mirror: true, // Replay animations when scrolling back up
-    });
-
-    return () => {
-      AOS.refreshHard(); // Clean up AOS on component unmount
-    };
+    try {
+      AOS.init({
+        duration: 1000,
+        offset: 50,
+        once: false,
+        mirror: true,
+      });
+      console.log("Herob: AOS initialized");
+      return () => {
+        AOS.refreshHard();
+        console.log("Herob: AOS cleaned up");
+      };
+    } catch (error) {
+      console.error("Herob: AOS initialization error:", error);
+    }
   }, []);
+
+
+  if (typeof t !== "function") {
+    console.warn(`Herob: t is not a function for locale ${locale}`);
+    return null;
+  }
+
+  const featureText: FeatureText[] = [
+    {
+      icon: <Image src={Help} alt={t("herob.feature1_alt")} className="h-15 w-15" />,
+      title: t("herob.feature1_title"),
+      href: "/request",
+      description: t("herob.feature1_description"),
+      cta: t("herob.feature1_cta"),
+    },
+    {
+      icon: <Image src={Support} alt={t("herob.feature2_alt")} className="h-15 w-15" />,
+      title: t("herob.feature2_title"),
+      href: "/",
+      description: t("herob.feature2_description"),
+      cta: t("herob.feature2_cta"),
+    },
+    {
+      icon: <Image src={Answers} alt={t("herob.feature3_alt")} className="h-15 w-15" />,
+      title: t("herob.feature3_title"),
+      href: "/",
+      description: t("herob.feature3_description"),
+      cta: t("herob.feature3_cta"),
+    },
+  ];
 
   return (
     <Section
-      className="w-full bg-[url('/bg1.png')]  dark:bg-[url('/darkbg1.png')] bg-no-repeat bg-cover p-4 sm:p-6 md:p-8 pb-0"
+      className="w-full bg-[url('/bg1.png')] dark:bg-[url('/darkbg1.png')] bg-no-repeat bg-cover p-4 sm:p-6 md:p-8 pb-0"
       data-aos="fade-in"
     >
       <Container className="flex items-center justify-center gap-6 md:grid-cols-2 md:gap-12 pb-0 mt-9">
@@ -72,18 +87,18 @@ const Hero = () => {
             data-aos="fade-down"
             data-aos-delay="200"
           >
-            Contact Us
+            {t("herob.contact_button")}
           </Button>
           <h1
             className="text-4xl sm:text-5xl md:text-7xl font-bold w-[80%] text-center"
             data-aos="zoom-in"
             data-aos-delay="300"
           >
-            We&apos;re always{" "}
+            {t("herob.main_title")}{" "}
             <span className="bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent">
-              available
+              {t("herob.main_title_highlight")}
             </span>{" "}
-            to answer your questions
+            {t("herob.main_title_part2")}
           </h1>
 
           <div className="w-full" data-aos="fade-up" data-aos-delay="400">
@@ -100,7 +115,7 @@ const Hero = () => {
                 className="flex flex-col justify-between gap-6 rounded-lg p-6 backdrop-filter backdrop-blur-lg shadow-lg"
                 key={index}
                 data-aos="fade-up"
-                data-aos-delay={`${600 + index * 100}`} // Staggered animation for each card
+                data-aos-delay={`${600 + index * 100}`}
               >
                 <div className="grid gap-4">
                   {icon}
@@ -119,6 +134,4 @@ const Hero = () => {
       </Container>
     </Section>
   );
-};
-
-export default Hero;
+}

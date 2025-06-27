@@ -237,7 +237,7 @@ export default function NavBar({ locale }: { locale: string }) {
                 onMouseEnter={() => handleMouseEnter("press")}
                 onMouseLeave={() => handleMouseLeave("press")}
               >
-                <Link href="/press" className="flex gap-2">
+                <Link href="/" className="flex gap-2">
                   <Image src={hoverStates.press ? Texth : Text} alt="" className="pr-1" />
                   <div className="flex-col items-center">
                     <h4 className="font-bold">{t("navbar.press")}</h4>
@@ -247,13 +247,13 @@ export default function NavBar({ locale }: { locale: string }) {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-          <Link href="/features">
+          <Link href="/">
             <Button variant="ghost">{t("navbar.features")}</Button>
           </Link>
           <Link href="/contact">
             <Button variant="ghost">{t("navbar.contact")}</Button>
           </Link>
-          <Link href="/how-it-works">
+          <Link href="/">
             <Button variant="ghost">{t("navbar.how_it_works")}</Button>
           </Link>
           <Link href="/waitlist">
