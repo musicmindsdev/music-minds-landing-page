@@ -6,7 +6,7 @@ import { Section, Container } from "@/components/craft";
 import Image from "next/image";
 import { JSX } from "react";
 import Ceo from "@/public/marshall.jpg";
-import Coo from "@/public/Bartosz.jpeg";
+import Coo from "@/public/Bartek.jpeg";
 import Vp from "@/public/Aisha.jpeg";
 import Cmo from "@/public/fidelis1.jpeg";
 import AOS from "aos";
@@ -71,7 +71,7 @@ export default function Feature1({ locale }: { locale: string }) {
         <Image
           src={Coo}
           alt={t("feature1.coo_alt")}
-          className="mx-auto block w-50 h-50 rounded-full object-fill"
+          className="mx-auto block w-50 h-50 rounded-full "
         />
       ),
       title: (

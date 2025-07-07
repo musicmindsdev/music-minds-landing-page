@@ -5,7 +5,7 @@ import { Section, Container } from "@/components/craft";
 import { JSX, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Users from "@/public/users.png";
+// import Users from "@/public/users.png";
 import Image from "next/image";
 import Providers from "@/components/svg/Providers";
 import Book from "@/components/svg/Book";
@@ -109,12 +109,12 @@ export default function Support1({ locale }: { locale: string }) {
             ))}
           </div>
 
-          <div className="w-full flex flex-col gap-4 items-center mt-4 justify-center">
+          {/* <div className="w-full flex flex-col gap-4 items-center mt-4 justify-center">
             <Image src={Users} alt={t("support1.users_img_alt")} className="" />
             <p className="text-center italic">
               {t("support1.users_text", { count: 578 })}
             </p>
-          </div>
+          </div> */}
         </div>
       </Container>
     </Section>
