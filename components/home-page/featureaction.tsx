@@ -3,10 +3,10 @@
 import React, { JSX, useState, useEffect, useRef } from "react";
 import { Section, Container } from "@/components/craft";
 import Balancer from "react-wrap-balancer";
-import { Button } from "../ui/button";
-import Link from "next/link";
-import { FaApple } from "react-icons/fa";
-import { IoLogoGooglePlaystore } from "react-icons/io5";
+// import { Button } from "../ui/button";
+// import Link from "next/link";
+// import { FaApple } from "react-icons/fa";
+// import { IoLogoGooglePlaystore } from "react-icons/io5";
 import Image from "next/image";
 import Iphone1 from "@/public/iphone1.png";
 import Iphone2 from "@/public/iphone2.png";
@@ -169,7 +169,7 @@ const FeatureAction  =  ({ locale }: { locale: string }) => {
             ))}
           </div>
 
-          <div
+          {/* <div
             className="w-full flex flex-col md:flex-row md:justify-center gap-4"
             data-aos="fade-up"
             data-aos-delay="800"
@@ -192,7 +192,7 @@ const FeatureAction  =  ({ locale }: { locale: string }) => {
                 </div>
               </Button>
             </Link>
-          </div>
+          </div> */}
         </div>
       </Container>
     </Section>
