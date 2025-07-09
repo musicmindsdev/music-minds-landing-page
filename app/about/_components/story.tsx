@@ -7,8 +7,10 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import Pic1 from "@/public/pic1.svg";
-import Pic2 from "@/public/pic2.svg";
+// import Pic1 from "@/public/pic1.svg";
+// import Pic2 from "@/public/pic2.svg";
+import Pic3 from "@/public/pic3.jpeg";
+import Pic4 from "@/public/pic4.jpeg";
 
 export default function Story({ locale }: { locale: string }) {
   const { t } = useTranslation("common");
@@ -49,13 +51,13 @@ export default function Story({ locale }: { locale: string }) {
           data-aos-delay="200"
         >
           <Image
-            src={Pic1}
+            src={Pic4}
             alt={t("story.image1_alt")}
             className="w-full max-w-full sm:max-w-[60%] h-auto"
             width={780}
           />
           <Image
-            src={Pic2}
+            src={Pic3}
             alt={t("story.image2_alt")}
             className="w-full max-w-full sm:max-w-[40%] h-auto mt-4 sm:mt-0"
             width={500}
