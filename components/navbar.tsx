@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+// import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
 import { MenuIcon } from "lucide-react";
@@ -12,14 +12,14 @@ import { SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet"
 import Logo from "@/public/Musicmindlogo.svg";
 import Image from "next/image";
 // import Info from "@/public/info-circle.svg";
-import Infoh from "@/public/info-circleh.svg";
+// import Infoh from "@/public/info-circleh.svg";
 // import People from "@/public/people.svg";
-import Peopleh from "@/public/peopleh.svg";
+// import Peopleh from "@/public/peopleh.svg";
 // import Case from "@/public/briefcase.svg";
 // import Caseh from "@/public/briefcaseh.svg";
 // import Text from "@/public/text-block.svg";
-import Texth from "@/public/text-blockh.svg";
-import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
+// import Texth from "@/public/text-blockh.svg";
+// import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 // import {
 //   DropdownMenu,
 //   DropdownMenuContent,
@@ -33,8 +33,8 @@ export default function NavBar({ locale }: { locale: string }) {
   const { t } = useTranslation("common");
   console.log(`NavBar locale: ${locale}, t is function: ${typeof t === "function"}`);
 
-  //const [isOpen, setIsOpen] = useState(false);
-  const [expandedMenu, setExpandedMenu] = useState<string | null>(null);
+  // const [isOpen, setIsOpen] = useState(false);
+  // const [expandedMenu, setExpandedMenu] = useState<string | null>(null);
   // const [hoverStates, setHoverStates] = useState({
   //   aboutUs: false,
   //   career: false,
@@ -55,9 +55,9 @@ export default function NavBar({ locale }: { locale: string }) {
   //   setHoverStates((prev) => ({ ...prev, [item]: false }));
   // };
 
-  const toggleMenu = (menu: string) => {
-    setExpandedMenu(expandedMenu === menu ? null : menu);
-  };
+  // const toggleMenu = (menu: string) => {
+  //   setExpandedMenu(expandedMenu === menu ? null : menu);
+  // };
 
   if (typeof t !== "function") {
     console.warn(`NavBar: t is not a function for locale ${locale}`);
@@ -90,67 +90,77 @@ export default function NavBar({ locale }: { locale: string }) {
             </SheetHeader>
             <div className="flex-col justify-between">
               <div className="flex flex-col space-y-3 mt-[1rem] z-[99]">
-                <Button
-                  variant="ghost"
-                  className="w-full flex items-start justify-start"
-                  onClick={() => toggleMenu("company")}
-                >
-                  <div className="flex items-center space-x-2">
-                    <span>{t("navbar.company")}</span>
-                  </div>
-                  {expandedMenu === "company" ? (
-                    <MdKeyboardArrowUp className="h-5 w-5 text-gray-500" />
-                  ) : (
-                    <MdKeyboardArrowDown className="h-5 w-5 text-gray-500" />
-                  )}
-                </Button>
-                {expandedMenu === "company" && (
-                  <div className="pl-2 space-y-2">
-                    <Link href="/about">
-                      <Button
-                        variant="ghost"
-                        className="w-full flex items-start justify-start space-x-2"
-                      >
-                        <Image src={Infoh} alt="" className="h-6 w-6" width={24} height={24} />
-                        <span>{t("navbar.about_us")}</span>
-                      </Button>
-                    </Link>
-                    {/*<Link href="/career">*/}
-                    {/*  <Button*/}
-                    {/*    variant="ghost"*/}
-                    {/*    className="w-full flex items-start justify-start space-x-2"*/}
-                    {/*  >*/}
-                    {/*    <Image src={Caseh} alt="" className="h-6 w-6" width={24} height={24} />*/}
-                    {/*    <span>{t("navbar.career")}</span>*/}
-                    {/*  </Button>*/}
-                    {/*</Link>*/}
-                    <Link href="/culture">
-                      <Button
-                        variant="ghost"
-                        className="w-full flex items-start justify-start space-x-2"
-                      >
-                        <Image src={Peopleh} alt="" className="h-6 w-6" width={24} height={24} />
-                        <span>{t("navbar.culture")}</span>
-                      </Button>
-                    </Link>
-                    <Link href="/press">
-                      <Button
-                        variant="ghost"
-                        className="w-full flex items-start justify-start space-x-2"
-                      >
-                        <Image src={Texth} alt="" className="h-6 w-6" width={24} height={24} />
-                        <span>{t("navbar.press")}</span>
-                      </Button>
-                    </Link>
-                  </div>
-                )}
+                {/*<Button*/}
+                {/*  variant="ghost"*/}
+                {/*  className="w-full flex items-start justify-start"*/}
+                {/*  onClick={() => toggleMenu("company")}*/}
+                {/*>*/}
+                {/*  <div className="flex items-center space-x-2">*/}
+                {/*    <span>{t("navbar.company")}</span>*/}
+                {/*  </div>*/}
+                {/*  {expandedMenu === "company" ? (*/}
+                {/*    <MdKeyboardArrowUp className="h-5 w-5 text-gray-500" />*/}
+                {/*  ) : (*/}
+                {/*    <MdKeyboardArrowDown className="h-5 w-5 text-gray-500" />*/}
+                {/*  )}*/}
+                {/*</Button>*/}
+                {/*{expandedMenu === "company" && (*/}
+                {/*  <div className="pl-2 space-y-2">*/}
+                {/*    <Link href="/about">*/}
+                {/*      <Button*/}
+                {/*        variant="ghost"*/}
+                {/*        className="w-full flex items-start justify-start space-x-2"*/}
+                {/*      >*/}
+                {/*        <Image src={Infoh} alt="" className="h-6 w-6" width={24} height={24} />*/}
+                {/*        <span>{t("navbar.about_us")}</span>*/}
+                {/*      </Button>*/}
+                {/*    </Link>*/}
+                {/*    /!*<Link href="/career">*!/*/}
+                {/*    /!*  <Button*!/*/}
+                {/*    /!*    variant="ghost"*!/*/}
+                {/*    /!*    className="w-full flex items-start justify-start space-x-2"*!/*/}
+                {/*    /!*  >*!/*/}
+                {/*    /!*    <Image src={Caseh} alt="" className="h-6 w-6" width={24} height={24} />*!/*/}
+                {/*    /!*    <span>{t("navbar.career")}</span>*!/*/}
+                {/*    /!*  </Button>*!/*/}
+                {/*    /!*</Link>*!/*/}
+                {/*    <Link href="/culture">*/}
+                {/*      <Button*/}
+                {/*        variant="ghost"*/}
+                {/*        className="w-full flex items-start justify-start space-x-2"*/}
+                {/*      >*/}
+                {/*        <Image src={Peopleh} alt="" className="h-6 w-6" width={24} height={24} />*/}
+                {/*        <span>{t("navbar.culture")}</span>*/}
+                {/*      </Button>*/}
+                {/*    </Link>*/}
+                {/*    <Link href="/press">*/}
+                {/*      <Button*/}
+                {/*        variant="ghost"*/}
+                {/*        className="w-full flex items-start justify-start space-x-2"*/}
+                {/*      >*/}
+                {/*        <Image src={Texth} alt="" className="h-6 w-6" width={24} height={24} />*/}
+                {/*        <span>{t("navbar.press")}</span>*/}
+                {/*      </Button>*/}
+                {/*    </Link>*/}
+                {/*  </div>*/}
+                {/*)}*/}
+                {/*<DialogClose asChild>*/}
+                {/*  <Link href="/features">*/}
+                {/*    <Button*/}
+                {/*      variant="ghost"*/}
+                {/*      className="w-full flex items-center justify-start space-x-2"*/}
+                {/*    >*/}
+                {/*      <span>{t("navbar.features")}</span>*/}
+                {/*    </Button>*/}
+                {/*  </Link>*/}
+                {/*</DialogClose>*/}
                 <DialogClose asChild>
-                  <Link href="/features">
+                  <Link href="/about">
                     <Button
                       variant="ghost"
                       className="w-full flex items-center justify-start space-x-2"
                     >
-                      <span>{t("navbar.features")}</span>
+                      <span>{t("navbar.about_us")}</span>
                     </Button>
                   </Link>
                 </DialogClose>
@@ -247,7 +257,7 @@ export default function NavBar({ locale }: { locale: string }) {
           {/*    </DropdownMenuItem>*/}
           {/*  </DropdownMenuContent>*/}
           {/*</DropdownMenu>*/}
-          <Link href="/">
+          <Link href="/about">
             <Button variant="ghost">{t("navbar.about_us")}</Button>
           </Link>
           <Link href="/contact">
