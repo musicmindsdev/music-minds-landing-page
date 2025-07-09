@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Balancer from "react-wrap-balancer";
 import { Section, Container } from "@/components/craft";
 import Image from "next/image";
@@ -63,7 +62,7 @@ export default function Feature1({ locale }: { locale: string }) {
           <p className="text-xs">{t("feature1.cmo_role")}</p>
         </div>
       ),
-      href: "/",
+     // href: "/",
       description: t("feature1.cmo_description"),
     },
     {
@@ -80,7 +79,7 @@ export default function Feature1({ locale }: { locale: string }) {
           <p className="text-xs">{t("feature1.coo_role")}</p>
         </div>
       ),
-      href: "/",
+      // href: "/",
       description: t("feature1.coo_description"),
     },
     {
@@ -97,7 +96,7 @@ export default function Feature1({ locale }: { locale: string }) {
           <p className="text-xs">{t("feature1.ceo_role")}</p>
         </div>
       ),
-      href: "/",
+      //href: "/",
       description: t("feature1.ceo_description"),
     },
     {
@@ -114,7 +113,7 @@ export default function Feature1({ locale }: { locale: string }) {
           <p className="text-xs">{t("feature1.vp_role")}</p>
         </div>
       ),
-      href: "/",
+     /// href: "/",
       description: t("feature1.vp_description"),
     },
   ];
@@ -154,9 +153,9 @@ export default function Feature1({ locale }: { locale: string }) {
             data-aos="fade-up"
             data-aos-delay="400"
           >
-            {featureText.map(({ img, title, description, href }, index) => (
-              <Link
-                href={`${href}`}
+            {featureText.map(({ img, title, description }, index) => (
+              <Container
+                // href={`${href}`}
                 className="flex flex-col justify-between items-center gap-6 rounded-lg border p-6 transition-all hover:-mt-2 hover:mb-2 backdrop-filter backdrop-blur-lg bg-card border-card border-opacity-20 shadow-lg"
                 key={index}
                 data-aos="fade-right"
@@ -168,7 +167,7 @@ export default function Feature1({ locale }: { locale: string }) {
                   <hr />
                   <p className="text-base opacity-75 text-center">{description}</p>
                 </div>
-              </Link>
+              </Container>
             ))}
           </div>
         </div>

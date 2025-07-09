@@ -11,21 +11,21 @@ import { NavigationMenu, NavigationMenuLink, NavigationMenuList } from "./ui/nav
 import { SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
 import Logo from "@/public/Musicmindlogo.svg";
 import Image from "next/image";
-import Info from "@/public/info-circle.svg";
+// import Info from "@/public/info-circle.svg";
 import Infoh from "@/public/info-circleh.svg";
-import People from "@/public/people.svg";
+// import People from "@/public/people.svg";
 import Peopleh from "@/public/peopleh.svg";
-import Case from "@/public/briefcase.svg";
-import Caseh from "@/public/briefcaseh.svg";
-import Text from "@/public/text-block.svg";
+// import Case from "@/public/briefcase.svg";
+// import Caseh from "@/public/briefcaseh.svg";
+// import Text from "@/public/text-block.svg";
 import Texth from "@/public/text-blockh.svg";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+// import {
+//   DropdownMenu,
+//   DropdownMenuContent,
+//   DropdownMenuItem,
+//   DropdownMenuTrigger,
+// } from "@/components/ui/dropdown-menu";
 import React from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
 
@@ -33,27 +33,27 @@ export default function NavBar({ locale }: { locale: string }) {
   const { t } = useTranslation("common");
   console.log(`NavBar locale: ${locale}, t is function: ${typeof t === "function"}`);
 
-  const [isOpen, setIsOpen] = useState(false);
+  //const [isOpen, setIsOpen] = useState(false);
   const [expandedMenu, setExpandedMenu] = useState<string | null>(null);
-  const [hoverStates, setHoverStates] = useState({
-    aboutUs: false,
-    career: false,
-    culture: false,
-    press: false,
-  });
+  // const [hoverStates, setHoverStates] = useState({
+  //   aboutUs: false,
+  //   career: false,
+  //   culture: false,
+  //   press: false,
+  // });
 
-  const handleOpenChange = (open: boolean) => {
-    setIsOpen(open);
-    if (!open) setExpandedMenu(null);
-  };
-
-  const handleMouseEnter = (item: keyof typeof hoverStates) => {
-    setHoverStates((prev) => ({ ...prev, [item]: true }));
-  };
-
-  const handleMouseLeave = (item: keyof typeof hoverStates) => {
-    setHoverStates((prev) => ({ ...prev, [item]: false }));
-  };
+  // const handleOpenChange = (open: boolean) => {
+  //   setIsOpen(open);
+  //   if (!open) setExpandedMenu(null);
+  // };
+  //
+  // const handleMouseEnter = (item: keyof typeof hoverStates) => {
+  //   setHoverStates((prev) => ({ ...prev, [item]: true }));
+  // };
+  //
+  // const handleMouseLeave = (item: keyof typeof hoverStates) => {
+  //   setHoverStates((prev) => ({ ...prev, [item]: false }));
+  // };
 
   const toggleMenu = (menu: string) => {
     setExpandedMenu(expandedMenu === menu ? null : menu);
@@ -115,15 +115,15 @@ export default function NavBar({ locale }: { locale: string }) {
                         <span>{t("navbar.about_us")}</span>
                       </Button>
                     </Link>
-                    <Link href="/career">
-                      <Button
-                        variant="ghost"
-                        className="w-full flex items-start justify-start space-x-2"
-                      >
-                        <Image src={Caseh} alt="" className="h-6 w-6" width={24} height={24} />
-                        <span>{t("navbar.career")}</span>
-                      </Button>
-                    </Link>
+                    {/*<Link href="/career">*/}
+                    {/*  <Button*/}
+                    {/*    variant="ghost"*/}
+                    {/*    className="w-full flex items-start justify-start space-x-2"*/}
+                    {/*  >*/}
+                    {/*    <Image src={Caseh} alt="" className="h-6 w-6" width={24} height={24} />*/}
+                    {/*    <span>{t("navbar.career")}</span>*/}
+                    {/*  </Button>*/}
+                    {/*</Link>*/}
                     <Link href="/culture">
                       <Button
                         variant="ghost"
@@ -164,16 +164,16 @@ export default function NavBar({ locale }: { locale: string }) {
                     </Button>
                   </Link>
                 </DialogClose>
-                <DialogClose asChild>
-                  <Link href="/how-it-works">
-                    <Button
-                      variant="ghost"
-                      className="w-full flex items-center justify-start space-x-2"
-                    >
-                      <span>{t("navbar.how_it_works")}</span>
-                    </Button>
-                  </Link>
-                </DialogClose>
+                {/*<DialogClose asChild>*/}
+                {/*  <Link href="/how-it-works">*/}
+                {/*    <Button*/}
+                {/*      variant="ghost"*/}
+                {/*      className="w-full flex items-center justify-start space-x-2"*/}
+                {/*    >*/}
+                {/*      <span>{t("navbar.how_it_works")}</span>*/}
+                {/*    </Button>*/}
+                {/*  </Link>*/}
+                {/*</DialogClose>*/}
               </div>
               <div className="bg-[#F2F1FF] absolute bottom-0 left-0 w-full flex justify-center items-center p-4">
                 <Link href="/waitlist">
@@ -185,77 +185,77 @@ export default function NavBar({ locale }: { locale: string }) {
         </Dialog>
 
         <div className="flex items-center gap-2 max-[825px]:hidden">
-          <DropdownMenu onOpenChange={handleOpenChange}>
-            <DropdownMenuTrigger>
-              <Button variant="ghost">
-                {t("navbar.company")}{" "}
-                {isOpen ? (
-                  <MdKeyboardArrowUp className="h-5 w-5 text-gray-500" />
-                ) : (
-                  <MdKeyboardArrowDown className="h-5 w-5 text-gray-500" />
-                )}
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="p-5 border-8 border-[#EEEDFF] rounded-lg">
-              <DropdownMenuItem
-                onMouseEnter={() => handleMouseEnter("aboutUs")}
-                onMouseLeave={() => handleMouseLeave("aboutUs")}
-              >
-                <Link href="/about" className="flex gap-2">
-                  <Image src={hoverStates.aboutUs ? Infoh : Info} alt="" className="pr-1" />
-                  <div className="flex-col items-center">
-                    <h4 className="font-bold">{t("navbar.about_us")}</h4>
-                    <p>{t("navbar.about_us_description")}</p>
-                  </div>
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem
-                onMouseEnter={() => handleMouseEnter("career")}
-                onMouseLeave={() => handleMouseLeave("career")}
-              >
-                <Link href="/career" className="flex gap-2">
-                  <Image src={hoverStates.career ? Caseh : Case} alt="" className="pr-1" />
-                  <div className="flex-col items-center">
-                    <h4 className="font-bold">{t("navbar.career")}</h4>
-                    <p>{t("navbar.career_description")}</p>
-                  </div>
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem
-                onMouseEnter={() => handleMouseEnter("culture")}
-                onMouseLeave={() => handleMouseLeave("culture")}
-              >
-                <Link href="/culture" className="flex gap-2">
-                  <Image src={hoverStates.culture ? Peopleh : People} alt="" className="pr-1" />
-                  <div className="flex-col items-center">
-                    <h4 className="font-bold">{t("navbar.culture")}</h4>
-                    <p>{t("navbar.culture_description")}</p>
-                  </div>
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem
-                onMouseEnter={() => handleMouseEnter("press")}
-                onMouseLeave={() => handleMouseLeave("press")}
-              >
-                <Link href="/" className="flex gap-2">
-                  <Image src={hoverStates.press ? Texth : Text} alt="" className="pr-1" />
-                  <div className="flex-col items-center">
-                    <h4 className="font-bold">{t("navbar.press")}</h4>
-                    <p>{t("navbar.press_description")}</p>
-                  </div>
-                </Link>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          {/*<DropdownMenu onOpenChange={handleOpenChange}>*/}
+          {/*  <DropdownMenuTrigger>*/}
+          {/*    <Button variant="ghost">*/}
+          {/*      {t("navbar.company")}{" "}*/}
+          {/*      {isOpen ? (*/}
+          {/*        <MdKeyboardArrowUp className="h-5 w-5 text-gray-500" />*/}
+          {/*      ) : (*/}
+          {/*        <MdKeyboardArrowDown className="h-5 w-5 text-gray-500" />*/}
+          {/*      )}*/}
+          {/*    </Button>*/}
+          {/*  </DropdownMenuTrigger>*/}
+          {/*  <DropdownMenuContent className="p-5 border-8 border-[#EEEDFF] rounded-lg">*/}
+          {/*    <DropdownMenuItem*/}
+          {/*      onMouseEnter={() => handleMouseEnter("aboutUs")}*/}
+          {/*      onMouseLeave={() => handleMouseLeave("aboutUs")}*/}
+          {/*    >*/}
+          {/*      <Link href="/about" className="flex gap-2">*/}
+          {/*        <Image src={hoverStates.aboutUs ? Infoh : Info} alt="" className="pr-1" />*/}
+          {/*        <div className="flex-col items-center">*/}
+          {/*          <h4 className="font-bold">{t("navbar.about_us")}</h4>*/}
+          {/*          <p>{t("navbar.about_us_description")}</p>*/}
+          {/*        </div>*/}
+          {/*      </Link>*/}
+          {/*    </DropdownMenuItem>*/}
+          {/*    /!*<DropdownMenuItem*!/*/}
+          {/*    /!*  onMouseEnter={() => handleMouseEnter("career")}*!/*/}
+          {/*    /!*  onMouseLeave={() => handleMouseLeave("career")}*!/*/}
+          {/*    /!*>*!/*/}
+          {/*    /!*  <Link href="/career" className="flex gap-2">*!/*/}
+          {/*    /!*    <Image src={hoverStates.career ? Caseh : Case} alt="" className="pr-1" />*!/*/}
+          {/*    /!*    <div className="flex-col items-center">*!/*/}
+          {/*    /!*      <h4 className="font-bold">{t("navbar.career")}</h4>*!/*/}
+          {/*    /!*      <p>{t("navbar.career_description")}</p>*!/*/}
+          {/*    /!*    </div>*!/*/}
+          {/*    /!*  </Link>*!/*/}
+          {/*    /!*</DropdownMenuItem>*!/*/}
+          {/*    <DropdownMenuItem*/}
+          {/*      onMouseEnter={() => handleMouseEnter("culture")}*/}
+          {/*      onMouseLeave={() => handleMouseLeave("culture")}*/}
+          {/*    >*/}
+          {/*      <Link href="/culture" className="flex gap-2">*/}
+          {/*        <Image src={hoverStates.culture ? Peopleh : People} alt="" className="pr-1" />*/}
+          {/*        <div className="flex-col items-center">*/}
+          {/*          <h4 className="font-bold">{t("navbar.culture")}</h4>*/}
+          {/*          <p>{t("navbar.culture_description")}</p>*/}
+          {/*        </div>*/}
+          {/*      </Link>*/}
+          {/*    </DropdownMenuItem>*/}
+          {/*    <DropdownMenuItem*/}
+          {/*      onMouseEnter={() => handleMouseEnter("press")}*/}
+          {/*      onMouseLeave={() => handleMouseLeave("press")}*/}
+          {/*    >*/}
+          {/*      <Link href="/" className="flex gap-2">*/}
+          {/*        <Image src={hoverStates.press ? Texth : Text} alt="" className="pr-1" />*/}
+          {/*        <div className="flex-col items-center">*/}
+          {/*          <h4 className="font-bold">{t("navbar.press")}</h4>*/}
+          {/*          <p>{t("navbar.press_description")}</p>*/}
+          {/*        </div>*/}
+          {/*      </Link>*/}
+          {/*    </DropdownMenuItem>*/}
+          {/*  </DropdownMenuContent>*/}
+          {/*</DropdownMenu>*/}
           <Link href="/">
-            <Button variant="ghost">{t("navbar.features")}</Button>
+            <Button variant="ghost">{t("navbar.about_us")}</Button>
           </Link>
           <Link href="/contact">
             <Button variant="ghost">{t("navbar.contact")}</Button>
           </Link>
-          <Link href="/">
-            <Button variant="ghost">{t("navbar.how_it_works")}</Button>
-          </Link>
+          {/*<Link href="/">*/}
+          {/*  <Button variant="ghost">{t("navbar.how_it_works")}</Button>*/}
+          {/*</Link>*/}
           <Link href="/waitlist">
             <Button className="text-white">{t("navbar.join_waitlist")}</Button>
           </Link>

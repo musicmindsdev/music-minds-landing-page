@@ -40,31 +40,31 @@ export  function Footer({ locale }: { locale: string }) {
             <h5 className="font-bold">{t("footer.company")}</h5>
             <Link href={`/about`}>{t("footer.about_us")}</Link>
             <Link href={`/contact`}>{t("footer.contact")}</Link>
-            <Link href={``}>{t("footer.careers")}</Link>
-            <Link href={``}>{t("footer.blog")}</Link>
+            {/*<Link href={``}>{t("footer.careers")}</Link>*/}
+            {/*<Link href={``}>{t("footer.blog")}</Link>*/}
           </div>
           <div className="flex flex-col items-start gap-2 md:items-center min-w-[100px]">
             <h5 className="font-bold">{t("footer.resources")}</h5>
-            <Link href={``}>{t("footer.help_center")}</Link>
-            <Link href={``}>{t("footer.community")}</Link>
-            <Link href={``}>{t("footer.tutorials")}</Link>
-            <Link href={``}>{t("footer.events")}</Link>
+            {/*<Link href={``}>{t("footer.help_center")}</Link>*/}
+            {/*<Link href={``}>{t("footer.community")}</Link>*/}
+            {/*<Link href={``}>{t("footer.tutorials")}</Link>*/}
+            {/*<Link href={``}>{t("footer.events")}</Link>*/}
+            <Link href={`/conduct`}>{t("footer.code_of_conduct")}</Link>
+            <Link href={`https://www.google.com/maps/place/Reichsstra%C3%9Fe+99,+14052+Berlin,+Germany/@52.5118569,13.2644961,17z/data=!3m1!4b1!4m6!3m5!1s0x47a857291d55130b:0xfdae2534a72974d3!8m2!3d52.5118569!4d13.267071!16s%2Fg%2F11b8v674cx?entry=ttu&g_ep=EgoyMDI1MDcwNi4wIKXMDSoASAFQAw%3D%3D`}
+                  className="break-words">{t("footer.address")}</Link>
           </div>
           <div className="flex flex-col items-start gap-2 min-w-[100px]">
             <h5 className="font-bold">{t("footer.legal")}</h5>
             <Link href={`/privacy`}>{t("footer.privacy_policy")}</Link>
             <Link href={`/terms`}>{t("footer.terms_conditions")}</Link>
-            <Link href={`/conduct`}>{t("footer.code_of_conduct")}</Link>
-            <Link href={``}>{t("footer.compliance")}</Link>
+            {/*<Link href={`/conduct`}>{t("footer.code_of_conduct")}</Link>*/}
+            {/*<Link href={``}>{t("footer.compliance")}</Link>*/}
           </div>
           <div className="flex flex-col items-start gap-2 w-full max-w-[200px] md:max-w-[180px] lg:max-w-[240px] text-sm">
             <h5 className="font-bold">{t("footer.contact")}</h5>
-            <Link href={`/privacy-policy`} className="break-words">
-              {t("footer.address")}
-            </Link>
-            <Link href={`/terms-of-service`}>{t("footer.email")}</Link>
-            <Link href={`/cookie-policy`}>{t("footer.phone")}</Link>
-            <Link href={``}>{t("footer.events")}</Link>
+            <Link href={`mailto:support@music-minds.io`}>{t("footer.email")}</Link>
+            <Link href={`tel:+4915733927104`}>{t("footer.phone")}</Link>
+            {/*<Link href={``}>{t("footer.events")}</Link>*/}
           </div>
         </Container>
         <Container className="not-prose flex flex-col justify-between gap-6 border-t md:flex-row md:items-center md:gap-2 w-full max-w-full">
