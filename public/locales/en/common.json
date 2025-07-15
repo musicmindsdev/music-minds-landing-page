@@ -1,27 +1,27 @@
 {
-    "navbar": {
-      "company": "Company",
-      "about_us": "About Us",
-      "about_us_description": "Learn more about the team",
-      "career": "Career",
-      "career_description": "Become one of us",
-      "culture": "Culture",
-      "culture_description": "Learn what makes us who we are",
-      "press": "Press",
-      "press_description": "All you need to know",
-      "features": "Features",
-      "contact": "Contact",
-      "how_it_works": "How it works",
-      "join_waitlist": "Join Waitlist"
-    },
-    "hero": {
-      "title_part1": "Unlock Your",
-      "title_part2": "Music",
-      "title_part3": "Potential",
-      "description": "Your gateway to the music world: Connect with top vocal coaches, songwriters, producers & studios. Learn, collaborate, grow — and turn your passion into real impact.",
-      "join_waitlist": "Join Waitlist"
-    },
-    "herob": {
+  "navbar": {
+    "company": "Company",
+    "about_us": "About Us",
+    "about_us_description": "Learn more about the team",
+    "career": "Career",
+    "career_description": "Become one of us",
+    "culture": "Culture",
+    "culture_description": "Learn what makes us who we are",
+    "press": "Press",
+    "press_description": "All you need to know",
+    "features": "Features",
+    "contact": "Contact",
+    "how_it_works": "How it works",
+    "join_waitlist": "Join Waitlist"
+  },
+  "hero": {
+    "title_part1": "Unlock Your",
+    "title_part2": "Music",
+    "title_part3": "Potential",
+    "description": "Your gateway to the music world: Connect with top vocal coaches, songwriters, producers & studios. Learn, collaborate, grow — and turn your passion into real impact.",
+    "join_waitlist": "Join Waitlist"
+  },
+  "herob": {
     "main_title": "We're always",
     "main_title_highlight": "available",
     "main_title_part2": "to answer your questions",
@@ -38,6 +38,37 @@
     "feature3_description": "Explore our resources to find solutions to your questions.",
     "feature3_cta": "Visit Help Center",
     "feature3_alt": "Find Answers Icon"
+  },
+  "herocu": {
+    "culture_button": "Culture",
+    "main_title": "Our Culture At",
+    "main_title_highlight": "Music Minds",
+    "description": "More Than Just an App - We provide an experience.",
+    "description_title": "Music Minds",
+    "description_title1": " Our platform",
+    "description_body": " is a digital home for everyone who not only consumes music but creates it. We connect people who learn, teach, produce, and publish – regardless of experience, genre, or network.",
+    "description_cta": "Download App",
+    "description_cta1": "Learn More",
+    "description_body1": " brings together artists, coaches, producers, studios, and content creators. But what truly unites us is our mindset: Collaboration over competition. Quality over noise. Structure over chaos."
+  },
+  "valuecu": {
+    "main_title": "Our",
+    "main_title_highlight": "Values",
+    "sub_title": "At MusicMinds, our core values guide the work we do to power the dreams of millions.",
+    "empowerment_title": "Empowerment over gatekeeping",
+    "empowerment_description": "Artists should connect, promote, and earn — directly, fairly, and with full control.",
+    "empowerment_alt": "Grit Icon",
+    "diversity_title": "Diversity as foundation",
+    "diversity_description": "We work to amplify underrepresented voices across gender, identity, and culture.",
+    "diversity_alt": "Empathy Icon",
+    "community_title": "Community before algorithms",
+    "community_description": "Real networks matter. Growth should be based on talent, effort, and engagement — not ad budgets or hype.",
+    "community_alt": "Candour Icon",
+    "learning_title": "Open access to learning",
+    "learning_description": "Music education should be practical, affordable, and flexible. We support both structured coaching and self-taught learning.",
+    "learning_alt": "No Ego Icon",
+    "learning_title3": "Appreciation Over Competition",
+    "learning_description3": "We believe in partnership – not platform ego. Our goal is to connect musicians and service providers as equals."
   },
   "support": {
     "main_title": "Get",
@@ -160,6 +191,15 @@
     "what_drives_us_join_label": "Join the Movement",
     "what_drives_us_join": "Whether you're a beatmaker, songwriter, coach, engineer, or a future headliner — this is your space. Connect. Learn. Build. Share. Let's change the music industry from the inside out."
   },
+  "storycu": {
+    "why_we_do_this_highlight": "Why",
+    "why_we_do_this": "We Do This",
+    "why_we_do_this_description": "We do this because we know firsthand how much potential lies in people who don’t get a platform. Because we’ve seen how many hours musicians spend searching, comparing, and improvising – instead of doing what matters. Because we believe that technology shouldn't replace but empower",
+    "why_we_do_this_descriptionb": "Music Minds was born from our belief that the music industry needs more structure, fairness, and focus.",
+    "what_drives_us_highlight": "What",
+    "what_drives_us": "Drives Us",
+    "what_drives_us_description": "We want more great music to be created – regardless of budget, network, or fame. We want collaboration to become professional, plannable, and accessible again. And we want musicians to work with passion without burning themselves out."
+  },
   "feature1": {
     "main_title": "Our",
     "main_title_highlight": "team",
@@ -181,6 +221,18 @@
     "vp_role": "Artist Relations and Content Host",
     "vp_description": "Music and media professional with over 20 years of experience in social media, format development, community building, label management, and artist development. An On-camera host of own formats as well as organization and execution of content behind the scenes",
     "vp_alt": "Artist Relations and Content Host Image"
+  },
+  "featurecu": {
+    "main_title": "How We",
+    "main_title_highlight": "Work",
+    "card_title": "Remote by Default",
+    "card_description": "Our team works flexibly – just like the users we build the platform for.",
+    "card_title1": "Team = Project",
+    "card_description1": "We think like a music project: flat, dynamic, goal-oriented. Every skillset matters, every perspective is welcome.",
+    "card_title2": "Learning Is Part of the Process",
+    "card_description2": "We improve Music Minds not by gut feeling, but through feedback, user data, and continuous learning.",
+    "card_title3": "Technology and Creativity Are Equal",
+    "card_description3": "Our culture brings code and art together – deliberately, consistently, and with mutual respect."
   },
   "value": {
     "main_title": "Our",
@@ -205,77 +257,81 @@
     "download_button": "Download App",
     "logo_alt": "Music Minds Logo"
   },
-    "feature": {
-      "trusted_by_artists": "TRUSTED BY ARTISTS WORLDWIDE",
-      "elevate_your_music_journey": "Elevate your Music Journey",
-      "elevate_your_music_journey_description": "Music Minds provides all the tools you need to grow your Music talents with expert guidance.",
-      "expert_service_providers": "Expert Service Providers",
-      "expert_service_providers_description": "Connect with professional service providers across various areas in music ranging from songwriters to producers for personalized sessions tailored to you.",
-      "easy_scheduling": "Easy Scheduling",
-      "easy_scheduling_description": "Book and manage your sessions with service providers using our intuitive scheduling system. No more back-and-forth emails.",
-      "progress_tracking": "Progress Tracking",
-      "progress_tracking_description": "Record your sessions, track your progress, and share your improvements with friends, coaches and the community.",
-      "community_support": "Community Support",
-      "community_support_description": "Connect with fellow musicians, share experiences, and get inspiration from a supportive community."
-    },
-    "feature_left": {
-      "find_perfect_provider": "Find the Perfect Service Provider",
-      "find_perfect_provider_description": "Browse through profiles of top music coaches, read reviews from other students, and find the perfect match for your Music journey.",
-      "filter_by_genre": "Filter by music genre and expertise",
-      "read_reviews": "Read verified clients reviews",
-      "message_providers": "Message providers before booking"
-    },
-    "feature_action": {
-      "how_music_minds_works": "How Music Minds Works",
-      "how_music_minds_works_description": "A simple process to connect you with the Music guidance you need.",
-      "create_profile": "Create Your Profile",
-      "create_profile_description": "Sign up and create your music profile with your skills, goals, and preferences.",
-      "find_provider": "Find Your Service Provider",
-      "find_provider_description": "Browse through verified coaches and musicians, filter by genre, location, and expertise.",
-      "book_sessions": "Book Sessions",
-      "book_sessions_description": "Schedule sessions with your favorite providers at times that work for you.",
-      "grow_share": "Grow & Share",
-      "grow_share_description": "Track your progress, share recordings, and connect with the music community.",
-      "get_it_on": "Get it on",
-      "app_store": "App Store",
-      "play_store": "Play Store"
-    },
-    "feature_right": {
-      "book_sessions": "Book Sessions With Service Providers in Minutes",
-      "book_sessions_description": "Schedule sessions with top coaches and providers around the world. Get personalized guidance to improve your technique, expand your range, and develop your unique style.",
-      "in_person_virtual": "In-person and virtual sessions available",
-      "flexible_scheduling": "Flexible scheduling to fit your routine",
-      "record_sessions": "Record sessions for later review and practice",
-      "personalized_feedback": "Get personalized feedback and exercises"
-    },
-    "cta": {
-      "ready_to_start": "Ready to Start Your Music Journey?",
-      "ready_to_start_description": "Join Music Minds today and connect with top music coaches, track your progress, and become the musician you've always wanted to be.",
-      "download_app": "Download App"
-    },
-    "footer": {
-      "description": "Connecting aspiring musicians with world-class coaches for a transformative Music journey.",
-      "company": "Company",
-      "about_us": "About Us",
-      "contact": "Contact",
-      "careers": "Careers",
-      "blog": "Blog",
-      "resources": "Resources",
-      "help_center": "Help Center",
-      "community": "Community",
-      "tutorials": "Tutorials",
-      "events": "Events",
-      "legal": "Legal",
-      "privacy_policy": "Privacy Policy",
-      "terms_conditions": "Terms & Conditions",
-      "code_of_conduct": "Code of Conduct",
-      "compliance": "Compliance",
-      "address": "Reichsstr. 99, D-14052 Berlin",
-      "email": "support@music-minds.io",
-      "phone": " +49 15733927104",
-      "copyright": "© 2025 Music Minds. All rights reserved"
-    },
-    "terms": {
+  "ctacu": {
+    "main_title": " Let’s build the future of music collaboration.",
+    "sub_title": " Fair, smart, digital..  If our values resonate with you – welcome to Music Minds."
+  },
+  "feature": {
+    "trusted_by_artists": "TRUSTED BY ARTISTS WORLDWIDE",
+    "elevate_your_music_journey": "Elevate your Music Journey",
+    "elevate_your_music_journey_description": "Music Minds provides all the tools you need to grow your Music talents with expert guidance.",
+    "expert_service_providers": "Expert Service Providers",
+    "expert_service_providers_description": "Connect with professional service providers across various areas in music ranging from songwriters to producers for personalized sessions tailored to you.",
+    "easy_scheduling": "Easy Scheduling",
+    "easy_scheduling_description": "Book and manage your sessions with service providers using our intuitive scheduling system. No more back-and-forth emails.",
+    "progress_tracking": "Progress Tracking",
+    "progress_tracking_description": "Record your sessions, track your progress, and share your improvements with friends, coaches and the community.",
+    "community_support": "Community Support",
+    "community_support_description": "Connect with fellow musicians, share experiences, and get inspiration from a supportive community."
+  },
+  "feature_left": {
+    "find_perfect_provider": "Find the Perfect Service Provider",
+    "find_perfect_provider_description": "Browse through profiles of top music coaches, read reviews from other students, and find the perfect match for your Music journey.",
+    "filter_by_genre": "Filter by music genre and expertise",
+    "read_reviews": "Read verified clients reviews",
+    "message_providers": "Message providers before booking"
+  },
+  "feature_action": {
+    "how_music_minds_works": "How Music Minds Works",
+    "how_music_minds_works_description": "A simple process to connect you with the Music guidance you need.",
+    "create_profile": "Create Your Profile",
+    "create_profile_description": "Sign up and create your music profile with your skills, goals, and preferences.",
+    "find_provider": "Find Your Service Provider",
+    "find_provider_description": "Browse through verified coaches and musicians, filter by genre, location, and expertise.",
+    "book_sessions": "Book Sessions",
+    "book_sessions_description": "Schedule sessions with your favorite providers at times that work for you.",
+    "grow_share": "Grow & Share",
+    "grow_share_description": "Track your progress, share recordings, and connect with the music community.",
+    "get_it_on": "Get it on",
+    "app_store": "App Store",
+    "play_store": "Play Store"
+  },
+  "feature_right": {
+    "book_sessions": "Book Sessions With Service Providers in Minutes",
+    "book_sessions_description": "Schedule sessions with top coaches and providers around the world. Get personalized guidance to improve your technique, expand your range, and develop your unique style.",
+    "in_person_virtual": "In-person and virtual sessions available",
+    "flexible_scheduling": "Flexible scheduling to fit your routine",
+    "record_sessions": "Record sessions for later review and practice",
+    "personalized_feedback": "Get personalized feedback and exercises"
+  },
+  "cta": {
+    "ready_to_start": "Ready to Start Your Music Journey?",
+    "ready_to_start_description": "Join Music Minds today and connect with top music coaches, track your progress, and become the musician you've always wanted to be.",
+    "download_app": "Download App"
+  },
+  "footer": {
+    "description": "Connecting aspiring musicians with world-class coaches for a transformative Music journey.",
+    "company": "Company",
+    "about_us": "About Us",
+    "contact": "Contact",
+    "careers": "Careers",
+    "blog": "Blog",
+    "resources": "Resources",
+    "help_center": "Help Center",
+    "community": "Community",
+    "tutorials": "Tutorials",
+    "events": "Events",
+    "legal": "Legal",
+    "privacy_policy": "Privacy Policy",
+    "terms_conditions": "Terms & Conditions",
+    "code_of_conduct": "Code of Conduct",
+    "compliance": "Compliance",
+    "address": "Reichsstr. 99, D-14052 Berlin",
+    "email": "support@music-minds.io",
+    "phone": " +49 15733927104",
+    "copyright": "© 2025 Music Minds. All rights reserved"
+  },
+  "terms": {
     "title": "Terms & Conditions",
     "last_updated": "Last Updated: {date} | Effective Date: {date}",
     "table_of_contents": {
@@ -661,4 +717,3 @@
     }
   }
 }
-  

@@ -263,6 +263,9 @@ export default function NavBar({ locale }: { locale: string }) {
           <Link href="/contact">
             <Button variant="ghost">{t("navbar.contact")}</Button>
           </Link>
+          <Link href="/culture">
+            <Button variant="ghost">{t("navbar.culture")}</Button>
+          </Link>
           {/*<Link href="/">*/}
           {/*  <Button variant="ghost">{t("navbar.how_it_works")}</Button>*/}
           {/*</Link>*/}
