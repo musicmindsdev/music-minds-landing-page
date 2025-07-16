@@ -39,6 +39,21 @@
     "feature3_cta": "Visit Help Center",
     "feature3_alt": "Find Answers Icon"
   },
+  "heropr": {
+    "main_title": "Press",
+    "main_title_highlight": "Materials",
+    "main_title_description": "All content is freely available for editorial use. Please credit music-minds.io as the source.",
+    "press_button": "Press",
+    "feature1_title": "Press Kit",
+    "feature1_description": "Download assets such as with company profile, team, vision, screenshots",
+    "feature1_cta": "Download",
+    "feature1_title2": "Logo & Branding Kit",
+    "feature1_description2": "Download assets such as logos and branding in all formats (PNG, SVG, light/dark)",
+    "feature1_title3": "App Mockups & Use Cases",
+    "feature1_description3": "Download assets such as app mockups and usecases in high resolution",
+    "feature1_title4": "Team Assets",
+    "feature1_description4": "Download assets such team photos and founder portraits"
+  },
   "herocu": {
     "culture_button": "Culture",
     "main_title": "Our Culture At",
@@ -199,6 +214,29 @@
     "what_drives_us_highlight": "What",
     "what_drives_us": "Drives Us",
     "what_drives_us_description": "We want more great music to be created – regardless of budget, network, or fame. We want collaboration to become professional, plannable, and accessible again. And we want musicians to work with passion without burning themselves out."
+  },
+  "storypr": {
+    "modern_music": "The Platform for",
+    "modern_music_highlight": " Modern Music",
+    "modern_musicb": " Projects",
+    "modern_music_description": "Music Minds is a digital all-in-one platform for musicians, producers, coaches, studios, and creatives. It enables professional music projects – structured, digital, and collaborative.",
+    "modern_music_descriptionb": " The app combines coaching, production, promotion, and project management in one intuitive system. Whether it's vocal lessons, mixing, video production, or marketing: Music Minds efficiently connects musicians and service providers – from idea to release.",
+    "modern_music_descriptionc": "Music Minds is part of the IMPACT universe and was founded in 2025",
+    "press_inquiries_highlight": "Press",
+    "press_inquiries": "Inquiries & Interview",
+    "press_inquiries_highlightb": "Contact",
+    "press_inquiries_description": "We welcome media inquiries, collaborations, or interview requests on topics such as:",
+    "press_inquiries_li1": "Digitization of the music industry",
+    "press_inquiries_li2": "Creator Economy",
+    "press_inquiries_li3": "Platform technologies in the music field",
+    "press_inquiries_li4": "Music education & community coaching",
+    "press_inquiries_descriptionb": "Press Contact: ",
+    "press_inquiries_descriptionb_highlight": "support@music-minds.io",
+    "description_short_highlight": "Descriptions",
+    "description_short": "Short",
+    "description_shortb": "(For Media)",
+    "description_short_description": "Music Minds is the first platform that bundles professional music services, coaching, and tools in a single app. With structured project processes, verified service providers, and AI-assisted matching, Music Minds facilitates the creative workflow for music creators – regardless of budget or location.",
+     "description_short_descriptionb": " As part of the IMPACT universe, Music Minds takes an interdisciplinary approach to make the music industry more sustainable, accessible, and collaborative through digital solutions."
   },
   "feature1": {
     "main_title": "Our",
