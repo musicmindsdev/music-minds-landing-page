@@ -4,6 +4,7 @@ import { Footer } from "@/components/home-page/footer";
 import { cookies } from "next/headers";
 import Heropr from "./_components/Hero";
 import StoryPr from "./_components/storypr";
+import CTAPr from "./_components/ctapr";
 
 const supportedLngs = ["de", "en", "fr"];
 const defaultLocale = "en";
@@ -33,6 +34,7 @@ export default function Home() {
       <Container >
         <Heropr locale={locale} />
         <StoryPr locale={locale} />
+        <CTAPr locale={locale}/>
         <Footer locale={locale} />
       </Container>
     </Section>
