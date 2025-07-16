@@ -346,6 +346,11 @@
     "record_sessions": "Record sessions for later review and practice",
     "personalized_feedback": "Get personalized feedback and exercises"
   },
+  "featurepr":{
+    "main_title":"Team",
+    "main_title_highlight": "Quotes",
+    "sub_title": "These quotes have been approved for editorial use"
+  },
   "cta": {
     "ready_to_start": "Ready to Start Your Music Journey?",
     "ready_to_start_description": "Join Music Minds today and connect with top music coaches, track your progress, and become the musician you've always wanted to be.",
