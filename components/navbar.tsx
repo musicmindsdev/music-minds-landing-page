@@ -174,6 +174,26 @@ export default function NavBar({ locale }: { locale: string }) {
                     </Button>
                   </Link>
                 </DialogClose>
+                <DialogClose asChild>
+                  <Link href="/culture">
+                    <Button
+                      variant="ghost"
+                      className="w-full flex items-center justify-start space-x-2"
+                    >
+                      <span>{t("navbar.culture")}</span>
+                    </Button>
+                  </Link>
+                </DialogClose>
+                <DialogClose asChild>
+                  <Link href="press">
+                    <Button
+                      variant="ghost"
+                      className="w-full flex items-center justify-start space-x-2"
+                    >
+                      <span>{t("navbar.press")}</span>
+                    </Button>
+                  </Link>
+                </DialogClose>
                 {/*<DialogClose asChild>*/}
                 {/*  <Link href="/how-it-works">*/}
                 {/*    <Button*/}

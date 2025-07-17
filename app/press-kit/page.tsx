@@ -3,6 +3,7 @@ import {  Container, Main, Section } from "@/components/craft";
 import { Footer } from "@/components/home-page/footer";
 import { cookies } from "next/headers";
 import HeroKit from "./_components/herokit";
+import CTAPr from "../press/_components/ctapr";
 
 const supportedLngs = ["de", "en", "fr"];
 const defaultLocale = "en";
@@ -31,6 +32,7 @@ export default function Home() {
     <Section >
       <Container >
         <HeroKit locale={locale} />
+         <CTAPr locale={locale}/>
         <Footer locale={locale} />
       </Container>
     </Section>
