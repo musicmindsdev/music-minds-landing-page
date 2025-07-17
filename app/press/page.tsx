@@ -6,6 +6,7 @@ import Heropr from "./_components/Hero";
 import StoryPr from "./_components/storypr";
 import CTAPr from "./_components/ctapr";
 import Featurepr from "./_components/featurepr";
+import Team from "./_components/team";
 
 const supportedLngs = ["de", "en", "fr"];
 const defaultLocale = "en";
@@ -35,6 +36,7 @@ export default function Home() {
       <Container >
         <Heropr locale={locale} />
         <StoryPr locale={locale} />
+        <Team locale={locale}/>
         <Featurepr locale={locale} />
         <CTAPr locale={locale}/>
         <Footer locale={locale} />

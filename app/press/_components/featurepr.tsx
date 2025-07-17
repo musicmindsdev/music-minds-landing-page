@@ -2,24 +2,13 @@
 
 import Balancer from "react-wrap-balancer";
 import { Section, Container } from "@/components/craft";
-import Image from "next/image";
-import { JSX } from "react";
-import Ceo from "@/public/marshall.jpg";
-import Coo from "@/public/Bartek.jpeg";
-import Vp from "@/public/Aisha.jpeg";
-import Cmo from "@/public/fidelis1.jpeg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import CarouselComponent from "@/components/Carousel";
 
-type FeatureText = {
-  img: JSX.Element;
-  title: JSX.Element;
-  description: string;
-  href?: string;
-};
+
 
 export default function Featurepr({ locale }: { locale: string }) {
   const { t } = useTranslation("common");
@@ -48,76 +37,7 @@ export default function Featurepr({ locale }: { locale: string }) {
     return null;
   }
 
-  const featureText: FeatureText[] = [
-    {
-      img: (
-        <Image
-          src={Cmo}
-          alt={t("feature1.cmo_alt")}
-          className="mx-auto block w-50 h-50 rounded-full object-cover"
-        />
-      ),
-      title: (
-        <div>
-          <h3 className="text-sm">{t("feature1.cmo_name")}</h3>
-          <p className="text-xs">{t("feature1.cmo_role")}</p>
-        </div>
-      ),
-     // href: "/",
-      description: t("feature1.cmo_description"),
-    },
-    {
-      img: (
-        <Image
-          src={Coo}
-          alt={t("feature1.coo_alt")}
-          className="mx-auto block w-50 h-50 rounded-full "
-        />
-      ),
-      title: (
-        <div>
-          <h3 className="text-sm">{t("feature1.coo_name")}</h3>
-          <p className="text-xs">{t("feature1.coo_role")}</p>
-        </div>
-      ),
-      // href: "/",
-      description: t("feature1.coo_description"),
-    },
-    {
-      img: (
-        <Image
-          src={Ceo}
-          alt={t("feature1.ceo_alt")}
-          className="mx-auto block w-50 h-50 rounded-full"
-        />
-      ),
-      title: (
-        <div>
-          <h3 className="text-sm">{t("feature1.ceo_name")}</h3>
-          <p className="text-xs">{t("feature1.ceo_role")}</p>
-        </div>
-      ),
-      //href: "/",
-      description: t("feature1.ceo_description"),
-    },
-    {
-      img: (
-        <Image
-          src={Vp}
-          alt={t("feature1.vp_alt")}
-          className="mx-auto block rounded-full w-50 h-50 object-fill"
-        />
-      ),
-      title: (
-        <div>
-          <h3 className="text-sm">{t("feature1.vp_name")}</h3>
-          <p className="text-xs">{t("feature1.vp_role")}</p>
-        </div>
-      ),
-     /// href: "/",
-      description: t("feature1.vp_description"),
-    },
-  ];
+ 
 
   return (
     <Section

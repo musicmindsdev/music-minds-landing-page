@@ -356,6 +356,20 @@
     "ready_to_start_description": "Join Music Minds today and connect with top music coaches, track your progress, and become the musician you've always wanted to be.",
     "download_app": "Download App"
   },
+  "team":{
+    "main_title": "Team",
+    "main_title_highlight": " Quotes",
+    "team_description": "These quotes have been approved for editorial use",
+    "team_quote1":"We built Music Minds because creativity today often fails due to lack of structure – not talent.",
+    "team_quote2":"Our vision is a digital music studio that connects all relevant players – safely, fairly, and efficiently.",
+    "team_quote3":  "Music Minds not only empowers musicians but also creates new opportunities for coaches, studios, and educators.",
+    "team_member1_name": "Bartosz Jarocki",
+    "team_member1_position":"Head of Music Partnership",
+    "team_member2_name": "Aisha Madarati",
+    "team_member2_position":"Artist Relations and Content Host",
+    "team_member3_name": "Fidelis Victory",
+    "team_member3_position":"Development Coordinator"
+  },
   "footer": {
     "description": "Connecting aspiring musicians with world-class coaches for a transformative Music journey.",
     "company": "Company",
