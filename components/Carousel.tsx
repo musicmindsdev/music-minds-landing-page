@@ -41,40 +41,53 @@ const CarouselComponent = () => {
       setActiveIndex((prevIndex) =>
         prevIndex === activeImages.length - 1 ? 0 : prevIndex + 1
       );
-    }, 2800); // 2.8 seconds total (2 seconds active + 0.8 seconds transition)
+    }, 2800);
     return () => clearInterval(interval);
   }, [activeImages.length]);
 
   return (
-    <div className="relative w-full h-110 flex overflow-hidden">
-      {activeImages.map((image, index) => (
-        <div
-          key={image.id}
-          className={`flex-shrink-0 h-full transition-all duration-800 ease-in-out ${
-            index === activeIndex
-              ? "w-[400px] opacity-100"
-              : "w-[80px] opacity-95 grayscale"
-          } ${index !== activeIndex ? "hidden md:flex" : ""}`}
-          style={{ marginRight: "15px" }}
-        >
-          <Image
-            src={index === activeIndex ? image.src : inactiveImages[index].src}
-            alt={index === activeIndex ? image.alt : inactiveImages[index].alt}
-            width={index === activeIndex ? 400 : 100}
-            height={400}
-            className={` h-full ${index === activeIndex ? "w-full" : "w-[100px]"}`}
-          />
-        </div>
-      ))}
-      {/* Slideshow for mobile */}
-      <div className="md:hidden relative w-full h-110 overflow-hidden">
-        <div className="absolute w-full h-full transition-all duration-800 ease-in-out">
+    <div className="w-full">
+      {/* Desktop View */}
+      <div className="hidden md:flex relative w-full h-110 overflow-hidden">
+        {activeImages.map((image, index) => (
+          <div
+            key={image.id}
+            className={`flex-shrink-0 h-full transition-all duration-800 ease-in-out ${
+              index === activeIndex
+                ? "w-[400px] opacity-100"
+                : "w-[80px] opacity-95 grayscale hidden md:flex"
+            }`}
+            style={{ marginRight: "15px" }}
+          >
+            <Image
+              src={
+                index === activeIndex
+                  ? image.src
+                  : inactiveImages[index].src
+              }
+              alt={
+                index === activeIndex
+                  ? image.alt
+                  : inactiveImages[index].alt
+              }
+              width={index === activeIndex ? 400 : 100}
+              height={400}
+              className="h-full "
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Mobile View */}
+      <div className="block md:hidden w-full overflow-hidden">
+        <div className="w-full h-auto transition-all duration-800 ease-in-out">
           <Image
             src={activeImages[activeIndex].src}
             alt={activeImages[activeIndex].alt}
-            width={400}
-            height={400}
-            className="object-cover w-full h-full"
+            width={600}
+            height={300}
+            className="w-full h-auto object-contain"
+            priority
           />
         </div>
       </div>

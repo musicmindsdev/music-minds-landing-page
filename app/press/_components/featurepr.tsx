@@ -70,28 +70,7 @@ export default function Featurepr({ locale }: { locale: string }) {
           <div className="flex  items-center justify-center">
           <CarouselComponent/>
           </div>
-          {/* <div
-            className="mt-6 grid gap-6 md:mt-12 md:grid-cols-4"
-            data-aos="fade-up"
-            data-aos-delay="400"
-          >
-            {featureText.map(({ img, title, description }, index) => (
-              <Container
-                // href={`${href}`}
-                className="flex flex-col justify-between items-center gap-6 rounded-lg border p-6 transition-all hover:-mt-2 hover:mb-2 backdrop-filter backdrop-blur-lg bg-card border-card border-opacity-20 shadow-lg"
-                key={index}
-                data-aos="fade-right"
-                data-aos-delay={`${500 + index * 100}`}
-              >
-                <div className="grid gap-4 items-center justify-center">
-                  {img}
-                  <h4 className="text-xl text-primary text-center">{title}</h4>
-                  <hr />
-                  <p className="text-base opacity-75 text-center">{description}</p>
-                </div>
-              </Container>
-            ))}
-          </div> */}
+        
         </div>
       </Container>
     </Section>
