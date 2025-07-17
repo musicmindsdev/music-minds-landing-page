@@ -54,6 +54,15 @@
     "feature1_title4": "Team Assets",
     "feature1_description4": "Download assets such team photos and founder portraits"
   },
+  "herokit":{
+    "press_button": "Press Kit",
+    "main_title_highlight":"Brand resources ",
+    "main_title":"for press and media",
+    "main_title_description":"Find everything here - from our logo kit and team pictures to news coverage, product pictures and featured businesses.",    
+    "feature1_title2":"For inquiries and request",    
+    "feature1_description2":"Don’t hesitate to reach us via email below for any additional media enquiries",
+    "feature1_cta":"support@music-minds.io"
+  },
   "herocu": {
     "culture_button": "Culture",
     "main_title": "Our Culture At",

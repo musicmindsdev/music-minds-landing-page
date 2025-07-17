@@ -4,25 +4,21 @@ import { Section, Container } from "@/components/craft";
 import { Button } from "@/components/ui/button";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { JSX, useEffect } from "react";
-import Image from "next/image";
-import {  Download } from "lucide-react";
+import {  useEffect } from "react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import Help from "@/public/kit.png";
-import Support from "@/public/logokit.png";
-import Answers from "@/public/usecase.png";
-import Team from "@/public/teamassets.png";
+import Kit from "@/public/kit copy.png";
+import { GoArrowUpRight } from "react-icons/go";
+import Image from "next/image";
 
 type FeatureText = {
-  icon: JSX.Element;
   title: string;
   description: string;
   href?: string;
   cta?: string;
 };
 
-export default function Heropr({ locale }: { locale: string }) {
+export default function HeroKit({ locale }: { locale: string }) {
   const { t } = useTranslation("common");
   console.log(`Herob: locale=${locale}, t is function: ${typeof t === "function"}`);
 
@@ -52,33 +48,11 @@ export default function Heropr({ locale }: { locale: string }) {
 
   const featureText: FeatureText[] = [
     {
-      icon: <Image src={Help} alt={t("herob.feature1_alt")} className="scale-x-70 scale-y-70" />,
-      title: t("heropr.feature1_title"),
-      href: "/press-kit",
-      description: t("heropr.feature1_description"),
-      cta: t("heropr.feature1_cta"),
-    },
-    {
-      icon: <Image src={Support} alt={t("herob.feature2_alt")} className="scale-x-70 scale-y-70" />,
-      title: t("heropr.feature1_title2"),
+      title: t("herokit.feature1_title2"),
       href: "/",
-      description: t("heropr.feature1_description2"),
-      cta: t("heropr.feature1_cta"),
+      description: t("herokit.feature1_description2"),
+      cta: t("herokit.feature1_cta"),
     },
-    {
-      icon: <Image src={Answers} alt={t("herob.feature3_alt")} className="scale-x-70 scale-y-70" />,
-      title: t("heropr.feature1_title3"),
-      href: "/",
-      description: t("heropr.feature1_description3"),
-      cta: t("heropr.feature1_cta"),
-    },
-    {
-        icon: <Image src={Team} alt={t("herob.feature3_alt")} className="scale-x-70 scale-y-70" />,
-        title: t("heropr.feature1_title4"),
-        href: "/",
-        description: t("herob.feature3_description"),
-        cta: t("heropr.feature1_cta"),
-      },
   ];
 
   return (
@@ -95,35 +69,36 @@ export default function Heropr({ locale }: { locale: string }) {
             data-aos="fade-down"
             data-aos-delay="200"
           >
-            {t("heropr.press_button")}
+            {t("herokit.press_button")}
           </Button>
           <h1
             className="text-4xl sm:text-5xl md:text-7xl font-bold w-[80%] text-center"
             data-aos="zoom-in"
             data-aos-delay="300"
           >
-            {t("heropr.main_title")}{" "}
-            <span className="bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent">
-              {t("heropr.main_title_highlight")}
+             <span className="bg-gradient-to-r from-[#5E9EFF] via-[#BF5DFF] to-[#FE02BF] bg-clip-text text-transparent">
+              {t("herokit.main_title_highlight")}
             </span>{" "}
+            {t("herokit.main_title")}{" "}
+           
           </h1>
           <p
             className="w-[45%] text-center line-clamp-3"
             data-aos="fade-up"
             data-aos-delay="400"
           >
-            {t("heropr.main_title_description")}
+            {t("herokit.main_title_description")}
           </p>
 
           <div className="w-full" data-aos="fade-up" data-aos-delay="400">
             {/* Placeholder div, can be removed if not needed */}
           </div>
           <div
-            className="mt-6 grid gap-6 md:mt-12 md:grid-cols-4"
+            className="mt-6 grid gap-6 md:mt-12 md:grid-cols-1 w-full"
             data-aos="fade-up"
             data-aos-delay="500"
           >
-            {featureText.map(({ icon, title, description, href, cta }, index) => (
+            {featureText.map(({  title, description, href, cta }, index) => (
               <Link
                 href={`${href}`}
                 className="flex flex-col justify-between gap-6 rounded-lg p-6 backdrop-filter backdrop-blur-lg shadow-lg "
@@ -132,13 +107,13 @@ export default function Heropr({ locale }: { locale: string }) {
                 data-aos-delay={`${600 + index * 100}`}
               >
                 <div className="grid gap-4">
-                  {icon}
                   <h4 className="text-xl text-primary font-semibold">{title}</h4>
-                  <p className="text-sm opacity-75">{description}</p>
+                  <p className="text-sm opacity-75 lg:w-[45%]">{description}</p>
                 </div>
                 {cta && (
                   <div className="flex h-fit items-center text-sm font-semibold text-[#5243FE]">
-                    <p>{cta}</p> <Download className="ml-2 h-4 w-4" />
+                    <Image src={Kit} alt={t("herob.feature1_alt")} className="scale-x-70 scale-y-70" />
+                    <p>{cta}</p> <GoArrowUpRight  className="ml-2 h-4 w-4" />
                   </div>
                 )}
               </Link>
