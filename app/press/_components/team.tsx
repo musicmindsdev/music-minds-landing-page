@@ -4,16 +4,10 @@ import Link from "next/link";
 import Balancer from "react-wrap-balancer";
 import { Section, Container } from "@/components/craft";
 import { JSX, useEffect } from "react";
-import Image from "next/image";
-import Music from "@/public/music.svg";
-import Calendar from "@/public/calendar.svg";
-import Play from "@/public/play.svg";
-import MessageText from "@/public/message-text.svg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useTranslation } from "react-i18next";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import Coo from "@/public/Bartek.jpeg";
 
 type FeatureText = {
   avartar?: JSX.Element;
@@ -104,7 +98,7 @@ const Team = ({ locale }: { locale: string }) => {
                     <p className="text-xs">{position}</p>
                     </div>
                   </div>
-                  <p className="text-base opacity-75 line-clamp-4 italic">"{description}"</p>
+                  <p className="text-base opacity-75 line-clamp-4 italic">&quot;{description}&quot;</p>
                 </div>
               </Link>
             ))}
