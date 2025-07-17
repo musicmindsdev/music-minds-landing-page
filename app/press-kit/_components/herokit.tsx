@@ -94,7 +94,7 @@ export default function HeroKit({ locale }: { locale: string }) {
             {/* Placeholder div, can be removed if not needed */}
           </div>
           <div
-            className="mt-6 grid gap-6 md:mt-12 md:grid-cols-1 w-full"
+            className="mt-6 grid gap-6 md:mt-12 md:grid-cols-1 w-[75%]"
             data-aos="fade-up"
             data-aos-delay="500"
           >
