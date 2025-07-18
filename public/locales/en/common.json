@@ -419,6 +419,11 @@
     "team_member3_name": "Fidelis Victory",
     "team_member3_position": "Development Coordinator"
   },
+  "cta": {
+    "ready_to_start": "Ready to start your music journey?",
+    "ready_to_start_description": "Join Music Minds today, connect with top music trainers, track your progress, and become the musician you’ve always wanted to be.",
+    "download_app": "Download the app"
+  },
   "footer": {
     "description": "Connecting aspiring musicians with world-class coaches for a transformative Music journey.",
     "company": "Company",

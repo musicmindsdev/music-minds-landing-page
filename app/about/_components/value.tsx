@@ -90,7 +90,7 @@ export default function Value({ locale }: { locale: string }) {
 
   return (
     <Section
-      className="py-12 bg-card"
+      className="py-12 bg-card dark:bg-background"
       data-aos="fade-in"
     >
       <Container className="not-prose">

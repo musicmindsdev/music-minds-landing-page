@@ -37,7 +37,7 @@ export default function StoryCu({ locale }: { locale: string }) {
     return (
         <Craft.Section
             data-aos="fade-in"
-            className="w-full py-12 bg-card"
+            className="w-full py-12 bg-card dark:bg-background"
         >
             <Craft.Container className="flex flex-col">
 
