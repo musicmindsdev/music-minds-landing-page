@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const Powerpoint: React.FC<React.SVGProps<SVGElement>> = (props) => (
+const Powerpoint: React.FC<React.SVGProps<SVGElement>> = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
