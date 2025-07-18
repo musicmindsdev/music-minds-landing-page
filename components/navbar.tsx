@@ -155,6 +155,16 @@ export default function NavBar({ locale }: { locale: string }) {
                 {/*  </Link>*/}
                 {/*</DialogClose>*/}
                 <DialogClose asChild>
+                  <Link href="/">
+                    <Button
+                      variant="ghost"
+                      className="w-full flex items-center justify-start space-x-2"
+                    >
+                      <span>{t("navbar.home")}</span>
+                    </Button>
+                  </Link>
+                </DialogClose>
+                <DialogClose asChild>
                   <Link href="/about">
                     <Button
                       variant="ghost"
