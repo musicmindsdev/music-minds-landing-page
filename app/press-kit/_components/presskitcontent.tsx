@@ -33,7 +33,7 @@ const PressKitContent: React.FC = () => {
               <div className='p-3 bg-[#FDE6DE] rounded-2xl'><Powerpoint /></div>
             }
             <div className="flex-1">
-              <h3 className="font-semibold text-gray-900 text-lg mb-2">{title}</h3>
+              <h3 className="font-semibold  text-lg mb-2">{title}</h3>
               <p className="text-gray-500 text-sm mt-5">Last Updated: {lastUpdated}</p>
             </div>
           </div>

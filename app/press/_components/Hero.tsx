@@ -61,14 +61,14 @@ export default function Heropr({ locale }: { locale: string }) {
     {
       icon: <Image src={Support} alt={t("herob.feature2_alt")} className="scale-x-70 scale-y-70" />,
       title: t("heropr.feature1_title2"),
-      href: "/",
+      href: "/logo&branding",
       description: t("heropr.feature1_description2"),
       cta: t("heropr.feature1_cta"),
     },
     {
       icon: <Image src={Answers} alt={t("herob.feature3_alt")} className="scale-x-70 scale-y-70" />,
       title: t("heropr.feature1_title3"),
-      href: "/",
+      href: "/appmockup",
       description: t("heropr.feature1_description3"),
       cta: t("heropr.feature1_cta"),
     },
