@@ -156,7 +156,7 @@ export default function Feature1({ locale }: { locale: string }) {
             {featureText.map(({ img, title, description }, index) => (
               <Container
                 // href={`${href}`}
-                className="flex flex-col justify-between items-center gap-6 rounded-lg border p-6 transition-all hover:-mt-2 hover:mb-2 backdrop-filter backdrop-blur-lg bg-card border-card border-opacity-20 shadow-lg"
+                className="flex flex-col justify-between items-center gap-6 rounded-lg border p-6 transition-all hover:-mt-2 hover:mb-2 backdrop-filter backdrop-blur-lg bg-card dark:bg-background border-card border-opacity-20 shadow-lg"
                 key={index}
                 data-aos="fade-right"
                 data-aos-delay={`${500 + index * 100}`}
