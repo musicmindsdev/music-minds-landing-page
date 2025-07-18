@@ -287,6 +287,9 @@ export default function NavBar({ locale }: { locale: string }) {
           {/*    </DropdownMenuItem>*/}
           {/*  </DropdownMenuContent>*/}
           {/*</DropdownMenu>*/}
+          <Link href="/">
+            <Button variant="ghost">{t("navbar.home")}</Button>
+          </Link>
           <Link href="/about">
             <Button variant="ghost">{t("navbar.about_us")}</Button>
           </Link>
