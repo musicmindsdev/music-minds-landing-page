@@ -60,7 +60,7 @@ const Team = ({ locale }: { locale: string }) => {
   }
 
   return (
-    <Section className="bg-card w-[100%]" data-aos="fade-up">
+    <Section className="bg-card w-[100%] dark:bg-background" data-aos="fade-up">
       <Container className="flex-col">
 
         <div className="flex flex-col gap-6 pt-7">
