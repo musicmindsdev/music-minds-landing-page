@@ -1,26 +1,27 @@
 {
-    "navbar": {
-      "company": "Unternehmen",
-      "about_us": "Über uns",
-      "about_us_description": "Erfahren Sie mehr über das Team",
-      "career": "Karriere",
-      "career_description": "Werden Sie einer von uns",
-      "culture": "Kultur",
-      "culture_description": "Erfahren Sie, was uns ausmacht",
-      "press": "Presse",
-      "press_description": "Alles, was Sie wissen müssen",
-      "features": "Funktionen",
-      "contact": "Kontakt",
-      "how_it_works": "So funktioniert's",
-      "join_waitlist": "Warteliste beitreten"
-    },
-    "hero": {
-      "title_part1": "Entfesseln Sie Ihr",
-      "title_part2": "Musik",
-      "title_part3": "Potenzial",
-      "description": "Ihr Tor zur Musikwelt: Verbinden Sie sich mit Top-Gesangstrainer:innen, Songwriter:innen, Produzent:innen und Studios. Lernen, zusammenarbeiten, wachsen — und Ihre Leidenschaft in echte Wirkung verwandeln.",
-      "join_waitlist": "Warteliste beitreten"
-    },
+  "navbar": {
+    "home": "Startseite",
+    "company": "Unternehmen",
+    "about_us": "Über uns",
+    "about_us_description": "Erfahren Sie mehr über das Team",
+    "career": "Karriere",
+    "career_description": "Werden Sie einer von uns",
+    "culture": "Kultur",
+    "culture_description": "Erfahren Sie, was uns ausmacht",
+    "press": "Presse",
+    "press_description": "Alles, was Sie wissen müssen",
+    "features": "Funktionen",
+    "contact": "Kontakt",
+    "how_it_works": "So funktioniert's",
+    "join_waitlist": "Warteliste beitreten"
+  },
+  "hero": {
+    "title_part1": "Entfesseln Sie Ihr",
+    "title_part2": "Musik",
+    "title_part3": "Potenzial",
+    "description": "Ihr Tor zur Musikwelt: Verbinden Sie sich mit Top-Gesangstrainer:innen, Songwriter:innen, Produzent:innen und Studios. Lernen, zusammenarbeiten, wachsen — und Ihre Leidenschaft in echte Wirkung verwandeln.",
+    "join_waitlist": "Warteliste beitreten"
+  },
   "herob": {
     "main_title": "Wir sind immer",
     "main_title_highlight": "verfügbar",
@@ -38,6 +39,61 @@
     "feature3_description": "Durchstöbern Sie unsere Ressourcen, um Lösungen für Ihre Fragen zu finden.",
     "feature3_cta": "Hilfezentrum besuchen",
     "feature3_alt": "Antworten-Icon"
+  },
+  "heropr": {
+    "main_title": "Presse",
+    "main_title_highlight": "Materialien",
+    "main_title_description": "Alle Inhalte stehen für redaktionelle Nutzung frei zur Verfügung. Bitte geben Sie music-minds.io als Quelle an.",
+    "press_button": "Presse",
+    "feature1_title": "Presse-Kit",
+    "feature1_description": "Laden Sie Assets wie Unternehmensprofil, Team, Vision, Screenshots herunter",
+    "feature1_cta": "Herunterladen",
+    "feature1_title2": "Logo- und Branding-Kit",
+    "feature1_description2": "Laden Sie Assets wie Logos und Branding in allen Formaten (PNG, SVG, hell/dunkel) herunter",
+    "feature1_title3": "App-Mockups & Anwendungsfälle",
+    "feature1_description3": "Laden Sie Assets wie App-Mockups und Anwendungsfälle in hoher Auflösung herunter",
+    "feature1_title4": "Team-Assets",
+    "feature1_description4": "Laden Sie Assets wie Teamfotos und Porträts der Gründer herunter"
+  },
+  "herokit": {
+    "press_button": "Presse-Kit",
+    "main_title_highlight": "Markenressourcen",
+    "main_title": "für Presse und Medien",
+    "main_title_description": "Finden Sie hier alles – von unserem Logo-Kit und Teamfotos bis hin zu Nachrichtenberichten, Produktbildern und vorgestellten Unternehmen.",
+    "feature1_title2": "Für Anfragen und Wünsche",
+    "feature1_description2": "Zögern Sie nicht, uns über die untenstehende E-Mail für weitere Medienanfragen zu kontaktieren",
+    "feature1_cta": "support@music-minds.io"
+  },
+  "herocu": {
+    "culture_button": "Kultur",
+    "main_title": "Unsere Kultur bei",
+    "main_title_highlight": "Music Minds",
+    "description": "Mehr als nur eine App – wir bieten ein Erlebnis.",
+    "description_title": "Music Minds",
+    "description_title1": "Unsere Plattform",
+    "description_body": " ist ein digitales Zuhause für alle, die Musik nicht nur konsumieren, sondern erschaffen. Wir verbinden Menschen, die lernen, lehren, produzieren und veröffentlichen – unabhängig von Erfahrung, Genre oder Netzwerk.",
+    "description_cta": "App herunterladen",
+    "description_cta1": "Mehr erfahren",
+    "description_body1": " bringt Künstler:innen, Coaches, Produzent:innen, Studios und Content-Creator zusammen. Doch was uns wirklich verbindet, ist unsere Denkweise: Zusammenarbeit statt Konkurrenz. Qualität statt Lärm. Struktur statt Chaos."
+  },
+  "valuecu": {
+    "main_title": "Unsere",
+    "main_title_highlight": "Werte",
+    "sub_title": "Bei MusicMinds leiten unsere Kernwerte die Arbeit, die wir tun, um die Träume von Millionen zu unterstützen.",
+    "empowerment_title": "Befähigung statt Gatekeeping",
+    "empowerment_description": "Künstler:innen sollten direkt, fair und mit voller Kontrolle verbinden, fördern und verdienen.",
+    "empowerment_alt": "Grit-Icon",
+    "diversity_title": "Vielfalt als Grundlage",
+    "diversity_description": "Wir arbeiten daran, unterrepräsentierte Stimmen in Bezug auf Geschlecht, Identität und Kultur zu verstärken.",
+    "diversity_alt": "Empathie-Icon",
+    "community_title": "Gemeinschaft vor Algorithmen",
+    "community_description": "Echte Netzwerke zählen. Wachstum sollte auf Talent, Einsatz und Engagement basieren – nicht auf Werbebudgets oder Hype.",
+    "community_alt": "Offenheits-Icon",
+    "learning_title": "Freier Zugang zum Lernen",
+    "learning_description": "Musikbildung sollte praktisch, erschwinglich und flexibel sein. Wir unterstützen sowohl strukturiertes Coaching als auch autodidaktisches Lernen.",
+    "learning_alt": "No-Ego-Icon",
+    "learning_title3": "Wertschätzung statt Konkurrenz",
+    "learning_description3": "Wir glauben an Partnerschaft – nicht an Plattform-Ego. Unser Ziel ist es, Musiker:innen und Dienstleister:innen als Gleichberechtigte zu verbinden."
   },
   "support": {
     "main_title": "Schnellen",
@@ -160,6 +216,38 @@
     "what_drives_us_join_label": "Schließen Sie sich der Bewegung an",
     "what_drives_us_join": "Egal, ob Sie Beatmaker, Songwriter, Coach, Techniker oder zukünftiger Headliner sind — dies ist Ihr Raum. Verbinden. Lernen. Bauen. Teilen. Lassen Sie uns die Musikindustrie von innen heraus verändern."
   },
+  "storycu": {
+    "why_we_do_this_highlight": "Warum",
+    "why_we_do_this": "wir das tun",
+    "why_we_do_this_description": "Wir tun dies, weil wir aus erster Hand wissen, wie viel Potenzial in Menschen steckt, die keine Plattform bekommen. Weil wir gesehen haben, wie viele Stunden Musiker:innen mit Suchen, Vergleichen und Improvisieren verbringen – anstatt das zu tun, was zählt. Weil wir glauben, dass Technologie nicht ersetzen, sondern befähigen sollte.",
+    "why_we_do_this_descriptionb": "Music Minds entstand aus unserer Überzeugung, dass die Musikindustrie mehr Struktur, Fairness und Fokus braucht.",
+    "what_drives_us_highlight": "Was",
+    "what_drives_us": "uns antreibt",
+    "what_drives_us_description": "Wir wollen, dass mehr großartige Musik entsteht – unabhängig von Budget, Netzwerk oder Ruhm. Wir wollen, dass Zusammenarbeit wieder professionell, planbar und zugänglich wird. Und wir wollen, dass Musiker:innen mit Leidenschaft arbeiten, ohne auszubrennen."
+  },
+  "storypr": {
+    "modern_music": "Die Plattform für",
+    "modern_music_highlight": "moderne Musik",
+    "modern_musicb": "Projekte",
+    "modern_music_description": "Music Minds ist eine digitale All-in-One-Plattform für Musiker:innen, Produzent:innen, Coaches, Studios und Kreative. Sie ermöglicht professionelle Musikprojekte – strukturiert, digital und kollaborativ.",
+    "modern_music_descriptionb": "Die App kombiniert Coaching, Produktion, Promotion und Projektmanagement in einem intuitiven System. Ob Gesangsunterricht, Mixing, Videoproduktion oder Marketing: Music Minds verbindet Musiker:innen und Dienstleister:innen effizient – von der Idee bis zur Veröffentlichung.",
+    "modern_music_descriptionc": "Music Minds ist Teil des IMPACT-Universums und wurde 2025 gegründet",
+    "press_inquiries_highlight": "Presse",
+    "press_inquiries": "Anfragen & Interviews",
+    "press_inquiries_highlightb": "Kontakt",
+    "press_inquiries_description": "Wir freuen uns über Medienanfragen, Kooperationen oder Interviewwünsche zu Themen wie:",
+    "press_inquiries_li1": "Digitalisierung der Musikindustrie",
+    "press_inquiries_li2": "Creator Economy",
+    "press_inquiries_li3": "Plattformtechnologien im Musikbereich",
+    "press_inquiries_li4": "Musikbildung & Community-Coaching",
+    "press_inquiries_descriptionb": "Pressekontakt: ",
+    "press_inquiries_descriptionb_highlight": "support@music-minds.io",
+    "description_short_highlight": "Kurzbeschreibungen",
+    "description_short": "für Medien",
+    "description_shortb": "",
+    "description_short_description": "Music Minds ist die erste Plattform, die professionelle Musikdienste, Coaching und Tools in einer einzigen App bündelt. Mit strukturierten Projektprozessen, verifizierten Dienstleistern und KI-gestütztem Matching erleichtert Music Minds den kreativen Workflow für Musikschaffende – unabhängig von Budget oder Standort.",
+    "description_short_descriptionb": "Als Teil des IMPACT-Universums verfolgt Music Minds einen interdisziplinären Ansatz, um die Musikindustrie durch digitale Lösungen nachhaltiger, zugänglicher und kollaborativer zu gestalten."
+  },
   "feature1": {
     "main_title": "Unser",
     "main_title_highlight": "Team",
@@ -182,6 +270,18 @@
     "vp_description": "Musik- und Medienprofi mit über 20 Jahren Erfahrung in sozialen Medien, Formatentwicklung, Community-Building, Label-Management und Künstlerentwicklung. Moderatorin eigener Formate vor der Kamera sowie Organisation und Umsetzung von Inhalten hinter den Kulissen.",
     "vp_alt": "Künstlerbeziehungen und Content-Moderatorin-Bild"
   },
+  "featurecu": {
+    "main_title": "Wie wir",
+    "main_title_highlight": "arbeiten",
+    "card_title": "Standardmäßig remote",
+    "card_description": "Unser Team arbeitet flexibel – genau wie die Nutzer:innen, für die wir die Plattform bauen.",
+    "card_title1": "Team = Projekt",
+    "card_description1": "Wir denken wie ein Musikprojekt: flach, dynamisch, zielorientiert. Jede Fähigkeit zählt, jede Perspektive ist willkommen.",
+    "card_title2": "Lernen ist Teil des Prozesses",
+    "card_description2": "Wir verbessern Music Minds nicht nach Bauchgefühl, sondern durch Feedback, Nutzerdaten und kontinuierliches Lernen.",
+    "card_title3": "Technologie und Kreativität sind gleichwertig",
+    "card_description3": "Unsere Kultur bringt Code und Kunst zusammen – absichtlich, konsequent und mit gegenseitigem Respekt."
+  },
   "value": {
     "main_title": "Unsere",
     "main_title_highlight": "Werte",
@@ -193,11 +293,13 @@
     "diversity_description": "Wir arbeiten daran, unterrepräsentierte Stimmen in Bezug auf Geschlecht, Identität und Kultur zu verstärken.",
     "diversity_alt": "Empathie-Icon",
     "community_title": "Gemeinschaft vor Algorithmen",
-    "community_description": "Echte Netzwerke zählen. Wachstum sollte auf Talent, Einsatz und Engagement basieren — nicht auf Werbebudgets oder Hype.",
+    "community_description": "Echte Netzwerke zählen. Wachstum sollte auf Talent, Einsatz und Engagement basieren – nicht auf Werbebudgets oder Hype.",
     "community_alt": "Offenheits-Icon",
     "learning_title": "Freier Zugang zum Lernen",
     "learning_description": "Musikbildung sollte praktisch, erschwinglich und flexibel sein. Wir unterstützen sowohl strukturiertes Coaching als auch autodidaktisches Lernen.",
-    "learning_alt": "No-Ego-Icon"
+    "learning_alt": "No-Ego-Icon",
+    "learning_title3": "Wertschätzung statt Konkurrenz",
+    "learning_description3": "Wir glauben an Partnerschaft – nicht an Plattform-Ego. Unser Ziel ist es, Musiker:innen und Dienstleister:innen als Gleichberechtigte zu verbinden."
   },
   "ctaa": {
     "main_title": "Suchen Sie nach Gleichgesinnten?",
@@ -205,77 +307,61 @@
     "download_button": "App herunterladen",
     "logo_alt": "Music Minds Logo"
   },
-    "feature": {
-      "trusted_by_artists": "VERTRAUEN VON KÜNSTLERN WELTWEIT",
-      "elevate_your_music_journey": "Heben Sie Ihre Musikreise auf ein neues Level",
-      "elevate_your_music_journey_description": "Music Minds bietet alle Werkzeuge, die Sie benötigen, um Ihre musikalischen Talente mit fachkundiger Anleitung zu entwickeln.",
-      "expert_service_providers": "Experten-Dienstleister",
-      "expert_service_providers_description": "Verbinden Sie sich mit professionellen Dienstleistern aus verschiedenen Musikbereichen, von Songwritern bis Produzenten, für personalisierte Sitzungen, die auf Sie zugeschnitten sind.",
-      "easy_scheduling": "Einfache Terminplanung",
-      "easy_scheduling_description": "Buchen und verwalten Sie Ihre Sitzungen mit Dienstleistern über unser intuitives Planungssystem. Keine zeitraubenden E-Mail-Ketten mehr.",
-      "progress_tracking": "Fortschrittsverfolgung",
-      "progress_tracking_description": "Zeichnen Sie Ihre Sitzungen auf, verfolgen Sie Ihren Fortschritt und teilen Sie Ihre Verbesserungen mit Freunden, Coaches und der Community.",
-      "community_support": "Community-Unterstützung",
-      "community_support_description": "Verbinden Sie sich mit anderen Musiker:innen, teilen Sie Erfahrungen und lassen Sie sich von einer unterstützenden Gemeinschaft inspirieren."
-    },
-    "feature_left": {
-      "find_perfect_provider": "Finden Sie den perfekten Dienstleister",
-      "find_perfect_provider_description": "Durchsuchen Sie Profile von Top-Musiktrainern, lesen Sie Bewertungen anderer Schüler:innen und finden Sie die perfekte Übereinstimmung für Ihre Musikreise.",
-      "filter_by_genre": "Nach Musikgenre und Expertise filtern",
-      "read_reviews": "Verifizierte Kundenbewertungen lesen",
-      "message_providers": "Vor der Buchung mit Dienstleistern kommunizieren"
-    },
-    "feature_action": {
-      "how_music_minds_works": "So funktioniert Music Minds",
-      "how_music_minds_works_description": "Ein einfacher Prozess, um Sie mit der musikalischen Anleitung zu verbinden, die Sie benötigen.",
-      "create_profile": "Erstellen Sie Ihr Profil",
-      "create_profile_description": "Registrieren Sie sich und erstellen Sie Ihr Musikprofil mit Ihren Fähigkeiten, Zielen und Vorlieben.",
-      "find_provider": "Finden Sie Ihren Dienstleister",
-      "find_provider_description": "Durchsuchen Sie verifizierte Trainer:innen und Musiker:innen, filtern Sie nach Genre, Standort und Expertise.",
-      "book_sessions": "Sitzungen buchen",
-      "book_sessions_description": "Planen Sie Sitzungen mit Ihren bevorzugten Dienstleistern zu Zeiten, die Ihnen passen.",
-      "grow_share": "Wachsen & Teilen",
-      "grow_share_description": "Verfolgen Sie Ihren Fortschritt, teilen Sie Aufnahmen und verbinden Sie sich mit der Musik-Community.",
-      "get_it_on": "Jetzt herunterladen",
-      "app_store": "App Store",
-      "play_store": "Play Store"
-    },
-    "feature_right": {
-      "book_sessions": "Sitzungen mit Dienstleistern in Minuten buchen",
-      "book_sessions_description": "Planen Sie Sitzungen mit Top-Trainer:innen und Dienstleistern weltweit. Erhalten Sie personalisierte Anleitung, um Ihre Technik zu verbessern, Ihren Bereich zu erweitern und Ihren einzigartigen Stil zu entwickeln.",
-      "in_person_virtual": "Persönliche und virtuelle Sitzungen verfügbar",
-      "flexible_scheduling": "Flexible Terminplanung, die zu Ihrem Alltag passt",
-      "record_sessions": "Sitzungen für spätere Überprüfung und Übung aufzeichnen",
-      "personalized_feedback": "Personalisierte Rückmeldungen und Übungen erhalten"
-    },
-    "cta": {
-      "ready_to_start": "Bereit, Ihre Musikreise zu beginnen?",
-      "ready_to_start_description": "Treten Sie Music Minds heute bei, verbinden Sie sich mit Top-Musiktrainer:innen, verfolgen Sie Ihren Fortschritt und werden Sie die Musiker:in, die Sie immer sein wollten.",
-      "download_app": "App herunterladen"
-    },
-    "footer": {
-      "description": "Verbindung von aufstrebenden Musiker:innen mit Weltklasse-Trainer:innen für eine transformative Musikreise.",
-      "company": "Unternehmen",
-      "about_us": "Über uns",
-      "contact": "Kontakt",
-      "careers": "Karriere",
-      "blog": "Blog",
-      "resources": "Ressourcen",
-      "help_center": "Hilfezentrum",
-      "community": "Gemeinschaft",
-      "tutorials": "Tutorials",
-      "events": "Veranstaltungen",
-      "legal": "Rechtliches",
-      "privacy_policy": "Datenschutzrichtlinie",
-      "terms_conditions": "Allgemeine Geschäftsbedingungen",
-      "code_of_conduct": "Verhaltenskodex",
-      "compliance": "Compliance",
-      "address": "Reichsstr. 99, D-14052 Berlin",
-      "email": "support@music-minds.io",
-      "phone": " +49 15733927104",
-      "copyright": "© 2025 Music Minds. Alle Rechte vorbehalten"
-    },
-    "terms": {
+  "ctacu": {
+    "main_title": "Lassen Sie uns die Zukunft der Musikkollaboration bauen.",
+    "sub_title": "Fair, intelligent, digital. Wenn unsere Werte Sie ansprechen – willkommen bei Music Minds."
+  },
+  "ctapr": {
+    "main_title": "Medienberichte & Features",
+    "sub_title": "Demnächst: Ein Überblick über aktuelle Artikel, Interviews und Podcasts mit dem Music Minds-Team."
+  },
+  "featurepr": {
+    "main_title": "Team",
+    "main_title_highlight": "Zitate",
+    "sub_title": "Diese Zitate sind für die redaktionelle Nutzung freigegeben"
+  },
+  "cta": {
+    "ready_to_start": "Bereit, Ihre Musikreise zu beginnen?",
+    "ready_to_start_description": "Treten Sie Music Minds heute bei, verbinden Sie sich mit Top-Musiktrainer:innen, verfolgen Sie Ihren Fortschritt und werden Sie die Musiker:in, die Sie immer sein wollten.",
+    "download_app": "App herunterladen"
+  },
+  "team": {
+    "main_title": "Team",
+    "main_title_highlight": "Zitate",
+    "team_description": "Diese Zitate sind für die redaktionelle Nutzung freigegeben",
+    "team_quote1": "Wir haben Music Minds gegründet, weil Kreativität heute oft an fehlender Struktur scheitert – nicht an Talent.",
+    "team_quote2": "Unsere Vision ist ein digitales Musikstudio, das alle relevanten Akteure verbindet – sicher, fair und effizient.",
+    "team_quote3": "Music Minds befähigt nicht nur Musiker:innen, sondern schafft auch neue Möglichkeiten für Coaches, Studios und Pädagog:innen.",
+    "team_member1_name": "Bartosz Jarocki",
+    "team_member1_position": "Leiter Musikpartnerschaften",
+    "team_member2_name": "Aisha Madarati",
+    "team_member2_position": "Künstlerbeziehungen und Content-Moderatorin",
+    "team_member3_name": "Fidelis Victory",
+    "team_member3_position": "Entwicklungskoordinator"
+  },
+  "footer": {
+    "description": "Verbindung von aufstrebenden Musiker:innen mit Weltklasse-Trainer:innen für eine transformative Musikreise.",
+    "company": "Unternehmen",
+    "about_us": "Über uns",
+    "contact": "Kontakt",
+    "careers": "Karriere",
+    "blog": "Blog",
+    "resources": "Ressourcen",
+    "help_center": "Hilfezentrum",
+    "community": "Gemeinschaft",
+    "tutorials": "Tutorials",
+    "events": "Veranstaltungen",
+    "legal": "Rechtliches",
+    "privacy_policy": "Datenschutzrichtlinie",
+    "terms_conditions": "Allgemeine Geschäftsbedingungen",
+    "code_of_conduct": "Verhaltenskodex",
+    "compliance": "Compliance",
+    "address": "Reichsstr. 99, D-14052 Berlin",
+    "email": "support@music-minds.io",
+    "phone": " +49 15733927104",
+    "copyright": "© 2025 Music Minds. Alle Rechte vorbehalten"
+  },
+  "terms": {
     "title": "Allgemeine Geschäftsbedingungen",
     "last_updated": "Zuletzt aktualisiert: {date} | Inkrafttreten: {date}",
     "table_of_contents": {
@@ -389,7 +475,7 @@
       }
     },
     "law": {
-    "title": "10. Anwendbares Recht & Gerichtsstand",
+      "title": "10. Anwendbares Recht & Gerichtsstand",
       "content": "Diese Bedingungen unterliegen den Gesetzen der Bundesrepublik Deutschland. Gerichtsstand für alle Streitigkeiten ist {city}, Deutschland."
     },
     "contact": {
@@ -653,11 +739,11 @@
         "ban": "Nutzer:innen bei schweren oder wiederholten Verstößen dauerhaft zu sperren."
       },
       "legal_action": "Wiederholte oder schwerwiegende Verstöße können bei Bedarf rechtliche Schritte nach sich ziehen.",
-      "report": "Wenn Sie Verhalten erleben oder beobachten, das gegen diesen Kodex verstößt, melden Sie es bitte über: <span class=\"font-semibold\">report@Musicmindz.com</span> oder nutzen Sie die In-App-Meldefunktion. Unser Team behandelt alle Meldungen ernsthaft und vertraulich."
+      "report": "Wenn Sie Verhalten erleben oder beobachten, das gegen diesen Kodex verstößt, melden Sie es bitte über: <span class=\"font-semibold\">report@music-minds.io</span> oder nutzen Sie die In-App-Meldefunktion. Unser Team behandelt alle Meldungen ernsthaft und vertraulich."
     },
     "childrens-privacy": {
       "title": "10. Schlussbemerkung",
       "content": "Diese Plattform wurde entwickelt, um Barrieren abzubauen – nicht um neue zu schaffen. Lassen Sie uns Music Minds zu einem sicheren, kollaborativen und stärkenden Raum für alle machen."
     }
   }
-  }
+}
