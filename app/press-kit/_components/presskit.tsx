@@ -43,7 +43,7 @@ const PressKitInterface: React.FC = () => {
   };
 
   return (
-    <Section className="bg-card p-6">
+    <Section className="bg-card dark:bg-background p-6">
       <Container className="p-4 flex flex-col md:flex-row gap-6">
         {/* Left Navigation */}
         <div className="w-80 relative">
@@ -76,7 +76,7 @@ const PressKitInterface: React.FC = () => {
         </div>
 
         {/* Right Content - Dynamic Component Rendering */}
-        <div className="flex-1 dark:bg-background">
+        <div className="flex-1 ">
           {renderContent()}
         </div>
       </Container>
