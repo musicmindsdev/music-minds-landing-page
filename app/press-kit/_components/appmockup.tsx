@@ -108,7 +108,7 @@ const AppMockupsContent: React.FC<AppMockupsContentProps> = ({ locale }) => {
       <div className="grid grid-cols-1 gap-6 md:grid-cols-4">
         {mockup.map((item, index) => (
           <div key={index}>
-            <div className={`flex items-center justify-center space-x-4 rounded-2xl px-5 py-9 bg-gradient-to-r from-[#F2F1FF] to-[#FFF0FD]`}>
+            <div className={`flex items-center justify-center space-x-4 rounded-2xl px-5 py-9 bg-gradient-to-r from-[#F2F1FF] to-[#FFF0FD] dark:bg-gradient-to-r dark:from-[#1E1A2F] dark:to-[#2A0E29]`}>
               {item.img}
             </div>
             <div className="mt-2 flex items-center justify-between">
