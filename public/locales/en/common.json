@@ -46,23 +46,65 @@
     "main_title_description": "All content is freely available for editorial use. Please credit music-minds.io as the source.",
     "press_button": "Press",
     "feature1_title": "Press Kit",
-    "feature1_description": "Download assets such as with company profile, team, vision, screenshots",
+    "feature1_description": "Download assets such as company profile, team, vision, screenshots",
     "feature1_cta": "Download",
     "feature1_title2": "Logo & Branding Kit",
     "feature1_description2": "Download assets such as logos and branding in all formats (PNG, SVG, light/dark)",
     "feature1_title3": "App Mockups & Use Cases",
-    "feature1_description3": "Download assets such as app mockups and usecases in high resolution",
+    "feature1_description3": "Download assets such as app mockups and use cases in high resolution",
     "feature1_title4": "Team Assets",
-    "feature1_description4": "Download assets such team photos and founder portraits"
+    "feature1_description4": "Download assets such as team photos and founder portraits",
+    "menu_press_kit": "Press Kit",
+    "menu_logo_branding_kit": "Logo & Branding Kit",
+    "menu_app_mockups_use_cases": "App Mockups & Use Cases",
+    "menu_team_photos": "Team Photos",
+    "document_company_profile": "Company Profile",
+    "document_team_data": "Team Data",
+    "document_mission_vision": "Mission & Vision",
+    "document_screenshots": "Screenshots",
+    "last_updated": "Last Updated",
+    "download": "Download",
+    "logo_section": "Logo",
+    "logo_variants_section": "Logo Variants",
+    "logo_usage_guidelines": "There's the right way to use the assets",
+    "logo_variant_primary": "Primary Logo",
+    "logo_variant_secondary": "Secondary Logo",
+    "logo_variant_tertiary": "Tertiary Logo",
+    "logo_variant_complimentary": "Complimentary Logo",
+    "logo_guideline_1": "The length of the Music Minds logo is precisely four times (4X) that of the icon.",
+    "logo_guideline_2": "The length of the logo is equal to the height, maintaining a consistent proportion.",
+    "logo_guideline_3": "A one-time (1X) border using the icon as a unit, is uniformly applied to the logo in all placements.",
+    "logo_guideline_4": "The spacing between the logo mark and the Monotype text is fixed at 1/4th (Y) of the width of the logo mark.",
+    "logo_guideline_5": "The logo mark should not be relocated or repositioned under any circumstances.",
+    "logo_guideline_6": "Avoid stretching or distorting the font in the logo to maintain its original integrity.",
+    "logo_guideline_7": "The window shape of the logo mark must not be altered; should remain consistent.",
+    "logo_guideline_8": "Avoid incorporating additional effects such as shadows or glow into the logo for a clean and consistent visual presentation.",
+    "logo_alt": "Music Minds Logo",
+    "mockup_splash": "Splash",
+    "mockup_booking_list": "Booking List",
+    "mockup_provider_profile": "Provider Profile",
+    "mockup_provider_feed": "Provider Feed",
+    "mockup_provider_reviews": "Provider Reviews",
+    "mockup_booking_success": "Booking Success",
+    "mockup_user_reviews": "User Reviews",
+    "mockup_user_activity": "User Activity",
+    "mockup_provider_music": "Provider Music",
+    "mockup_user_schedule": "User Schedule",
+    "mockup_profile_edit": "Profile Edit",
+    "mockup_provider_schedule": "Provider Schedule",
+    "mockup_pending_booking": "Pending Booking",
+    "mockup_booking_form": "Booking Form",
+    "mockup_post_upload": "Post Upload",
+    "mockup_user_post": "User Post"
   },
-  "herokit":{
+  "herokit": {
     "press_button": "Press Kit",
-    "main_title_highlight":"Brand resources ",
-    "main_title":"for press and media",
-    "main_title_description":"Find everything here - from our logo kit and team pictures to news coverage, product pictures and featured businesses.",    
-    "feature1_title2":"For inquiries and request",    
-    "feature1_description2":"Don’t hesitate to reach us via email below for any additional media enquiries",
-    "feature1_cta":"support@music-minds.io"
+    "main_title_highlight": "Brand resources",
+    "main_title": "for press and media",
+    "main_title_description": "Find everything here - from our logo kit and team pictures to news coverage, product pictures and featured businesses.",
+    "feature1_title2": "For inquiries and request",
+    "feature1_description2": "Don’t hesitate to reach us via email below for any additional media enquiries",
+    "feature1_cta": "support@music-minds.io"
   },
   "herocu": {
     "culture_button": "Culture",
@@ -70,11 +112,11 @@
     "main_title_highlight": "Music Minds",
     "description": "More Than Just an App - We provide an experience.",
     "description_title": "Music Minds",
-    "description_title1": " Our platform",
-    "description_body": " is a digital home for everyone who not only consumes music but creates it. We connect people who learn, teach, produce, and publish – regardless of experience, genre, or network.",
+    "description_title1": "Our platform",
+    "description_body": "is a digital home for everyone who not only consumes music but creates it. We connect people who learn, teach, produce, and publish – regardless of experience, genre, or network.",
     "description_cta": "Download App",
     "description_cta1": "Learn More",
-    "description_body1": " brings together artists, coaches, producers, studios, and content creators. But what truly unites us is our mindset: Collaboration over competition. Quality over noise. Structure over chaos."
+    "description_body1": "brings together artists, coaches, producers, studios, and content creators. But what truly unites us is our mindset: Collaboration over competition. Quality over noise. Structure over chaos."
   },
   "valuecu": {
     "main_title": "Our",
@@ -227,10 +269,10 @@
   },
   "storypr": {
     "modern_music": "The Platform for",
-    "modern_music_highlight": " Modern Music",
-    "modern_musicb": " Projects",
+    "modern_music_highlight": "Modern Music",
+    "modern_musicb": "Projects",
     "modern_music_description": "Music Minds is a digital all-in-one platform for musicians, producers, coaches, studios, and creatives. It enables professional music projects – structured, digital, and collaborative.",
-    "modern_music_descriptionb": " The app combines coaching, production, promotion, and project management in one intuitive system. Whether it's vocal lessons, mixing, video production, or marketing: Music Minds efficiently connects musicians and service providers – from idea to release.",
+    "modern_music_descriptionb": "The app combines coaching, production, promotion, and project management in one intuitive system. Whether it's vocal lessons, mixing, video production, or marketing: Music Minds efficiently connects musicians and service providers – from idea to release.",
     "modern_music_descriptionc": "Music Minds is part of the IMPACT universe and was founded in 2025",
     "press_inquiries_highlight": "Press",
     "press_inquiries": "Inquiries & Interview",
@@ -246,7 +288,7 @@
     "description_short": "Short",
     "description_shortb": "(For Media)",
     "description_short_description": "Music Minds is the first platform that bundles professional music services, coaching, and tools in a single app. With structured project processes, verified service providers, and AI-assisted matching, Music Minds facilitates the creative workflow for music creators – regardless of budget or location.",
-     "description_short_descriptionb": " As part of the IMPACT universe, Music Minds takes an interdisciplinary approach to make the music industry more sustainable, accessible, and collaborative through digital solutions."
+    "description_short_descriptionb": "As part of the IMPACT universe, Music Minds takes an interdisciplinary approach to make the music industry more sustainable, accessible, and collaborative through digital solutions."
   },
   "feature1": {
     "main_title": "Our",
@@ -297,7 +339,9 @@
     "community_alt": "Candour Icon",
     "learning_title": "Open access to learning",
     "learning_description": "Music education should be practical, affordable, and flexible. We support both structured coaching and self-taught learning.",
-    "learning_alt": "No Ego Icon"
+    "learning_alt": "No Ego Icon",
+    "learning_title3": "Appreciation Over Competition",
+    "learning_description3": "We believe in partnership – not platform ego. Our goal is to connect musicians and service providers as equals."
   },
   "ctaa": {
     "main_title": "Looking to Connect with Like Minds?",
@@ -306,12 +350,12 @@
     "logo_alt": "Music Minds Logo"
   },
   "ctacu": {
-    "main_title": " Let’s build the future of music collaboration.",
-    "sub_title": " Fair, smart, digital..  If our values resonate with you – welcome to Music Minds."
+    "main_title": "Let’s build the future of music collaboration.",
+    "sub_title": "Fair, smart, digital. If our values resonate with you – welcome to Music Minds."
   },
   "ctapr": {
-    "main_title": " Media Reports & Features",
-    "sub_title": " Coming soon: An overview of current articles, interviews, and podcasts with the Music Minds team."
+    "main_title": "Media Reports & Features",
+    "sub_title": "Coming soon: An overview of current articles, interviews, and podcasts with the Music Minds team."
   },
   "feature": {
     "trusted_by_artists": "TRUSTED BY ARTISTS WORLDWIDE",
@@ -356,29 +400,24 @@
     "record_sessions": "Record sessions for later review and practice",
     "personalized_feedback": "Get personalized feedback and exercises"
   },
-  "featurepr":{
-    "main_title":"Team",
+  "featurepr": {
+    "main_title": "Team",
     "main_title_highlight": "Quotes",
     "sub_title": "These quotes have been approved for editorial use"
   },
-  "cta": {
-    "ready_to_start": "Ready to Start Your Music Journey?",
-    "ready_to_start_description": "Join Music Minds today and connect with top music coaches, track your progress, and become the musician you've always wanted to be.",
-    "download_app": "Download App"
-  },
-  "team":{
+  "team": {
     "main_title": "Team",
-    "main_title_highlight": " Quotes",
+    "main_title_highlight": "Quotes",
     "team_description": "These quotes have been approved for editorial use",
-    "team_quote1":"We built Music Minds because creativity today often fails due to lack of structure – not talent.",
-    "team_quote2":"Our vision is a digital music studio that connects all relevant players – safely, fairly, and efficiently.",
-    "team_quote3":  "Music Minds not only empowers musicians but also creates new opportunities for coaches, studios, and educators.",
+    "team_quote1": "We built Music Minds because creativity today often fails due to lack of structure – not talent.",
+    "team_quote2": "Our vision is a digital music studio that connects all relevant players – safely, fairly, and efficiently.",
+    "team_quote3": "Music Minds not only empowers musicians but also creates new opportunities for coaches, studios, and educators.",
     "team_member1_name": "Bartosz Jarocki",
-    "team_member1_position":"Head of Music Partnership",
+    "team_member1_position": "Head of Music Partnership",
     "team_member2_name": "Aisha Madarati",
-    "team_member2_position":"Artist Relations and Content Host",
+    "team_member2_position": "Artist Relations and Content Host",
     "team_member3_name": "Fidelis Victory",
-    "team_member3_position":"Development Coordinator"
+    "team_member3_position": "Development Coordinator"
   },
   "footer": {
     "description": "Connecting aspiring musicians with world-class coaches for a transformative Music journey.",
@@ -399,7 +438,7 @@
     "compliance": "Compliance",
     "address": "Reichsstr. 99, D-14052 Berlin",
     "email": "support@music-minds.io",
-    "phone": " +49 15733927104",
+    "phone": "+49 15733927104",
     "copyright": "© 2025 Music Minds. All rights reserved"
   },
   "terms": {
@@ -780,7 +819,7 @@
         "ban": "Permanently ban users in case of serious or repeated violations."
       },
       "legal_action": "Repeated or serious breaches may result in legal action if applicable.",
-      "report": "If you experience or witness behavior that violates this Code, please report it via: <span class=\"font-semibold\">report@musicminds.com</span> or use the in-app reporting function. Our team treats all reports seriously and confidentially."
+      "report": "If you experience or witness behavior that violates this Code, please report it via: <span class=\"font-semibold\">report@music-minds.io</span> or use the in-app reporting function. Our team treats all reports seriously and confidentially."
     },
     "childrens-privacy": {
       "title": "10. Final Note",

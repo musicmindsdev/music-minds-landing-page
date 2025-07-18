@@ -34,7 +34,7 @@ export default function Home() {
     <Section >
       <Container >
         <HeroKit locale={locale} />
-        <PressKitInterface/>
+        <PressKitInterface locale={locale}/>
          <CTAPr locale={locale}/>
         <Footer locale={locale} />
       </Container>
