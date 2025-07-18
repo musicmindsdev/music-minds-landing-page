@@ -137,7 +137,7 @@ const LogoBrandingContent: React.FC = () => {
       </div>
       <div className="mt-6">
         <h3 className="text-sm font-semibold mb-3 ">There&apos;s the right way to use the assets</h3>
-        <ul className="list-outside space-y-3 pl-5 text-gray-700 text-xs marker:text-lg marker:text-[#5243FE] marker:content-['■']">
+        <ul className="list-outside space-y-3 pl-5 text-xs marker:text-lg marker:text-[#5243FE] marker:content-['■']">
           <li>The length of the Music Minds logo is precisely four times (4X) that of the icon.</li>
           <li>The length of the logo is equal to the height, maintaining a consistent proportion.</li>
           <li>A one-time (1X) border using the icon as a unit, is uniformly applied to the logo in all placements.</li>
