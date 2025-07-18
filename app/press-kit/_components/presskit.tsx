@@ -76,7 +76,7 @@ const PressKitInterface: React.FC = () => {
         </div>
 
         {/* Right Content - Dynamic Component Rendering */}
-        <div className="flex-1">
+        <div className="flex-1 dark:bg-background">
           {renderContent()}
         </div>
       </Container>
