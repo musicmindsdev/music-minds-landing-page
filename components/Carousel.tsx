@@ -55,7 +55,7 @@ const CarouselComponent = () => {
             className={`flex-shrink-0 h-full transition-all duration-800 ease-in-out ${
               index === activeIndex
                 ? "w-[400px] opacity-100"
-                : "w-[80px] opacity-95 grayscale hidden md:flex"
+                : "w-[70px] opacity-95 grayscale hidden md:flex"
             }`}
             style={{ marginRight: "15px" }}
           >
