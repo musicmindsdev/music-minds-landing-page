@@ -1,0 +1,33 @@
+import * as React from "react";
+
+const LogoVariant5: React.FC<React.SVGProps<SVGElement>> = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="42"
+    height="50"
+    fill="none"
+    viewBox="0 0 42 50"
+  >
+    <path
+      stroke="url(#paint0_linear_7070_89963)"
+      strokeOpacity="0.75"
+      d="M41.37 8.738v27.06c0 4.742-3.622 8.597-8.076 8.597-4.43 0-8.075-3.855-8.075-8.597 0-4.717 3.644-8.573 8.075-8.573 1.89 0 3.577.695 4.95 1.844V7.917l-9.372 8.935-11.346-3.575V40.42c0 4.742-3.644 8.597-8.076 8.597-4.453 0-8.075-3.855-8.075-8.597 0-4.718 3.622-8.573 8.075-8.573 1.868 0 3.555.694 4.927 1.82v-21.17c0-3.52.925-6.367 4.853-6.01l4.285 1.25 4.285 1.61 6.428-6.434c1.428-1.575 4.139-2.008 5.713-.715 1.598 1.27 1.429 3.57 1.429 6.54Z"
+    ></path>
+    <defs>
+      <linearGradient
+        id="paint0_linear_7070_89963"
+        x1="21.375"
+        x2="21.375"
+        y1="1.438"
+        y2="49.017"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#FF36E6"></stop>
+        <stop offset="0.557" stopColor="#AB3CF2"></stop>
+        <stop offset="0.703" stopColor="#5243FE"></stop>
+      </linearGradient>
+    </defs>
+  </svg>
+);
+
+export default LogoVariant5;

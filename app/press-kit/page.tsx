@@ -4,6 +4,8 @@ import { Footer } from "@/components/home-page/footer";
 import { cookies } from "next/headers";
 import HeroKit from "./_components/herokit";
 import CTAPr from "../press/_components/ctapr";
+// import PressKitComponent from "./_components/presskit";
+import PressKitInterface from "./_components/presskit";
 
 const supportedLngs = ["de", "en", "fr"];
 const defaultLocale = "en";
@@ -32,6 +34,7 @@ export default function Home() {
     <Section >
       <Container >
         <HeroKit locale={locale} />
+        <PressKitInterface/>
          <CTAPr locale={locale}/>
         <Footer locale={locale} />
       </Container>
