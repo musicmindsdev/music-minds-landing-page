@@ -49,7 +49,7 @@ const PressKitInterface: React.FC<PressKitInterfaceProps> = ({ locale }) => {
       case 'APP MOCKUPS & USE CASES':
         return <AppMockupsContent locale={locale}/>;
       case 'TEAM PHOTOS':
-        return <TeamPhotosContent />;
+        return <TeamPhotosContent locale={locale}/>;
       default:
         return <PressKitContent locale={locale}/>;
     }

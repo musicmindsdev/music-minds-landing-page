@@ -24,7 +24,7 @@ interface PressKitInterfaceProps {
 
 const PressKitInterface: React.FC<PressKitInterfaceProps> = ({ locale }) => {
   const { t } = useTranslation('common');
-  const [activeSection, setActiveSection] = useState<MenuSection>('LOGO & BRANDING KIT');
+  const [activeSection, setActiveSection] = useState<MenuSection>('TEAM PHOTOS');
 
   console.log(`PressKitInterface: locale=${locale}, t is function: ${typeof t === 'function'}`);
 

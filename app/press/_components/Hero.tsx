@@ -75,7 +75,7 @@ export default function Heropr({ locale }: { locale: string }) {
     {
         icon: <Image src={Team} alt={t("herob.feature3_alt")} className="scale-x-70 scale-y-70" />,
         title: t("heropr.feature1_title4"),
-        href: "/",
+        href: "/teams",
         description: t("herob.feature3_description"),
         cta: t("heropr.feature1_cta"),
       },
