@@ -52,7 +52,6 @@ const TeamsPhotoContent: React.FC<LogoBrandingContentProps> = ({ locale }) => {
 
   return (
     <div className="max-w-4xl mx-auto p-6">
-      <h3 className="text-sm font-semibold mb-3">{t('heropr.logo_variants_section')}</h3>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
         {team.map((item, index) => (
           <div key={index}>
