@@ -11,6 +11,8 @@ type Team = {
   img: JSX.Element;
   name: string;
   role: string;
+  imageKey: string;
+  fileName: string;
 }
 
 interface LogoBrandingContentProps {
@@ -27,26 +29,47 @@ const TeamsPhotoContent: React.FC<LogoBrandingContentProps> = ({ locale }) => {
     return null;
   }
 
+  const downloadImage = (imageKey: string, fileName: string) => {
+    const downloadUrl = `/api/download-image?image=${imageKey}&filename=${encodeURIComponent(fileName)}`;
+    
+    // Create a temporary link and trigger download
+    const link = document.createElement('a');
+    link.href = downloadUrl;
+    link.download = fileName;
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const team: Team[] = [
     {
-      img: <Image  src={Ceo} alt=''className='w-60 h-60 rounded-2xl'/>,
+      img: <Image src={Ceo} alt='' className='w-60 h-60 rounded-2xl'/>,
       name: t("feature1.ceo_name"),
       role: t("feature1.ceo_role"),
+      imageKey: 'ceo',
+      fileName: 'CEO_Marshall.jpg'
     },
     {
-      img: <Image  src={Coo} alt=''className='w-60 h-60 rounded-2xl'/>,
+      img: <Image src={Coo} alt='' className='w-60 h-60 rounded-2xl'/>,
       name: t("feature1.coo_name"),
       role: t("feature1.coo_role"),
+      imageKey: 'coo',
+      fileName: 'COO_Bartek.jpg'
     },
     {
       img: <Image src={Vp} alt='' className='w-60 h-60 rounded-2xl'/>,
       name: t("feature1.vp_name"),
       role: t("feature1.vp_role"),
+      imageKey: 'vp',
+      fileName: 'VP_Aisha.jpg'
     },
     {
       img: <Image src={Cmo} alt='' className='w-60 h-60 rounded-2xl'/>,
       name: t("feature1.cmo_name"),
       role: t("feature1.cmo_role"),
+      imageKey: 'cmo',
+      fileName: 'CMO_Fidelis.jpg'
     },
   ];
 
@@ -61,9 +84,15 @@ const TeamsPhotoContent: React.FC<LogoBrandingContentProps> = ({ locale }) => {
             <div className="mt-2 flex items-center justify-between">
               <div className='flex flex-col'>
                 <h3>{item.name}</h3>
-              <p className='text-xs text-[#474747]'>{item.role}</p>
+                <p className='text-xs text-[#474747]'>{item.role}</p>
               </div>
-              <Download1 className="h-5 w-5 cursor-pointer" aria-label={`${t('heropr.download')} ${item.role}`} />
+              <button onClick={() => downloadImage(item.imageKey, item.fileName)} className='p-0'>
+              <Download1 
+                className="h-5 w-5 cursor-pointer hover:opacity-70 transition-opacity" 
+                aria-label={`${t('heropr.download')} ${item.role}`}
+                onClick={() => downloadImage(item.imageKey, item.fileName)}
+              />
+              </button>
             </div>
           </div>
         ))}

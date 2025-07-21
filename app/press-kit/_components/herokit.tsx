@@ -49,7 +49,7 @@ export default function HeroKit({ locale }: { locale: string }) {
   const featureText: FeatureText[] = [
     {
       title: t("herokit.feature1_title2"),
-      href: "/",
+      href:`mailto:support@music-minds.io`,
       description: t("herokit.feature1_description2"),
       cta: t("herokit.feature1_cta"),
     },
