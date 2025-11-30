@@ -4,19 +4,20 @@ import Link from "next/link";
 import Balancer from "react-wrap-balancer";
 import { Button } from "@/components/ui/button";
 import { Container, Section } from "@/components/craft";
-// import { IoLogoGooglePlaystore } from "react-icons/io5";
-// import { FaApple } from "react-icons/fa";
+import { IoLogoGooglePlaystore } from "react-icons/io5";
+import { FaApple } from "react-icons/fa";
 import Logo from "@/public/Musicmindlogo.svg";
 import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-const CTA =  ({ locale }: { locale: string }) => {
+const CTA = ({ locale }: { locale: string }) => {
   const { t } = useTranslation("common");
-  console.log(`CTA locale: ${locale}, t is function: ${typeof t === "function"}`);
+  const [isAppleDevice, setIsAppleDevice] = useState<boolean | null>(null);
 
+  console.log(`CTA locale: ${locale}, t is function: ${typeof t === "function"}`);
 
   useEffect(() => {
     AOS.init({
@@ -26,6 +27,32 @@ const CTA =  ({ locale }: { locale: string }) => {
     });
     AOS.refresh();
   }, []);
+
+  // Detect user's device type
+  useEffect(() => {
+     // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
+    
+    // Check if it's an Apple device (iOS, iPad, Mac)
+    const apple = /iPad|iPhone|iPod|Macintosh/.test(userAgent);
+    setIsAppleDevice(apple);
+  }, []);
+
+  // App store URLs
+  const appStoreURL = "https://apps.apple.com/us/app/music-minds/id6755591778";
+  const playStoreURL = "https://play.google.com/store/apps/details?id=com.ims.mminds";
+
+  // Determine which URL to use based on device
+  const getAppStoreURL = () => {
+    if (isAppleDevice === null) return `/${locale}`; // Default while detecting
+    return isAppleDevice ? appStoreURL : playStoreURL;
+  };
+
+  // Determine button text based on device
+  const getButtonText = () => {
+    if (isAppleDevice === null) return t("Download the App");
+    return isAppleDevice ? t("Download for ios") : t("Download for andriod");
+  };
 
   if (typeof t !== "function") {
     console.warn(`CTA: t is not a function for locale ${locale}`);
@@ -43,16 +70,11 @@ const CTA =  ({ locale }: { locale: string }) => {
             <Balancer>{t("cta.ready_to_start_description")}</Balancer>
           </h4>
           <div className="not-prose flex items-center gap-2" data-aos="fade-up" data-aos-delay="300">
-            {/* <Link href={`/${locale}`}>
+            <Link href={getAppStoreURL()} target="_blank" rel="noopener noreferrer">
               <Button className="text-white">
-                <FaApple /> | <IoLogoGooglePlaystore /> {t("cta.download_app")}
+                <FaApple /> | <IoLogoGooglePlaystore /> {getButtonText()}
               </Button>
-            </Link> */}
-             <Link href={`/waitlist`}>
-                <Button className="w-full h-[50px] p-3 text-white flex items-center justify-center">
-                  {t("hero.join_waitlist")}
-                </Button>
-              </Link>
+            </Link>
           </div>
         </div>
         <div className="flex justify-center md:w-1/2" data-aos="zoom-in" data-aos-delay="400">

@@ -7,11 +7,15 @@ import { Button } from "@/components/ui/button";
 import HeroImage from "@/public/hero1.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { IoLogoGooglePlaystore } from "react-icons/io5";
+import { FaApple } from "react-icons/fa";
 
 const Hero = ({ locale }: { locale: string }) => {
   const { t } = useTranslation("common");
+  const [isAppleDevice, setIsAppleDevice] = useState<boolean | null>(null);
+
   console.log(`Hero locale: ${locale}, t is function: ${typeof t === "function"}`);
 
   useEffect(() => {
@@ -32,6 +36,32 @@ const Hero = ({ locale }: { locale: string }) => {
       console.log("AOS refreshed hard on cleanup");
     };
   }, []);
+
+  // Detect user's device type
+  useEffect(() => {
+     // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
+    
+    // Check if it's an Apple device (iOS, iPad, Mac)
+    const apple = /iPad|iPhone|iPod|Macintosh/.test(userAgent);
+    setIsAppleDevice(apple);
+  }, []);
+
+  // App store URLs
+  const appStoreURL = "https://apps.apple.com/us/app/music-minds/id6755591778";
+  const playStoreURL = "https://play.google.com/store/apps/details?id=com.ims.mminds";
+
+  // Determine which URL to use based on device
+  const getAppStoreURL = () => {
+    if (isAppleDevice === null) return `/${locale}`; // Default while detecting
+    return isAppleDevice ? appStoreURL : playStoreURL;
+  };
+
+  // Determine button text based on device
+  const getButtonText = () => {
+    if (isAppleDevice === null) return t("cta.download_app") || "Download App";
+    return isAppleDevice ? (t("Download on iOS")) : (t("Download for andriod"));
+  };
 
   if (typeof t !== "function") {
     console.warn(`Hero: t is not a function for locale ${locale}`);
@@ -62,9 +92,13 @@ const Hero = ({ locale }: { locale: string }) => {
           </p>
           <div className="w-full" data-aos="fade-up" data-aos-delay="500">
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <Link href={`/waitlist`}>
-                <Button className="w-full h-[50px] p-3 text-white flex items-center justify-center">
-                  {t("hero.join_waitlist")}
+              {/* Replaced waitlist button with smart app store button */}
+              <Link href={getAppStoreURL()} target="_blank" rel="noopener noreferrer">
+                <Button className="w-full h-[50px] p-3 text-white flex items-center justify-center gap-2">
+                  <FaApple className="text-lg" /> 
+                  <span>|</span>
+                  <IoLogoGooglePlaystore className="text-lg" /> 
+                  {getButtonText()}
                 </Button>
               </Link>
             </div>
