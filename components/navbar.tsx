@@ -28,6 +28,7 @@ import Image from "next/image";
 // } from "@/components/ui/dropdown-menu";
 import React from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { DownloadAppButton } from "./download-app-button";
 
 export default function NavBar() {
   const t = useTranslations();
@@ -210,9 +211,11 @@ export default function NavBar() {
                 {/*</DialogClose>*/}
               </div>
               <div className="bg-[#F2F1FF] absolute bottom-0 left-0 w-full flex justify-center items-center p-4">
-                <Link href="/waitlist">
-                  <Button className="text-white w-full">{t("navbar.join_waitlist")}</Button>
-                </Link>
+                <DialogClose asChild>
+                  <div className="w-full">
+                    <DownloadAppButton />
+                  </div>
+                </DialogClose>
               </div>
             </div>
           </SheetContent>
@@ -299,9 +302,11 @@ export default function NavBar() {
           {/*<Link href="/">*/}
           {/*  <Button variant="ghost">{t("navbar.how_it_works")}</Button>*/}
           {/*</Link>*/}
-          <Link href="/waitlist">
-            <Button className="text-white">{t("navbar.join_waitlist")}</Button>
-          </Link>
+          <DownloadAppButton
+            className="w-auto"
+            buttonClassName="h-9 min-h-0 w-auto shrink-0 px-3 text-white flex items-center justify-center gap-1.5 whitespace-nowrap"
+            iconClassName="text-sm"
+          />
           <LanguageSwitcher />
         </div>
       </div>

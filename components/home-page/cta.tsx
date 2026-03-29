@@ -1,17 +1,15 @@
 "use client";
 
 import NextLink from "next/link";
-import { Link as I18nLink } from "@/i18n/navigation";
+import { DownloadAppButton } from "@/components/download-app-button";
 import Balancer from "react-wrap-balancer";
 import { Button } from "@/components/ui/button";
 import { Container, Section } from "@/components/craft";
-import { IoLogoGooglePlaystore } from "react-icons/io5";
-import { FaApple } from "react-icons/fa";
 import Logo from "@/public/Musicmindlogo.svg";
 import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useTranslations } from "next-intl";
 
 const WEB_APP_LOGIN = "https://app.music-minds.io/auth/login";
@@ -19,7 +17,6 @@ const WEB_APP_REGISTER = "https://app.music-minds.io/auth/register";
 
 const CTA = () => {
   const t = useTranslations();
-  const [isAppleDevice, setIsAppleDevice] = useState<boolean | null>(null);
 
   useEffect(() => {
     AOS.init({
@@ -29,34 +26,6 @@ const CTA = () => {
     });
     AOS.refresh();
   }, []);
-
-  useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
-    const apple = /iPad|iPhone|iPod|Macintosh/.test(userAgent);
-    setIsAppleDevice(apple);
-  }, []);
-
-  const appStoreURL = "https://apps.apple.com/us/app/music-minds/id6755591778";
-  const playStoreURL = "https://play.google.com/store/apps/details?id=com.ims.mminds";
-
-  const getAppStoreURL = () => {
-    if (isAppleDevice === null) return "/";
-    return isAppleDevice ? appStoreURL : playStoreURL;
-  };
-
-  const storeHref = getAppStoreURL();
-
-  const downloadButton = (
-    <>
-      <FaApple className="shrink-0" aria-hidden />
-      <span className="opacity-80" aria-hidden>
-        |
-      </span>
-      <IoLogoGooglePlaystore className="shrink-0" aria-hidden />
-      <span className="truncate">{t("cta.download_app")}</span>
-    </>
-  );
 
   return (
     <Section className="overflow-x-hidden bg-[url(/bg.png)] rounded-2xl px-4 sm:px-6" data-aos="fade-in">
@@ -82,19 +51,7 @@ const CTA = () => {
             data-aos-delay="300"
           >
             <div className="w-full md:hidden">
-              {storeHref.startsWith("http") ? (
-                <NextLink href={storeHref} target="_blank" rel="noopener noreferrer" className="block w-full">
-                  <Button className="h-12 min-h-[48px] w-full px-4 text-white flex items-center justify-center gap-2">
-                    {downloadButton}
-                  </Button>
-                </NextLink>
-              ) : (
-                <I18nLink href={storeHref} className="block w-full">
-                  <Button className="h-12 min-h-[48px] w-full px-4 text-white flex items-center justify-center gap-2">
-                    {downloadButton}
-                  </Button>
-                </I18nLink>
-              )}
+              <DownloadAppButton />
             </div>
             <div className="hidden w-full flex-row flex-wrap gap-3 md:flex">
               <NextLink
