@@ -1,6 +1,7 @@
 "use client";
 
-import Link from "next/link";
+import NextLink from "next/link";
+import { Link as I18nLink } from "@/i18n/navigation";
 import Balancer from "react-wrap-balancer";
 import { Button } from "@/components/ui/button";
 import { Container, Section } from "@/components/craft";
@@ -11,13 +12,14 @@ import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 
-const CTA = ({ locale }: { locale: string }) => {
-  const { t } = useTranslation("common");
+const WEB_APP_LOGIN = "https://app.music-minds.io/auth/login";
+const WEB_APP_REGISTER = "https://app.music-minds.io/auth/register";
+
+const CTA = () => {
+  const t = useTranslations();
   const [isAppleDevice, setIsAppleDevice] = useState<boolean | null>(null);
-
-  console.log(`CTA locale: ${locale}, t is function: ${typeof t === "function"}`);
 
   useEffect(() => {
     AOS.init({
@@ -28,57 +30,101 @@ const CTA = ({ locale }: { locale: string }) => {
     AOS.refresh();
   }, []);
 
-  // Detect user's device type
   useEffect(() => {
-     // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
-    
-    // Check if it's an Apple device (iOS, iPad, Mac)
     const apple = /iPad|iPhone|iPod|Macintosh/.test(userAgent);
     setIsAppleDevice(apple);
   }, []);
 
-  // App store URLs
   const appStoreURL = "https://apps.apple.com/us/app/music-minds/id6755591778";
   const playStoreURL = "https://play.google.com/store/apps/details?id=com.ims.mminds";
 
-  // Determine which URL to use based on device
   const getAppStoreURL = () => {
-    if (isAppleDevice === null) return `/${locale}`; // Default while detecting
+    if (isAppleDevice === null) return "/";
     return isAppleDevice ? appStoreURL : playStoreURL;
   };
 
-  // Determine button text based on device
-  const getButtonText = () => {
-    if (isAppleDevice === null) return t("Download the App");
-    return isAppleDevice ? t("Download for ios") : t("Download for andriod");
-  };
+  const storeHref = getAppStoreURL();
 
-  if (typeof t !== "function") {
-    console.warn(`CTA: t is not a function for locale ${locale}`);
-    return null;
-  }
+  const downloadButton = (
+    <>
+      <FaApple className="shrink-0" aria-hidden />
+      <span className="opacity-80" aria-hidden>
+        |
+      </span>
+      <IoLogoGooglePlaystore className="shrink-0" aria-hidden />
+      <span className="truncate">{t("cta.download_app")}</span>
+    </>
+  );
 
   return (
-    <Section className="bg-[url(/bg.png)] rounded-2xl" data-aos="fade-in">
-      <Container className="flex flex-col md:flex-row justify-between items-center gap-6">
-        <div className="flex flex-col gap-6 md:w-1/2">
-          <h1 className="!my-0 font-bold text-4xl" data-aos="fade-up" data-aos-delay="100">
+    <Section className="overflow-x-hidden bg-[url(/bg.png)] rounded-2xl px-4 sm:px-6" data-aos="fade-in">
+      <Container className="flex max-w-full min-w-0 flex-col items-stretch gap-6 md:flex-row md:items-center md:justify-between">
+        <div className="flex min-w-0 w-full flex-col gap-6 md:w-1/2 md:items-start">
+          <h1
+            className="!my-0 break-words text-center text-3xl font-bold sm:text-4xl md:text-left"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             {t("cta.ready_to_start")}
           </h1>
-          <h4 className="text-muted-foreground w-full md:w-[60%]" data-aos="fade-up" data-aos-delay="200">
+          <h4
+            className="text-muted-foreground w-full max-w-full break-words text-center text-base leading-relaxed md:w-[90%] md:text-left"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <Balancer>{t("cta.ready_to_start_description")}</Balancer>
           </h4>
-          <div className="not-prose flex items-center gap-2" data-aos="fade-up" data-aos-delay="300">
-            <Link href={getAppStoreURL()} target="_blank" rel="noopener noreferrer">
-              <Button className="text-white">
-                <FaApple /> | <IoLogoGooglePlaystore /> {getButtonText()}
-              </Button>
-            </Link>
+          <div
+            className="not-prose flex w-full max-w-md flex-col gap-3 self-center md:max-w-none md:self-start"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div className="w-full md:hidden">
+              {storeHref.startsWith("http") ? (
+                <NextLink href={storeHref} target="_blank" rel="noopener noreferrer" className="block w-full">
+                  <Button className="h-12 min-h-[48px] w-full px-4 text-white flex items-center justify-center gap-2">
+                    {downloadButton}
+                  </Button>
+                </NextLink>
+              ) : (
+                <I18nLink href={storeHref} className="block w-full">
+                  <Button className="h-12 min-h-[48px] w-full px-4 text-white flex items-center justify-center gap-2">
+                    {downloadButton}
+                  </Button>
+                </I18nLink>
+              )}
+            </div>
+            <div className="hidden w-full flex-row flex-wrap gap-3 md:flex">
+              <NextLink
+                href={WEB_APP_LOGIN}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="min-w-[140px] flex-1 md:flex-none"
+              >
+                <Button
+                  variant="outline"
+                  className="h-12 min-h-[48px] w-full border-[#5243FE] text-[#5243FE] hover:bg-[#5243FE]/10"
+                >
+                  {t("cta.auth_login")}
+                </Button>
+              </NextLink>
+              <NextLink
+                href={WEB_APP_REGISTER}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="min-w-[140px] flex-1 md:flex-none"
+              >
+                <Button className="h-12 min-h-[48px] w-full text-white bg-[#5243FE] hover:bg-[#5243FE]/90">
+                  {t("cta.auth_sign_up")}
+                </Button>
+              </NextLink>
+            </div>
           </div>
         </div>
-        <div className="flex justify-center md:w-1/2" data-aos="zoom-in" data-aos-delay="400">
-          <Image src={Logo} alt="" width={150} height={150} />
+        <div className="flex min-w-0 w-full justify-center md:w-1/2" data-aos="zoom-in" data-aos-delay="400">
+          <Image src={Logo} alt="" width={150} height={150} className="h-auto w-[min(150px,40vw)] max-w-full" />
         </div>
       </Container>
     </Section>

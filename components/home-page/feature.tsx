@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Balancer from "react-wrap-balancer";
 import { Section, Container } from "@/components/craft";
 import { JSX, useEffect } from "react";
@@ -15,7 +15,7 @@ import Image3 from "@/public/image48.png";
 import Image4 from "@/public/image49.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 
 type FeatureText = {
   icon: JSX.Element;
@@ -24,33 +24,32 @@ type FeatureText = {
   href?: string;
 };
 
-const Feature =  ({ locale }: { locale: string }) => {
-  const { t } = useTranslation("common");
-  console.log(`Hero locale: ${locale}, t is function: ${typeof t === "function"}`);
+const Feature = () => {
+  const t = useTranslations();
 
   const featureText: FeatureText[] = [
     {
       icon: <Image src={Music} className="rounded-full p-3 bg-[#EAE9FF]" alt="" />,
       title: t("feature.expert_service_providers"),
-      href: `/${locale}`,
+      href: "/",
       description: t("feature.expert_service_providers_description"),
     },
     {
       icon: <Image src={Calendar} className="rounded-full p-3 bg-[#EAE9FF]" alt="" />,
       title: t("feature.easy_scheduling"),
-      href: `/${locale}`,
+      href: "/",
       description: t("feature.easy_scheduling_description"),
     },
     {
       icon: <Image src={Play} className="rounded-full p-3 bg-[#EAE9FF]" alt="" />,
       title: t("feature.progress_tracking"),
-      href: `/${locale}`,
+      href: "/",
       description: t("feature.progress_tracking_description"),
     },
     {
       icon: <Image src={MessageText} className="rounded-full p-3 bg-[#EAE9FF]" alt="" />,
       title: t("feature.community_support"),
-      href: `/${locale}`,
+      href: "/",
       description: t("feature.community_support_description"),
     },
   ];
@@ -63,11 +62,6 @@ const Feature =  ({ locale }: { locale: string }) => {
     });
     AOS.refresh();
   }, []);
-
-  if (typeof t !== "function") {
-    console.warn(`Hero: t is not a function for locale ${locale}`);
-    return null;
-  }
 
   return (
     <Section className="bg-card w-[100%]" data-aos="fade-up">
@@ -124,7 +118,7 @@ const Feature =  ({ locale }: { locale: string }) => {
           <div className="mt-6 grid gap-6 md:mt-12 md:grid-cols-4">
             {featureText.map(({ icon, title, description, href }, index) => (
               <Link
-                href={href || `/${locale}`}
+                href={href || "/"}
                 className="flex flex-col justify-between gap-6 rounded-lg border p-6 transition-all hover:-mt-2 hover:mb-2 backdrop-filter backdrop-blur-lg bg-card border-card border-opacity-20 shadow-lg"
                 key={index}
                 data-aos="fade-up"

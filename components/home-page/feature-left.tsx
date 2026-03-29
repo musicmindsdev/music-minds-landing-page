@@ -9,12 +9,10 @@ import Message from "@/public/message.svg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 
-const FeatureLeft =  ({ locale }: { locale: string }) => {
-  const { t } = useTranslation("common");
-  console.log(`FeatureLeft locale: ${locale}, t is function: ${typeof t === "function"}`);
-
+const FeatureLeft = () => {
+  const t = useTranslations();
 
   useEffect(() => {
     AOS.init({
@@ -24,11 +22,6 @@ const FeatureLeft =  ({ locale }: { locale: string }) => {
     });
     AOS.refresh();
   }, []);
-
-  if (typeof t !== "function") {
-    console.warn(`Hero: t is not a function for locale ${locale}`);
-    return null;
-  }
 
   return (
     <Section className="bg-[url(/bg.png)] pb-0" data-aos="fade-up">

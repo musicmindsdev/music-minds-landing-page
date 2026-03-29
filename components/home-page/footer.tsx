@@ -1,28 +1,23 @@
 "use client"
 
 import Image from "next/image";
-import Link from "next/link";
+import NextLink from "next/link";
+import { Link } from "@/i18n/navigation";
 import Balancer from "react-wrap-balancer";
 import { Button } from "../ui/button";
 import { Twitter, Facebook, Instagram, Youtube } from "lucide-react";
 import { Section, Container } from "../craft";
 import Logo from "@/public/Musicmindlogo.svg";
-import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 
-export  function Footer({ locale }: { locale: string }) {
-  const { t } = useTranslation("common");
-  console.log(`Footer locale: ${locale}, t is function: ${typeof t === "function"}`);
-
-  if (typeof t !== "function") {
-    console.warn(`Footer: t is not a function for locale ${locale}`);
-    return null;
-  }
+export function Footer() {
+  const t = useTranslations();
   return (
     <footer>
       <Section className="">
         <Container className="flex flex-col items-start md:flex-row md:items-center md:justify-between gap-4 md:gap-2 lg:gap-7 p-4 w-full max-w-full">
           <div className="not-prose flex flex-col gap-6 w-full max-w-[200px] md:max-w-[180px] lg:max-w-[240px]">
-            <Link href={``}>
+            <Link href="/">
               <h3 className="sr-only">Music Minds</h3>
               <Image
                 src={Logo}
@@ -50,8 +45,12 @@ export  function Footer({ locale }: { locale: string }) {
             {/*<Link href={``}>{t("footer.tutorials")}</Link>*/}
             {/*<Link href={``}>{t("footer.events")}</Link>*/}
             <Link href={`/conduct`}>{t("footer.code_of_conduct")}</Link>
-            <Link href={`https://www.google.com/maps/place/Reichsstra%C3%9Fe+99,+14052+Berlin,+Germany/@52.5118569,13.2644961,17z/data=!3m1!4b1!4m6!3m5!1s0x47a857291d55130b:0xfdae2534a72974d3!8m2!3d52.5118569!4d13.267071!16s%2Fg%2F11b8v674cx?entry=ttu&g_ep=EgoyMDI1MDcwNi4wIKXMDSoASAFQAw%3D%3D`}
-                  className="break-words">{t("footer.address")}</Link>
+            <NextLink
+              href={`https://www.google.com/maps/place/Reichsstra%C3%9Fe+99,+14052+Berlin,+Germany/@52.5118569,13.2644961,17z/data=!3m1!4b1!4m6!3m5!1s0x47a857291d55130b:0xfdae2534a72974d3!8m2!3d52.5118569!4d13.267071!16s%2Fg%2F11b8v674cx?entry=ttu&g_ep=EgoyMDI1MDcwNi4wIKXMDSoASAFQAw%3D%3D`}
+              className="break-words"
+            >
+              {t("footer.address")}
+            </NextLink>
           </div>
           <div className="flex flex-col items-start gap-2 min-w-[100px]">
             <h5 className="font-bold">{t("footer.legal")}</h5>
@@ -62,8 +61,8 @@ export  function Footer({ locale }: { locale: string }) {
           </div>
           <div className="flex flex-col items-start gap-2 w-full max-w-[200px] md:max-w-[180px] lg:max-w-[240px] text-sm">
             <h5 className="font-bold">{t("footer.contact")}</h5>
-            <Link href={`mailto:support@music-minds.io`}>{t("footer.email")}</Link>
-            <Link href={`tel:+4915733927104`}>{t("footer.phone")}</Link>
+            <NextLink href={`mailto:support@music-minds.io`}>{t("footer.email")}</NextLink>
+            <NextLink href={`tel:+4915733927104`}>{t("footer.phone")}</NextLink>
             {/*<Link href={``}>{t("footer.events")}</Link>*/}
           </div>
         </Container>
@@ -73,9 +72,9 @@ export  function Footer({ locale }: { locale: string }) {
               <Twitter />
             </Button>
             <Button variant="outline" size="icon">
-              <Link href="https://www.instagram.com/musicminds.io">
+              <NextLink href="https://www.instagram.com/musicminds.io">
                 <Instagram />
-              </Link>
+              </NextLink>
             </Button>
             <Button variant="outline" size="icon">
               <Facebook />
