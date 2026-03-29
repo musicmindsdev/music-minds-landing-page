@@ -60,11 +60,11 @@
     "menu_team_photos": "Teamfotos",
     "document_company_profile": "Unternehmensprofil",
     "document_team_data": "Teamdaten",
-    "document_mission_vision": "Mission & Vision",
-    "document_screenshots": "Screenshots",
+    "document_mission_vision": "Mission und Vision",
+    "document_screenshots": "Bildschirmfotos",
     "last_updated": "Zuletzt aktualisiert",
     "download": "Herunterladen",
-    "logo_section": "Logo",
+    "logo_section": "Markenlogo",
     "logo_variants_section": "Logovarianten",
     "logo_usage_guidelines": "Der richtige Umgang mit den Assets",
     "logo_variant_primary": "Primäres Logo",
@@ -79,7 +79,7 @@
     "logo_guideline_6": "Vermeiden Sie das Strecken oder Verzerren der Schrift im Logo, um die ursprüngliche Integrität zu bewahren.",
     "logo_guideline_7": "Die Fensterform des Logozeichens darf nicht verändert werden und muss konsistent bleiben.",
     "logo_guideline_8": "Vermeiden Sie das Hinzufügen von Effekten wie Schatten oder Glühen zum Logo, um eine klare und konsistente visuelle Darstellung zu gewährleisten.",
-    "logo_alt": "Music Minds Logo",
+    "logo_alt": "Logo von Music Minds",
     "mockup_splash": "Startbildschirm",
     "mockup_booking_list": "Buchungsliste",
     "mockup_provider_profile": "Dienstleisterprofil",
@@ -146,7 +146,7 @@
     "feature1_cta": "Mehr erfahren",
     "feature1_button1": "Konto",
     "feature1_button2": "Anmelden",
-    "feature1_button3": "Dashboard",
+    "feature1_button3": "Übersicht",
     "feature2_title": "Hilfe bei KYC benötigt?",
     "feature2_description": "Probleme mit dem KYC-Verifizierungsprozess? Klicken Sie unten, um mehr über die verschiedenen KYC-Stufen und die Schritt-für-Schritt-Anforderungen für jede Stufe zu erfahren.",
     "feature2_cta": "Mehr erfahren",
@@ -202,7 +202,7 @@
       "submit_button": "Frühen Zugang erhalten",
       "processing": "Wird verarbeitet...",
       "submitting": "Wird gesendet...",
-      "step": "{step}/4"
+      "step": "{step} von 4"
     },
     "success_message": "Erfolgreich der Warteliste beigetreten!",
     "errors": {
@@ -279,7 +279,7 @@
     "press_inquiries_highlightb": "Kontakt",
     "press_inquiries_description": "Wir freuen uns über Medienanfragen, Kooperationen oder Interviewwünsche zu Themen wie:",
     "press_inquiries_li1": "Digitalisierung der Musikindustrie",
-    "press_inquiries_li2": "Creator Economy",
+    "press_inquiries_li2": "Kreativwirtschaft",
     "press_inquiries_li3": "Plattformtechnologien im Musikbereich",
     "press_inquiries_li4": "Musikbildung & Community-Coaching",
     "press_inquiries_descriptionb": "Pressekontakt: ",
@@ -347,7 +347,7 @@
     "main_title": "Suchen Sie nach Gleichgesinnten?",
     "sub_title": "Treten Sie Music Minds heute bei, verbinden Sie sich mit Top-Musiktrainer:innen, verfolgen Sie Ihren Fortschritt und werden Sie die Musiker:in, die Sie immer sein wollten.",
     "download_button": "App herunterladen",
-    "logo_alt": "Music Minds Logo"
+    "logo_alt": "Logo von Music Minds"
   },
   "ctacu": {
     "main_title": "Lassen Sie uns die Zukunft der Musikkollaboration bauen.",
@@ -357,18 +357,63 @@
     "main_title": "Medienberichte & Features",
     "sub_title": "Demnächst: Ein Überblick über aktuelle Artikel, Interviews und Podcasts mit dem Music Minds-Team."
   },
+  "feature": {
+    "trusted_by_artists": "WELTWEIT VON KÜNSTLER:INNEN GESCHÄTZT",
+    "elevate_your_music_journey": "Heben Sie Ihre Musikreise auf ein neues Level",
+    "elevate_your_music_journey_description": "Music Minds bietet Ihnen alle Werkzeuge, um Ihre musikalischen Talente mit professioneller Begleitung zu entwickeln.",
+    "expert_service_providers": "Erfahrene Dienstleister:innen",
+    "expert_service_providers_description": "Verbinden Sie sich mit professionellen Dienstleister:innen aus allen Bereichen der Musik – von Songwriter:innen bis Produzent:innen – für persönliche Sessions, die zu Ihnen passen.",
+    "easy_scheduling": "Einfache Terminplanung",
+    "easy_scheduling_description": "Buchen und verwalten Sie Ihre Sessions mit Dienstleister:innen über unser intuitives Buchungssystem – ohne endloses E-Mail-Hin und Her.",
+    "progress_tracking": "Fortschrittsverfolgung",
+    "progress_tracking_description": "Nehmen Sie Ihre Sessions auf, verfolgen Sie Ihren Fortschritt und teilen Sie Ihre Entwicklung mit Freund:innen, Coaches und der Community.",
+    "community_support": "Community-Unterstützung",
+    "community_support_description": "Vernetzen Sie sich mit anderen Musiker:innen, tauschen Sie Erfahrungen aus und lassen Sie sich von einer unterstützenden Community inspirieren."
+  },
+  "feature_left": {
+    "find_perfect_provider": "Finden Sie die passenden Dienstleister:innen",
+    "find_perfect_provider_description": "Stöbern Sie in Profilen von Top-Musikcoaches, lesen Sie Bewertungen anderer Schüler:innen und finden Sie die perfekte Passform für Ihre Musikreise.",
+    "filter_by_genre": "Nach Musikgenre und Expertise filtern",
+    "read_reviews": "Verifizierte Kundenbewertungen lesen",
+    "message_providers": "Dienstleister:innen vor der Buchung kontaktieren"
+  },
+  "feature_action": {
+    "how_music_minds_works": "So funktioniert Music Minds",
+    "how_music_minds_works_description": "Ein einfacher Ablauf, der Sie mit der musikalischen Begleitung verbindet, die Sie brauchen.",
+    "create_profile": "Profil anlegen",
+    "create_profile_description": "Registrieren Sie sich und legen Sie Ihr Musikprofil mit Fähigkeiten, Zielen und Vorlieben an.",
+    "find_provider": "Dienstleister:innen finden",
+    "find_provider_description": "Durchsuchen Sie verifizierte Coaches und Musiker:innen, filtern Sie nach Genre, Standort und Expertise.",
+    "book_sessions": "Sessions buchen",
+    "book_sessions_description": "Vereinbaren Sie Termine mit Ihren Lieblingsdienstleister:innen zu Zeiten, die für Sie passen.",
+    "grow_share": "Wachsen und teilen",
+    "grow_share_description": "Verfolgen Sie Ihren Fortschritt, teilen Sie Aufnahmen und vernetzen Sie sich mit der Musik-Community.",
+    "get_it_on": "Jetzt bei",
+    "app_store": "Apple App Store",
+    "play_store": "Google Play Store"
+  },
+  "feature_right": {
+    "book_sessions": "Sessions mit Dienstleister:innen in wenigen Minuten buchen",
+    "book_sessions_description": "Planen Sie Sessions mit Top-Coaches und Dienstleister:innen weltweit. Erhalten Sie persönliche Begleitung, um Ihre Technik zu verbessern, Ihren Umfang zu erweitern und Ihren eigenen Stil zu entwickeln.",
+    "in_person_virtual": "Präsenz- und Online-Sessions verfügbar",
+    "flexible_scheduling": "Flexible Terminplanung, die in Ihren Alltag passt",
+    "record_sessions": "Sessions zur späteren Wiederholung und Übung aufnehmen",
+    "personalized_feedback": "Persönliches Feedback und Übungen erhalten"
+  },
   "featurepr": {
-    "main_title": "Team",
+    "main_title": "Teamzitate",
     "main_title_highlight": "Zitate",
     "sub_title": "Diese Zitate sind für die redaktionelle Nutzung freigegeben"
   },
   "cta": {
     "ready_to_start": "Bereit, Ihre Musikreise zu beginnen?",
     "ready_to_start_description": "Treten Sie Music Minds heute bei, verbinden Sie sich mit Top-Musiktrainer:innen, verfolgen Sie Ihren Fortschritt und werden Sie die Musiker:in, die Sie immer sein wollten.",
-    "download_app": "App herunterladen"
+    "download_app": "App herunterladen",
+    "auth_login": "Anmelden",
+    "auth_sign_up": "Registrieren"
   },
   "team": {
-    "main_title": "Team",
+    "main_title": "Unser Team",
     "main_title_highlight": "Zitate",
     "team_description": "Diese Zitate sind für die redaktionelle Nutzung freigegeben",
     "team_quote1": "Wir haben Music Minds gegründet, weil Kreativität heute oft an fehlender Struktur scheitert – nicht an Talent.",
@@ -387,17 +432,17 @@
     "about_us": "Über uns",
     "contact": "Kontakt",
     "careers": "Karriere",
-    "blog": "Blog",
+    "blog": "Blog & News",
     "resources": "Ressourcen",
     "help_center": "Hilfezentrum",
     "community": "Gemeinschaft",
-    "tutorials": "Tutorials",
+    "tutorials": "Anleitungen",
     "events": "Veranstaltungen",
     "legal": "Rechtliches",
     "privacy_policy": "Datenschutzrichtlinie",
     "terms_conditions": "Allgemeine Geschäftsbedingungen",
     "code_of_conduct": "Verhaltenskodex",
-    "compliance": "Compliance",
+    "compliance": "Regelkonformität",
     "address": "Reichsstr. 99, D-14052 Berlin",
     "email": "support@music-minds.io",
     "phone": " +49 15733927104",
@@ -537,7 +582,7 @@
       "data_sharing": "Weitergabe von Daten",
       "storage": "Datenspeicherung & Sicherheit",
       "right": "Ihre Rechte",
-      "cook": "Cookies",
+      "cook": "Cookies und ähnliche Technologien",
       "third": "Links zu Drittanbietern",
       "childrens_privacy": "Datenschutz für Kinder",
       "changes": "Änderungen an dieser Richtlinie",
@@ -664,7 +709,7 @@
       "contact": "Um Ihre Rechte auszuüben, kontaktieren Sie bitte: {email}"
     },
     "cook": {
-      "title": "9. Cookies",
+      "title": "9. Cookies und ähnliche Technologien",
       "intro": "Die Website und die App können Cookies oder ähnliche Technologien verwenden, um:",
       "list": {
         "session": "Sitzungsdaten zu speichern",

@@ -10,11 +10,10 @@ import Sms from "@/public/sms-star.svg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 
-const FeatureRight = ({ locale }: { locale: string }) => {
-  const { t } = useTranslation("common");
-  console.log(`Hero locale: ${locale}, t is function: ${typeof t === "function"}`);
+const FeatureRight = () => {
+  const t = useTranslations();
 
   useEffect(() => {
     AOS.init({
@@ -24,11 +23,6 @@ const FeatureRight = ({ locale }: { locale: string }) => {
     });
     AOS.refresh();
   }, []);
-
-  if (typeof t !== "function") {
-    console.warn(`Hero: t is not a function for locale ${locale}`);
-    return null;
-  }
 
   return (
     <Craft.Section className="bg-[url(/bg.png)] pb-0" data-aos="fade-in">

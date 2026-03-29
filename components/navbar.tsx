@@ -1,10 +1,10 @@
 "use client";
 
 // import { useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { MenuIcon } from "lucide-react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Dialog, DialogClose } from "./ui/dialog";
 import { Button } from "./ui/button";
 import { NavigationMenu, NavigationMenuLink, NavigationMenuList } from "./ui/navigation-menu";
@@ -29,9 +29,8 @@ import Image from "next/image";
 import React from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
 
-export default function NavBar({ locale }: { locale: string }) {
-  const { t } = useTranslation("common");
-  console.log(`NavBar locale: ${locale}, t is function: ${typeof t === "function"}`);
+export default function NavBar() {
+  const t = useTranslations();
 
   // const [isOpen, setIsOpen] = useState(false);
   // const [expandedMenu, setExpandedMenu] = useState<string | null>(null);
@@ -59,16 +58,11 @@ export default function NavBar({ locale }: { locale: string }) {
   //   setExpandedMenu(expandedMenu === menu ? null : menu);
   // };
 
-  if (typeof t !== "function") {
-    console.warn(`NavBar: t is not a function for locale ${locale}`);
-    return null;
-  }
-
   return (
     <div className="flex items-center min-w-full w-full fixed justify-center p-2 z-[50]">
       <div className="flex justify-between w-[100%] relative backdrop-filter backdrop-blur-lg bg-card border-white border-opacity-20 rounded-xl p-2 shadow-lg">
      <div className="min-[825px]:hidden">
-      <LanguageSwitcher currentLocale={locale} />
+      <LanguageSwitcher />
       </div>
         <NavigationMenu>
           <NavigationMenuList className="max-[825px]:w-10 max-[825px]:h-10">
@@ -195,7 +189,7 @@ export default function NavBar({ locale }: { locale: string }) {
                   </Link>
                 </DialogClose>
                 <DialogClose asChild>
-                  <Link href="press">
+                  <Link href="/press">
                     <Button
                       variant="ghost"
                       className="w-full flex items-center justify-start space-x-2"
@@ -308,7 +302,7 @@ export default function NavBar({ locale }: { locale: string }) {
           <Link href="/waitlist">
             <Button className="text-white">{t("navbar.join_waitlist")}</Button>
           </Link>
-          <LanguageSwitcher currentLocale={locale} />
+          <LanguageSwitcher />
         </div>
       </div>
     </div>

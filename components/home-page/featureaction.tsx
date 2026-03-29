@@ -14,7 +14,7 @@ import Iphone3 from "@/public/iphone3.png";
 import Iphone4 from "@/public/iphone4.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 
 type FeatureText = {
   icon: JSX.Element;
@@ -23,9 +23,8 @@ type FeatureText = {
   img: JSX.Element;
 };
 
-const FeatureAction  =  ({ locale }: { locale: string }) => {
-  const { t } = useTranslation("common");
-  console.log(`FeatureAction locale: ${locale}, t is function: ${typeof t === "function"}`);
+const FeatureAction = () => {
+  const t = useTranslations();
 
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
@@ -119,11 +118,6 @@ const FeatureAction  =  ({ locale }: { locale: string }) => {
     });
     AOS.refresh();
   }, []);
-
-  if (typeof t !== "function") {
-    console.warn(`Hero: t is not a function for locale ${locale}`);
-    return null;
-  }
 
   return (
     <Section className="" data-aos="fade-in">
